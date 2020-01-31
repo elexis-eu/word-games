@@ -1,0 +1,238 @@
+[1mdiff --git a/Assets/Scenes/Choose/Choose.unity b/Assets/Scenes/Choose/Choose.unity[m
+[1mindex 58a9231..c69bfa1 100644[m
+[1m--- a/Assets/Scenes/Choose/Choose.unity[m
+[1m+++ b/Assets/Scenes/Choose/Choose.unity[m
+[36m@@ -1386,21 +1386,6 @@[m [mPrefabInstance:[m
+       propertyPath: m_SizeDelta.x[m
+       value: 0[m
+       objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.r[m
+[31m-      value: 0.23921569[m
+[31m-      objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.g[m
+[31m-      value: 0.28235295[m
+[31m-      objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.b[m
+[31m-      value: 0.3529412[m
+[31m-      objectReference: {fileID: 0}[m
+     - target: {fileID: 3221114346291685576, guid: e1d3f336937486049933a5a2de9236f6,[m
+         type: 3}[m
+       propertyPath: m_AnchorMin.y[m
+[36m@@ -1426,21 +1411,6 @@[m [mPrefabInstance:[m
+       propertyPath: m_SizeDelta.x[m
+       value: 0[m
+       objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.r[m
+[31m-      value: 0.23921569[m
+[31m-      objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.g[m
+[31m-      value: 0.28235295[m
+[31m-      objectReference: {fileID: 0}[m
+[31m-    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[31m-        type: 3}[m
+[31m-      propertyPath: m_Color.b[m
+[31m-      value: 0.3529412[m
+[31m-      objectReference: {fileID: 0}[m
+     - target: {fileID: 3221114346530297976, guid: e1d3f336937486049933a5a2de9236f6,[m
+         type: 3}[m
+       propertyPath: m_AnchorMin.y[m
+[36m@@ -1466,6 +1436,41 @@[m [mPrefabInstance:[m
+       propertyPath: m_SizeDelta.x[m
+       value: 0[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.r[m
+[32m+[m[32m      value: 0.23921569[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.g[m
+[32m+[m[32m      value: 0.28235295[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.b[m
+[32m+[m[32m      value: 0.3529412[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 4288049802222565474, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_FontSize[m
+[32m+[m[32m      value: 85[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.r[m
+[32m+[m[32m      value: 0.23921569[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.g[m
+[32m+[m[32m      value: 0.28235295[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3221114346285534072, guid: e1d3f336937486049933a5a2de9236f6,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_Color.b[m
+[32m+[m[32m      value: 0.3529412[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     - target: {fileID: 3221114346530297975, guid: e1d3f336937486049933a5a2de9236f6,[m
+         type: 3}[m
+       propertyPath: m_Color.r[m
+[1mdiff --git a/Assets/Scenes/Choose/Classify Info.unity b/Assets/Scenes/Choose/Classify Info.unity[m
+[1mindex aea0211..0c3808a 100644[m
+[1m--- a/Assets/Scenes/Choose/Classify Info.unity[m	
+[1m+++ b/Assets/Scenes/Choose/Classify Info.unity[m	
+[36m@@ -239,6 +239,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_FontData.m_MinSize[m
+       value: 6[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     m_RemovedComponents: [][m
+   m_SourcePrefab: {fileID: 100100000, guid: 44c489f4e32128a4ba1fac4cbd577784, type: 3}[m
+ --- !u!224 &37100916 stripped[m
+[36m@@ -510,6 +520,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_FontData.m_MinSize[m
+       value: 6[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     m_RemovedComponents: [][m
+   m_SourcePrefab: {fileID: 100100000, guid: 44c489f4e32128a4ba1fac4cbd577784, type: 3}[m
+ --- !u!224 &428534750 stripped[m
+[36m@@ -875,7 +895,7 @@[m [mPrefabInstance:[m
+     - target: {fileID: 6835186612219213793, guid: 6cbba248127fb9848972b5a5df64494c,[m
+         type: 3}[m
+       propertyPath: m_AnchoredPosition.x[m
+[31m-      value: 201[m
+[32m+[m[32m      value: 243.9[m
+       objectReference: {fileID: 0}[m
+     - target: {fileID: 6835186612219213793, guid: 6cbba248127fb9848972b5a5df64494c,[m
+         type: 3}[m
+[36m@@ -885,7 +905,7 @@[m [mPrefabInstance:[m
+     - target: {fileID: 6835186612219213793, guid: 6cbba248127fb9848972b5a5df64494c,[m
+         type: 3}[m
+       propertyPath: m_SizeDelta.x[m
+[31m-      value: 166[m
+[32m+[m[32m      value: 251.8[m
+       objectReference: {fileID: 0}[m
+     - target: {fileID: 6835186612219213793, guid: 6cbba248127fb9848972b5a5df64494c,[m
+         type: 3}[m
+[36m@@ -922,6 +942,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_Pivot.y[m
+       value: 0.5[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 6835186612219213823, guid: 6cbba248127fb9848972b5a5df64494c,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 6835186612219213823, guid: 6cbba248127fb9848972b5a5df64494c,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     m_RemovedComponents:[m
+     - {fileID: 6835186612219213792, guid: 6cbba248127fb9848972b5a5df64494c, type: 3}[m
+   m_SourcePrefab: {fileID: 100100000, guid: 6cbba248127fb9848972b5a5df64494c, type: 3}[m
+[36m@@ -1058,6 +1088,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_FontData.m_FontSize[m
+       value: 150[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 8574421179885119886, guid: 737202687df84d342889638c45dd5f01,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 8574421179885119886, guid: 737202687df84d342889638c45dd5f01,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     m_RemovedComponents: [][m
+   m_SourcePrefab: {fileID: 100100000, guid: 737202687df84d342889638c45dd5f01, type: 3}[m
+ --- !u!224 &1105905510 stripped[m
+[36m@@ -1709,8 +1749,23 @@[m [mPrefabInstance:[m
+     - target: {fileID: 7688447900276585353, guid: 04946f75e579949449652bd5d5c78194,[m
+         type: 3}[m
+       propertyPath: m_Text[m
+[31m-      value: po ustreznosti, od po tvojem mnenju najbolj ustrezne (1) do najmanj ustrezne[m
+[31m-        (3) besedne zveze.[m
+[32m+[m[32m      value: "po ustreznosti, od po tvojem mnenju\nnajbolj ustrezne (1) do najmanj[m
+[32m+[m[32m        \nustrezne (3) besedne zveze."[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 7688447900276585353, guid: 04946f75e579949449652bd5d5c78194,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 7688447900276585353, guid: 04946f75e579949449652bd5d5c78194,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 7688447900276585353, guid: 04946f75e579949449652bd5d5c78194,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_FontSize[m
+[32m+[m[32m      value: 45[m
+       objectReference: {fileID: 0}[m
+     m_RemovedComponents: [][m
+   m_SourcePrefab: {fileID: 100100000, guid: 04946f75e579949449652bd5d5c78194, type: 3}[m
+[36m@@ -1853,6 +1908,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_FontData.m_MinSize[m
+       value: 6[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 3998570555337213933, guid: 44c489f4e32128a4ba1fac4cbd577784,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_VerticalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+     m_RemovedComponents: [][m
+   m_SourcePrefab: {fileID: 100100000, guid: 44c489f4e32128a4ba1fac4cbd577784, type: 3}[m
+ --- !u!1 &6261165634833374438 stripped[m
+[1mdiff --git a/Assets/Scenes/Choose/Classify.unity b/Assets/Scenes/Choose/Classify.unity[m
+[1mindex 8dadcd3..31aa6f7 100644[m
+[1m--- a/Assets/Scenes/Choose/Classify.unity[m
+[1m+++ b/Assets/Scenes/Choose/Classify.unity[m
+[36m@@ -329,6 +329,16 @@[m [mPrefabInstance:[m
+       propertyPath: m_Text[m
+       value: MALO MANJ USTREZNA (2.)[m
+       objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 6835186612219213823, guid: 6cbba248127fb9848972b5a5df64494c,[m
+[32m+[m[32m        type: 3}[m
+[32m+[m[32m      propertyPath: m_FontData.m_HorizontalOverflow[m
+[32m+[m[32m      value: 1[m
+[32m+[m[32m      objectReference: {fileID: 0}[m
+[32m+[m[32m    - target: {fileID: 6835186612219213823, guid: 6cbba248127fb9848972b5a5df64494c,[m
+[32m+[m

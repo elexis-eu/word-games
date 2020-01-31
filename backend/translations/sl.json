@@ -1,0 +1,788 @@
+{
+    "strings" : [
+        {
+            "key" : "INTRO_TITLE",
+            "value":  "Igra Besed"
+        },
+        {
+            "key" : "INTRO_TITLE_INFO",
+            "value":  "© Center za jezikovne vire in tehnologije Univerze v Ljubljani"
+        },
+        {
+            "key" : "INTRO_LOGIN",
+            "value":  "Prijava"
+        },        
+        {
+            "key" : "INTRO_PLAY_AS_GUEST",
+            "value":  "Igraj kot gost"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS",
+            "value":  "Kolokacije"
+        },
+        {
+            "key" : "MODE_COL_INFO",
+            "value":  "Besede, ki se rade družijo"
+        },        
+        {
+            "key" : "MODE_SYNONYMS",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "MODE_SYNONYMS_INFO",
+            "value":  "Besede, ki imajo podoben pomen"
+        },
+        {
+            "key" : "MODE_SYNONYMS_SOLO",
+            "value":  "Solo"
+        }, 
+        {
+            "key" : "MODE_SYNONYMS_SOLO_INFO",
+            "value":  "Igraš sam"
+        },
+        {
+            "key" : "MODE_SYNONYMS_MULTI",
+            "value":  "Tekmovanje"
+        }, 
+        {
+            "key" : "MODE_SYNONYMS_MULTI_INFO",
+            "value":  "Igraš z drugimi tekmovalci"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS_SOLO",
+            "value":  "Solo"
+        }, 
+        {
+            "key" : "MODE_COLLOCATIONS_SOLO_INFO",
+            "value":  "Igraš sam"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS_MULTI",
+            "value":  "Tekmovanje"
+        }, 
+        {
+            "key" : "MODE_COLLOCATIONS_MULTI_INFO",
+            "value":  "Igraš z drugimi tekmovalci"
+        },
+        {
+            "key" : "REGISTRATION_TITLE",
+            "value":  "Registracija"
+        },
+        {
+            "key" : "REGISTRATION_NICKNAME",
+            "value":  "Vzdevek"
+        },
+        {
+            "key" : "REGISTRATION_NICKNAME_TAKEN",
+            "value":  "Vzdevek zaseden!"
+        },
+        {
+            "key" : "REGISTRATION_NATIVE_LANGUAGE",
+            "value":  "Materni jezik"
+        },
+        {
+            "key" : "REGISTRATION_LANG_SLO",
+            "value":  "Slovenski"
+        },
+        {
+            "key" : "REGISTRATION_AGE",
+            "value":  "Starost"
+        },
+        {
+            "key" : "REGISTRATION_PRIVACY_POLICY_BUTTON",
+            "value":  "Pravni poduk"
+        },
+        {
+            "key" : "REGISTRATION_REGISTER_BUTTON",
+            "value":  "Registracija"
+        },
+        {
+            "key" : "REGISTRATION_NOTICE",
+            "value":  "S pritiskom na gumb <color=blue>“Registracija”</color> potrjujem, da sem prebral/-a informacije o projektu, v katerem je igra nastala, in pravni poduk ter se strinjam s pogoji uporabe."
+        },
+        {
+            "key" : "COL_SELECT_MODE_CHOOSE",
+            "value":  "Izberi"
+        },
+        {
+            "key" : "COL_SELECT_MODE_DRAG",
+            "value":  "Povleci"
+        },
+        {
+            "key" : "COL_SELECT_MODE_INSERT",
+            "value":  "Vtipkaj"
+        },
+        {
+            "key" : "COL_SELECT_MODE_THEMATIC",
+            "value":  "Tematsko"
+        },
+        {
+            "key" : "COL_SELECT_MODE_SYNONYMS",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "THEMATIC_INFO_EMAIL",
+            "value":  "E-naslov"
+        },
+        {
+            "key" : "THEMATIC_INFO_EMAIL_HELPER",
+            "value":  "E-naslov"
+        },
+        {
+            "key" : "THEMATIC_INFO_INVALID_EMAIL",
+            "value":  "Neveljaven e-naslov!"
+        },
+        {
+            "key" : "THEMATIC_INFO_DETAILS",
+            "value":  "Najboljši igralci na tematski lestvici prejmejo <color=blue>nagrade</color>. Ker si morda med njimi, potrebujemo tvoj <color=blue>e-naslov</color>."
+        },
+        {
+            "key" : "THEMATIC_INFO_SEND_BUTTON",
+            "value":  "Pošlji"
+        },
+        {
+            "key" : "SYNONYM_SOLO_TITLE",
+            "value":  "Izberi stopnjo"
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN_LOADING",
+            "value":  "Nalagam stopnjo..."
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN",
+            "value":  "Stopnja {{LEVEL}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN_INFO",
+            "value":  "Nadaljuj"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PRACTICE",
+            "value":  "Vaja"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PRACTICE_INFO",
+            "value":  "Izberi sam"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_INFO",
+            "value":  "Vseh stopenj: 500"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_HELPER",
+            "value":  "Izbrana je stopnja {{LEVEL}} !"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_PLAY_BUTTON",
+            "value":  "Igraj"
+        },
+        {
+            "key" : "SYNONYM_SOLO_LEVEL_FILLER",
+            "value":  "Stopnja {{LEVEL}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_WORD_FILLER",
+            "value":  "{{WORD}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_HEADWORD",
+            "value":  "Iztočnica"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_HELPER_TEXT",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_CHECK_BUTTON",
+            "value":  "Preglej"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_FORWARD_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT",
+            "value":  "Možna sopomenka za to besedo bi lahko bila tudi {{WORD}} ."
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT_2_STARS",
+            "value":  "Bravo! Možna sopomenka za to besedo bi lahko bila tudi {{WORD}} ."
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_INFO",
+            "value":  "DOSEGEL SI"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_SUM_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_TYPE_HELPER_TEXT",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_SUM_HELPER_TEXT",
+            "value":  "Skupaj"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_MAIN_SCORE",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_MAIN_POSITION",
+            "value":  "{{POSITION}}. mesto"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_FORWARD_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_TITLE",
+            "value":  "Besede"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+            "value":  "Konča stopnjo"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCOREBOARD_TITLE",
+            "value":  "Lestvica"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCOREBOARD_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "OPTIONS_TITLE",
+            "value":  "Menu"
+        },
+        {
+            "key" : "OPTIONS_ABOUT_TITLE",
+            "value":  "O igri"
+        },
+        {
+            "key" : "OPTIONS_ABOUT_SUMMARY",
+            "value":  "Igra besed je del prizadevanj <b>Centra za jezikovne vire in tehnologije</b> Univerze v Ljubljani, da bi za slovenščino zagotovili jezikovno infrastrukturo, primerljivo tisti, ki nastaja za večje jezike. Z drugimi besedam: za slovenščino želimo vse, kar imajo veliki! Ena od takšnih stvari so brez dvoma jezikovne igre, na drugi strani pa odprto dostopni podatki o jeziku, s pomočjo katerih lahko za slovenščino nastajajo tudi novi izdelki.\n\nIgra je nastala s pomočjo podatkov, ki so vključeni v vire in slovarje CJVT. Zasnovana je tako, da so odločitve, ki jih igralke in igralci posredujejo med igranjem, <b>uporabne za nadaljnji razvoj</b> teh virov in slovarjev, ki jih lahko odprto uporablja celotna jezikovna skupnost. Vaše sodelovanje je torej zelo koristno, trudimo pa se, da bi bilo tudi zabavno in prijetno. Uporabniških povratnih informacij bomo zelo veseli!\n"
+        },
+        {
+            "key" : "OPTIONS_LOGIN_BUTTON",
+            "value":  "Prijava"
+        },
+        {
+            "key" : "OPTIONS_LOGED_BUTTON",
+            "value":  "Prijavljen {{USER}}"
+        },
+        {
+            "key" : "OPTIONS_LOGOUT_BUTTON",
+            "value":  "Odjavi {{USER}}"
+        },
+        {
+            "key" : "OPTIONS_POLICY_BUTTON",
+            "value":  "Igra besed: pravni poduk"
+        },
+        {
+            "key" : "OPTIONS_UNITY_POLICY_BUTTON",
+            "value":  "Unity: pravni poduk"
+        },
+        {
+            "key" : "OPTIONS_COLLOCATIONS_BUTTON",
+            "value":  "Kolokacije"
+        },
+        {
+            "key" : "OPTIONS_SYNONYMS_BUTTON",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "OPTIONS_EMAIL_BUTTON",
+            "value":  "E-naslov"
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_TITLE",
+            "value":  "Kolokacije"
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_SUMMARY",
+            "value":  "<size=50><b><color=red>Način igranja</color></b></size>\n\nTa modul ponuja preizkus v poznavanju besed, ki se rade družijo oz. se rade sopojavljajo. Jezikoslovci jim rečejo <b>kolokacije</b>. Računalnik igralcu ponudi iztočnico (samostalnik, pridevnik, glagol ali prislov), igralec pa mora uganiti besedo, ki se najbolj tipično pojavlja zraven nje – bodisi spredaj bodisi zadaj. Igra se na tri načine.\n\n<b>Izberi</b>\n\nPri tem tipu igre dobiš eno iztočnico in 3-krat po 3 besede. Igraš tako, da izmed predlaganih besed <b>izbereš</b> tisto, ki se po tvojem mnenju najbolj tipično druži z iztočnico. Izbrane besede nato še <b>razporediš</b>: na prvo mesto gre beseda, ki se po tvojem mnenju najbolj tipično druži z iztočnico, na tretje mesto najmanj tipična. Pazi tudi na čas in zgradbo zveze.\n\n<b>Vtipkaj</b>\n\nPri tem tipu igre dobiš iztočnico. K njej <b>vtipkaš</b> tri besede, ki se po tvojem mnenju najbolj tipično družijo z njo. Pazi tudi na čas in zgradbo zveze.\n\n<b>Povleci</b>\n\nPri tem tipu igre dobiš dve iztočnici, eno zgoraj in eno spodaj. V nadaljevanju se na zaslonu zaporedno prikaže 9 besed. Nekatere od njih se tipično družijo z gornjo, nekatere s spodnjo iztočnico. Predlagano besedo moraš povleči k tisti iztočnici, kamor spada. Da bi bila igra bolj zanimiva, se med besedami pojavljajo tudi primeri, ki se družijo z obema iztočnicama – ali pa z nobeno. Te zadnje moraš povleči v koš, ki je voljo na desni strani ekrana. Pazi tudi na čas in zgradbo zveze.\n\n<size=50><b><color=red>Točkovanje</color></b></size>\n\nTočkovanje temelji na podatkih iz zelo velike zbirke besedil sodobne pisne slovenščine: korpusu\n <color=red>Gigafida</color>. Iz korpusa smo pridobili <b>sezname kolokacij</b>, in sicer po druženju, ki je statistično izračunano\nkot jakost.\n\n<b>IZBERI:</b>\n<b>1.</b> izbira: Vsaka izmed treh skupaj podanih besed prihaja iz drugega dela seznama: ena iz vrhnjih 20%, ena iz obsega od 20 % do 50 % in ena iz spodnjega dela seznama (pod 50 %). \nŠtevilo točk je naslednje:\n    beseda iz vrhnjih 20 % seznama = 80 točk\n    beseda od 20 % do 50 % seznama = 40 točk\n    beseda pod 50 % seznama = 10 točk\n\n<b>2.</b> razvrstitev: Točke prinese le povsem pravilen vrstni red besed, in sicer 60 dodatnih točk.\n\nNajvečje možno število točk na igro je 300.\n\n<b>VTIPKAJ:</b>\n<b>1.</b> Če je bilo na seznamu 30 ali več besed, \nje točkovanje naslednje:\n    beseda iz vrhnjih 10 % seznama \n    (vendar največ 30 besed) = 100 točk\n    beseda od 10 % do 30 % seznama = 50 točk\n    beseda od 30 % do 55 % seznama = 20 točk\n    beseda od 55 % do 100 % seznama = 5 točk\n    besede ni na seznamu = 0 točk\n\nNajvečje možno število točk na iztočnico je 300, torej na igro (tri iztočnice) 900.\n\n<b>2.</b> Če je bilo na seznamu manj kot 30 besed,\n je točkovanje naslednje:\n    vrhnje 3 besede na seznamu = 100 točk\n    od 4. do 6. besede na seznamu = 50 točk\n    od 7. do 10. besede na seznamu = 20 točk\n    od 11. besede do konca seznama = 5 točk\n    besede ni na seznamu = 0 točk\n\nNajvečje možno število točk na iztočnico je 300, torej na igro (tri iztočnice) 900.\n\n<b>POVLECI:</b>\nMožno je, da je ponujena beseda na seznamu obeh iztočnic, bodisi zgolj ene od iztočnic, bodisi\nnobene od njiju. Točkovanje je zato naslednje:\n\n<b>1.</b> beseda, ki je na seznamu zgolj ene izmed iztočnic:\n    izbira prave iztočnice = 100 točk\n    izbira koša = 50 točk\n    izbira napačne iztočnice = 0 točk\n\n<b>2.</b> beseda, ki je na seznamu obeh iztočnic:\n    izbira katerokoli iztočnice = 100 točk\n    izbira koša = 50 točk\n\n<b>3.</b> beseda, ki ni na seznamu nobene od iztočnic:\n    izbira koša = 100 točk\n    izbira katerokoli iztočnice = 0 točk\n\nNajvečje možno število točk na igro je 900.\n\n            "
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_ABOUT_PROJECT",
+            "value":  "O projektu"
+        },
+        {
+            "key" : "OPTIONS_RULES_SYNONYMS_TITLE",
+            "value":  "Sopomenke"
+        },
+        {
+            "key" : "OPTIONS_RULES_SYNONYMS_SUMMARY",
+            "value":  "<b><size=50><color=red>Način igranja</color></size></b>\n\nIgro Sopomenke lahko igramo na dva načina: za točke ali pa samo za vajo. \n\n<b>Igra za točke</b>\n\nČe igramo za točke, nas bo igra popeljala prek 500 stopenj. V vsaki od njih je zbranih po 10 besed. Igramo tako, da za vsako besedo <b>vpišemo njene sopomenke</b> – besede, ki imajo čimbolj podoben pomen. Za besedo lep bi lahko vpisali npr. čeden, privlačen, estetski. \n\nStopnje so <b>urejene po težavnosti</b>. Na začetku bo igra ponujala besede, ki imajo v slovenščini veliko sopomenk (npr. živahen, velik, hud). Kasneje bo ponujala besede, kjer je iskanje sopomenk večji izziv (npr. ravnotežje, reprezentacija, razgraditi).\n\nIgra bo za vsako besedo sproti preverila naše vnose v slovarju in <b>podelila zvezdice</b> za dobre odgovore. Ker je namen igre tudi <b>bogatiti besedni zaklad</b>, bomo za vsako od besed lahko prebrali predlog sopomenke, na katero morda nismo pomislili.\n\nPo koncu vsake stopnje se bodo zvezdice <b>pretvorile v točke</b>. Točke in tudi stopnja, do katere smo se trenutno prebili, se <b>vpišejo v lestvico</b>, kjer lahko svoj dosežek primerjamo z ostalimi igralci.\n\n<b>Igra za vajo</b>\n\nČe igramo za vajo, lahko <b>sami izberemo</b>, na katero stopnjo bo igra skočila. Točke se pri tem načinu igranja ne beležijo.\nIzbira prav določene stopnje je še zlasti uporabna, če želimo <b>igro vključiti v jezikovni pouk</b>. Ker so besede v posamezni stopnji <b>vedno enake</b> (prikazujejo pa se v naključnem vrstnem redu), se lahko učiteljice in učitelji pripravijo vnaprej in v razredu delajo z moduli, ki so ustrezni glede vsebine in zahtevnosti. Informacije, ki jih ponuja igra, je tako enostavno povezati z drugimi učnimi vsebinami, predvidljivost modula pa omogoča tudi lažjo oceno uspešnosti učenke ali učenca.\n\n<b><size=50><color=red>Točkovanje</color></size></b>\n\nMed igranjem za vsako dobro sopomenko prejmemo zvezdico. Pri vrednotenju se upošteva trenutna različica <b>Slovarja sopomenk sodobne slovenščine</b> (t. i. jedrne in bližnje sopomenke). Če se vam zdi, da ste vnesli dober predlog, ki ni dobil zvezdice, brez skrbi! Dobri uporabniški predlogi, ki jih trenutno še ni v bazi, bodo vključeni v naslednjo različice igre. Vključili pa jih bomo tudi v sam slovar, ki je koristen za celotno jezikovno skupnost!\nZvezdice se pretvorijo v točke po preprostem izračunu: ena zvezdica prinese <b>100 točk</b>.\n\n<b><size=50><color=red>O projektu</color></size></b>\n\nIgra Sopomenke je nastala v projektu <b>Slovar sopomenk sodobne slovenščine: od skupnosti za skupnost</b>, ki ga je v letih 2018 in 2019 financiralo Ministrstvo za kulturo Republike Slovenije. Eden od ciljev projekta je bil identificirati in vključiti motivacijske elemente, ki bodo jezikovno skupnost pritegnili k sodelovanju pri razvoju slovarja. Ker je vzporedno potekal razvoj Igre besed za kolokacijske podatke, smo izkoristili obstoječo infrastrukturo in v igro vključili sopomensko gradivo.  Ko jezikovna skupnost vpisuje sopomenke, se podatki, ki v slovarju že obstajajo, potrjujejo. Novi predlogi bodo ročno preverjeni in vključeni v nadaljnje različice slovarja in Igre besed. Več informacij je na spletni strani projekta: https://www.cjvt.si/promocija-sopomenk/.\n\n"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_TITLE",
+            "value":  "Izberi stopnjo"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN_LOADING",
+            "value":  "Nalagam stopnjo"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN",
+            "value":  "Stopnja {{LEVEL}}"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN_INFO",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PRACTICE",
+            "value":  "Vaja"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PRACTICE_INFO",
+            "value":  "Izberi stopnjo"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_INFO",
+            "value":  "Vseh stopenj: 500"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_HELPER",
+            "value":  "Izbrana je stopnja {{LEVEL}}"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_PLAY_BUTTON",
+            "value":  "Igraj"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_LEVEL_FILLER",
+            "value":  "Stopnja {{LEVEL}}"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_WORD_FILLER",
+            "value":  "Nalagam..."
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_TITLE",
+            "value":  "Besede"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_CHOOSE",
+            "value":  "Izberi"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_INSERT",
+            "value":  "Vtipkaj"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_DRAG",
+            "value":  "Povleci"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+            "value":  "Končaj stopnjo"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_SCOREBOARD_TITLE",
+            "value":  "Lestvica"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_SCOREBOARD_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD1",
+            "value":  "Beseda 1"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD2",
+            "value":  "Beseda 2"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD3",
+            "value":  "Beseda 3"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_END_BUTTON",
+            "value":  "Potrdi"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_FIRST",
+            "value":  "1. mesto"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_SECOND",
+            "value":  "2. mesto"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_THIRD",
+            "value":  "3. mesto"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_OK_TEXT",
+            "value":  "Vse OK?"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_TIP_TEXT",
+            "value":  "Še enkrat poglej razvrstitev izbranih besednih zvez in jo po potrebi popravi."
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+            "value":  "Zaključi"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_HELPER",
+            "value":  "NAVODILA"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_TITLE",
+            "value":  "Razvrsti"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_SUMMARY",
+            "value":  "Izbrane 3 besede razvrsti od 1. do 3. mesta. Razvrstitev lahko popravljaš, dokler čas ne poteče.\n"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+            "value":  "Razvrsti"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+            "value":  "RAZVRSTITEV"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+            "value":  "Pravilna razvrstitev!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+            "value":  "Napačna razvrstitev!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+            "value":  "{{POINTS}} točk"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+            "value":  "Zaključi"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_TITLE",
+            "value":  "Tip igre:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_CHOOSE_BUTTON",
+            "value":  "IZBERI"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_INSERT_BUTTON",
+            "value":  "VTIPKAJ"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_DRAG_BUTTON",
+            "value":  "POVLECI"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_BUTTON",
+            "value":  "SKUPAJ"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_COMPETITIVE_TITLE",
+            "value":  "Tekmovalna lestvica"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_THEMATIC_TITLE",
+            "value":  "Tematska lestvica"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_THEMATIC_LEADERBOARD_TITLE",
+            "value":  "Tema: "
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD1",
+            "value":  "Beseda 1"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD2",
+            "value":  "Beseda 2"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD3",
+            "value":  "Beseda 3"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },          
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_END_BUTTON",
+            "value":  "Zaključi"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_LEADERBOARD_TITLE",
+            "value":  "Lestvica"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_TILL_NEXT_GAME",
+            "value":  "DO NASLEDNJE IGRE:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_HELPER",
+            "value":  "Navodila"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_TITLE",
+            "value":  "VTIPKAJ"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_SUMMARY",
+            "value":  "Vtipkaj 3 besede, ki se najbolj tipično družijo z iztočnico."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_PLAY_BUTTON",
+            "value":  "Igraj"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },          
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_END_BUTTON",
+            "value":  "Zaključi"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_LEADERBOARD_TITLE",
+            "value":  "Lestvica"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_TILL_NEXT_GAME",
+            "value":  "DO NASLEDNJE IGRE:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_HELPER",
+            "value":  "Navodila"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_TITLE",
+            "value":  "Povleci"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_SUMMARY",
+            "value":  "Povleci ponujeno besedo k iztočnici, s katero se tipično druži. Med ponujenimi besedami so tudi odvečne. Te povleci v koš."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_PLAY_BUTTON",
+            "value":  "Igraj"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_FIRST",
+            "value":  "1. mesto"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_SECOND",
+            "value":  "2. mesto"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_THIRD",
+            "value":  "3. mesto"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_OK_TEXT",
+            "value":  "Vse OK?"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_TIP_TEXT",
+            "value":  "Še enkrat poglej razvrstitev izbranih besednih zvez in jo po potrebi popravi."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_HELPER",
+            "value":  "NAVODILA"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_TITLE",
+            "value":  "Razvrsti"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_SUMMARY",
+            "value":  "Izbrane 3 besede razvrsti od 1. do 3. mesta. Razvrstitev lahko popravljaš, dokler čas ne poteče."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+            "value":  "Razvrsti"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_TITLE",
+            "value":  "DOSEŽEK"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_HELPER",
+            "value":  "IZBIRA"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS",
+            "value":  "{{POINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} točk"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_END_BUTTON",
+            "value":  "Zaključi"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+            "value":  "RAZVRSTITEV"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+            "value":  "Pravilna razvrstitev!"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+            "value":  "Napačna razvrstitev!"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+            "value":  "{{POINTS}} točk"
+        },        
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+            "value":  "Naprej"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_LEADERBOARD_TITLE",
+            "value":  "Lestvica"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_TILL_NEXT_GAME",
+            "value":  "DO NASLEDNJE IGRE:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_HELPER",
+            "value":  "Navodila"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_TITLE",
+            "value":  "Izberi"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_SUMMARY",
+            "value":  "Izmed 3 ponujenih besed izberi tisto, ki se najbolj tipično druži z iztočnico. Izbrane besede nato še razvrsti."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_PLAY_BUTTON",
+            "value":  "Igraj"
+        } 
+    ]
+}

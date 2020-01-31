@@ -1,0 +1,210 @@
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="CJVT_Thesaurus-v1.0.xsd">
+  <entry>
+    <headword id="th.66151">lotiti se</headword>
+    <groups_core>
+      <group>
+        <candidate score="0.035020">
+          <s id="th.66151.1">posvetiti se</s>
+        </candidate>
+        <candidate score="0.034745">
+          <s id="th.66151.2">spustiti se v</s>
+          <labels>
+            <la>ekonomija</la>
+          </labels>
+        </candidate>
+        <candidate score="0.031447">
+          <s id="th.66151.3">začeti</s>
+        </candidate>
+        <candidate score="0.025767">
+          <s id="th.66151.4">začeti z</s>
+        </candidate>
+        <candidate score="0.021709">
+          <s id="th.66151.5">osredotočiti se na</s>
+        </candidate>
+        <candidate score="0.020573">
+          <s id="th.66151.6">podati se v</s>
+        </candidate>
+        <candidate score="0.019412">
+          <s id="th.66151.7">začeti se ukvarjati z</s>
+        </candidate>
+        <candidate score="0.013775">
+          <s id="th.66151.8">skoncentrirati se na</s>
+        </candidate>
+        <candidate score="0.013775">
+          <s id="th.66151.9">pripraviti se k</s>
+        </candidate>
+        <candidate score="0.013775">
+          <s id="th.66151.10">pripraviti se</s>
+        </candidate>
+        <candidate score="0.008275">
+          <s id="th.66151.11">oprijeti se</s>
+        </candidate>
+        <candidate score="0.007341">
+          <s id="th.66151.12">zastaviti</s>
+        </candidate>
+        <candidate score="0.007325">
+          <s id="th.66151.13">pričeti z</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.033185">
+          <s id="th.66151.14">prevzeti</s>
+        </candidate>
+        <candidate score="0.031192">
+          <s id="th.66151.15">polastiti se</s>
+        </candidate>
+        <candidate score="0.031192">
+          <s id="th.66151.16">zajeti</s>
+        </candidate>
+        <candidate score="0.012185">
+          <s id="th.66151.17">premagati</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.021620">
+          <s id="th.66151.18">spraviti se k</s>
+        </candidate>
+        <candidate score="0.016010">
+          <s id="th.66151.19">spraviti se</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.018339">
+          <s id="th.66151.20">načeti</s>
+        </candidate>
+        <candidate score="0.014628">
+          <s id="th.66151.21">preiti na</s>
+        </candidate>
+        <candidate score="0.005755">
+          <s id="th.66151.22">pristopiti k</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.017336">
+          <s id="th.66151.23">napasti</s>
+        </candidate>
+        <candidate score="0.005834">
+          <s id="th.66151.24">spoprijeti se z</s>
+        </candidate>
+        <candidate score="0.005743">
+          <s id="th.66151.25">planiti na</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.014596">
+          <s id="th.66151.26">vreči se</s>
+        </candidate>
+        <candidate score="0.014596">
+          <s id="th.66151.27">zagnati se</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.009270">
+          <s id="th.66151.28">spraviti se na</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.007298">
+          <s id="th.66151.29">vzeti si</s>
+        </candidate>
+        <candidate score="0.007298">
+          <s id="th.66151.30">začeti jesti</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.005785">
+          <s id="th.66151.31">usmeriti pozornost na</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.004196">
+          <s id="th.66151.32">vreči se na</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.004196">
+          <s id="th.66151.33">zagrabiti</s>
+        </candidate>
+      </group>
+    </groups_core>
+    <groups_near>
+      <group>
+        <candidate score="0.007952">
+          <s id="th.66151.34">govoriti o</s>
+        </candidate>
+        <candidate score="0.007952">
+          <s id="th.66151.35">ukvarjati se z</s>
+        </candidate>
+        <candidate score="0.006552">
+          <s id="th.66151.36">vreči se v</s>
+        </candidate>
+        <candidate score="0.006258">
+          <s id="th.66151.37">znajti se v</s>
+        </candidate>
+        <candidate score="0.006258">
+          <s id="th.66151.38">zaiti v</s>
+        </candidate>
+        <candidate score="0.006093">
+          <s id="th.66151.39">ukvarjati se</s>
+        </candidate>
+        <candidate score="0.003505">
+          <s id="th.66151.40">sodelovati</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.008771">
+          <s id="th.66151.41">končno narediti</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.009098">
+          <s id="th.66151.42">zakaditi se v</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.005250">
+          <s id="th.66151.43">navaliti na</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.003737">
+          <s id="th.66151.44">prediskutirati</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.004842">
+          <s id="th.66151.45">hudo skritizirati</s>
+        </candidate>
+        <candidate score="0.004842">
+          <s id="th.66151.46">raztrgati</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.002098">
+          <s id="th.66151.47">ovreči</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.002098">
+          <s id="th.66151.48">poskusiti</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.002098">
+          <s id="th.66151.49">prizadevati si</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.002098">
+          <s id="th.66151.50">spopasti se</s>
+        </candidate>
+      </group>
+      <group>
+        <candidate score="0.002098">
+          <s id="th.66151.51">zadati si</s>
+        </candidate>
+      </group>
+    </groups_near>
+  </entry>
+ </base>

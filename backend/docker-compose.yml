@@ -1,0 +1,12 @@
+version: '2'
+services:
+  security:
+    build: ./
+    ports:
+     - "3000:3000"
+    depends_on:
+     - db
+    environment:
+     - DATABASE_HOST=db
+  db:
+    build: ./database

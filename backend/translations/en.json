@@ -1,0 +1,788 @@
+{
+    "strings" : [
+        {
+            "key" : "INTRO_TITLE",
+            "value":  "Word games"
+        },
+        {
+            "key" : "INTRO_TITLE_INFO",
+            "value":  "© Language center"
+        },
+        {
+            "key" : "INTRO_LOGIN",
+            "value":  "Login"
+        },        
+        {
+            "key" : "INTRO_PLAY_AS_GUEST",
+            "value":  "Play as guest"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS",
+            "value":  "Collocations"
+        },
+        {
+            "key" : "MODE_COL_INFO",
+            "value":  "Adjacent words"
+        },        
+        {
+            "key" : "MODE_SYNONYMS",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "MODE_SYNONYMS_INFO",
+            "value":  "Words with similar meaning"
+        },
+        {
+            "key" : "MODE_SYNONYMS_SOLO",
+            "value":  "Solo"
+        }, 
+        {
+            "key" : "MODE_SYNONYMS_SOLO_INFO",
+            "value":  "Play alone"
+        },
+        {
+            "key" : "MODE_SYNONYMS_MULTI",
+            "value":  "Multiplayer"
+        }, 
+        {
+            "key" : "MODE_SYNONYMS_MULTI_INFO",
+            "value":  "Play with competition"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS_SOLO",
+            "value":  "Solo"
+        }, 
+        {
+            "key" : "MODE_COLLOCATIONS_SOLO_INFO",
+            "value":  "Play alone"
+        },
+        {
+            "key" : "MODE_COLLOCATIONS_MULTI",
+            "value":  "Multiplayer"
+        }, 
+        {
+            "key" : "MODE_COLLOCATIONS_MULTI_INFO",
+            "value":  "Play with competition"
+        },
+        {
+            "key" : "REGISTRATION_TITLE",
+            "value":  "Registration"
+        },
+        {
+            "key" : "REGISTRATION_NICKNAME",
+            "value":  "Nickname"
+        },
+        {
+            "key" : "REGISTRATION_NICKNAME_TAKEN",
+            "value":  "Nickname taken!"
+        },
+        {
+            "key" : "REGISTRATION_NATIVE_LANGUAGE",
+            "value":  "Native language"
+        },
+        {
+            "key" : "REGISTRATION_LANG_SLO",
+            "value":  "Slovenian"
+        },
+        {
+            "key" : "REGISTRATION_AGE",
+            "value":  "Age"
+        },
+        {
+            "key" : "REGISTRATION_PRIVACY_POLICY_BUTTON",
+            "value":  "Privacy policy"
+        },
+        {
+            "key" : "REGISTRATION_REGISTER_BUTTON",
+            "value":  "Register"
+        },
+        {
+            "key" : "REGISTRATION_NOTICE",
+            "value":  "Pressing the button <color=blue>“Register”</color> I confirm..."
+        },
+        {
+            "key" : "COL_SELECT_MODE_CHOOSE",
+            "value":  "Choose"
+        },
+        {
+            "key" : "COL_SELECT_MODE_DRAG",
+            "value":  "Drag"
+        },
+        {
+            "key" : "COL_SELECT_MODE_INSERT",
+            "value":  "Insert"
+        },
+        {
+            "key" : "COL_SELECT_MODE_THEMATIC",
+            "value":  "Thematic"
+        },
+        {
+            "key" : "COL_SELECT_MODE_SYNONYMS",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "THEMATIC_INFO_EMAIL",
+            "value":  "Email"
+        },
+        {
+            "key" : "THEMATIC_INFO_EMAIL_HELPER",
+            "value":  "Email"
+        },
+        {
+            "key" : "THEMATIC_INFO_INVALID_EMAIL",
+            "value":  "Invalid email!"
+        },
+        {
+            "key" : "THEMATIC_INFO_DETAILS",
+            "value":  "Best players in thematic mode get an <color=blue>award</color>. We need your <color=blue>email</color>."
+        },
+        {
+            "key" : "THEMATIC_INFO_SEND_BUTTON",
+            "value":  "Send"
+        },
+        {
+            "key" : "SYNONYM_SOLO_TITLE",
+            "value":  "Pick level"
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN_LOADING",
+            "value":  "Checking level"
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN",
+            "value":  "Level {{LEVEL}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_CAMPAIGN_INFO",
+            "value":  "Continue"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PRACTICE",
+            "value":  "Practice"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PRACTICE_INFO",
+            "value":  "Choose level"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_INFO",
+            "value":  "All levels: 500"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_HELPER",
+            "value":  "Level {{LEVEL}} picked!"
+        },
+        {
+            "key" : "SYNONYM_SOLO_PICK_LEVEL_PLAY_BUTTON",
+            "value":  "Play!"
+        },
+        {
+            "key" : "SYNONYM_SOLO_LEVEL_FILLER",
+            "value":  "Level {{LEVEL}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_WORD_FILLER",
+            "value":  "{{WORD}}"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_HEADWORD",
+            "value":  "Headword"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_HELPER_TEXT",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_CHECK_BUTTON",
+            "value":  "Check"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_FORWARD_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT",
+            "value":  "Did you think of {{WORD}} ?"
+        },
+        {
+            "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT_2_STARS",
+            "value":  "Very good! Did you think of {{WORD}} ?"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_INFO",
+            "value":  "You achieved"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_SUM_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_TYPE_HELPER_TEXT",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_SUM_HELPER_TEXT",
+            "value":  "Together"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_MAIN_SCORE",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_MAIN_POSITION",
+            "value":  "{{POSITION}}. place"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCORE_FORWARD_BUTTON",
+            "value":  "Forward"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_TITLE",
+            "value":  "Words"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+            "value":  "End level"
+        },
+        {
+            "key" : "SYNONYM_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+            "value":  "Forward"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCOREBOARD_TITLE",
+            "value":  "Scoreboard"
+        },
+        {
+            "key" : "SYNONYM_SOLO_SCOREBOARD_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "OPTIONS_TITLE",
+            "value":  "Menu"
+        },
+        {
+            "key" : "OPTIONS_ABOUT_TITLE",
+            "value":  "About game"
+        },
+        {
+            "key" : "OPTIONS_ABOUT_SUMMARY",
+            "value":  "Igra besed je del prizadevanj <b>Centra za jezikovne vire in tehnologije</b> Univerze v Ljubljani, da bi za slovenščino zagotovili jezikovno infrastrukturo, primerljivo tisti, ki nastaja za večje jezike. Z drugimi besedam: za slovenščino želimo vse, kar imajo veliki! Ena od takšnih stvari so brez dvoma jezikovne igre, na drugi strani pa odprto dostopni podatki o jeziku, s pomočjo katerih lahko za slovenščino nastajajo tudi novi izdelki.\nIgra je nastala s pomočjo podatkov, ki so vključeni v vire in slovarje CJVT. Zasnovana je tako, da so odločitve, ki jih igralke in igralci posredujejo med igranjem, <b>uporabne za nadaljnji razvoj</b> teh virov in slovarjev, ki jih lahko odprto uporablja celotna jezikovna skupnost. Vaše sodelovanje je torej zelo koristno, trudimo pa se, da bi bilo tudi zabavno in prijetno. Uporabniških povratnih informacij bomo zelo veseli!"
+        },
+        {
+            "key" : "OPTIONS_LOGIN_BUTTON",
+            "value":  "Login"
+        },
+        {
+            "key" : "OPTIONS_LOGED_BUTTON",
+            "value":  "Logout {{USER}}"
+        },
+        {
+            "key" : "OPTIONS_LOGOUT_BUTTON",
+            "value":  "Logout {{USER}}"
+        },
+        {
+            "key" : "OPTIONS_POLICY_BUTTON",
+            "value":  "Policy"
+        },
+        {
+            "key" : "OPTIONS_UNITY_POLICY_BUTTON",
+            "value":  "Unity Policy"
+        },
+        {
+            "key" : "OPTIONS_COLLOCATIONS_BUTTON",
+            "value":  "Collocations"
+        },
+        {
+            "key" : "OPTIONS_SYNONYMS_BUTTON",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "OPTIONS_EMAIL_BUTTON",
+            "value":  "Email"
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_TITLE",
+            "value":  "Collocations"
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_SUMMARY",
+            "value":  "<size=50><b><color=red>Način igranja</color></b></size>\nTa modul ponuja preizkus v poznavanju besed, ki se rade družijo oz. se rade sopojavljajo. Jezikoslovci jim rečejo <b>kolokacije</b>. Računalnik igralcu ponudi iztočnico (samostalnik, pridevnik, glagol ali prislov), igralec pa mora uganiti besedo, ki se najbolj tipično pojavlja zraven nje – bodisi spredaj bodisi zadaj. Igra se na tri načine.\n<b>Izberi</b>"
+        },
+        {
+            "key" : "OPTIONS_RULES_COLLOCATION_ABOUT_PROJECT",
+            "value":  "About project"
+        },
+        {
+            "key" : "OPTIONS_RULES_SYNONYMS_TITLE",
+            "value":  "Synonyms"
+        },
+        {
+            "key" : "OPTIONS_RULES_SYNONYMS_SUMMARY",
+            "value":  "<b><size=50><color=red>Način igranja</color></size></b>\n\nIgro Sopomenke lahko igramo na dva načina: za točke ali pa samo za vajo.\n\n<b>Igra za točke</b>\nČe igramo za točke, nas bo igra popeljala prek 500 stopenj. V vsaki od njih je zbranih po 10 besed. Igramo tako, da za vsako besedo <b>vpišemo njene sopomenke</b> – besede, ki imajo čimbolj podoben pomen. Za besedo lep bi lahko vpisali npr. čeden, privlačen, estetski."
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_TITLE",
+            "value":  "Pick level"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN_LOADING",
+            "value":  "Checking level"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN",
+            "value":  "Level {{LEVEL}}"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CAMPAIGN_INFO",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PRACTICE",
+            "value":  "Practice"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PRACTICE_INFO",
+            "value":  "Choose level"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_INFO",
+            "value":  "All levels: 500"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_HELPER",
+            "value":  "Level {{LEVEL}} picked!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_PICK_LEVEL_PLAY_BUTTON",
+            "value":  "Play!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_LEVEL_FILLER",
+            "value":  "Level {{LEVEL}}"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_WORD_FILLER",
+            "value":  "Loading..."
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_TITLE",
+            "value":  "Words"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_CHOOSE",
+            "value":  "CHOOSE"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_INSERT",
+            "value":  "INSERT"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_DRAG",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+            "value":  "End level"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_SCOREBOARD_TITLE",
+            "value":  "Scoreboard"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_SCOREBOARD_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD1",
+            "value":  "Word 1"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD2",
+            "value":  "Word 2"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_WORD3",
+            "value":  "Word 3"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_END_BUTTON",
+            "value":  "Submit"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_HELPER",
+            "value":  "Insert"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SCORE_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_FIRST",
+            "value":  "1. place"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_SECOND",
+            "value":  "2. place"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_THIRD",
+            "value":  "3. place"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_OK_TEXT",
+            "value":  "All OK?"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_TIP_TEXT",
+            "value":  "Please check placing again and fixed them accordingly"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_HELPER",
+            "value":  "Directions"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_TITLE",
+            "value":  "Classify"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_SUMMARY",
+            "value":  "Order 3 words from 1. to 3. place."
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_HELPER",
+            "value":  "CHOOSE"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+            "value":  "PLACING"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+            "value":  "Correct order!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+            "value":  "Wrong order!"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+            "value":  "{{POINTS}} points"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_HELPER",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_TITLE",
+            "value":  "Game type:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_CHOOSE_BUTTON",
+            "value":  "CHOOSE"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_INSERT_BUTTON",
+            "value":  "INSERT"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_DRAG_BUTTON",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_BUTTON",
+            "value":  "ALL"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_COMPETITIVE_TITLE",
+            "value":  "Competitive leaderboard"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_THEMATIC_TITLE",
+            "value":  "Thematic leaderboard"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_THEMATIC_LEADERBOARD_TITLE",
+            "value":  "Theme: "
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD1",
+            "value":  "Word 1"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD2",
+            "value":  "Word 2"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD3",
+            "value":  "Word 3"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_HELPER",
+            "value":  "CHOOSE"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },          
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_END_BUTTON",
+            "value":  "End"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_LEADERBOARD_TITLE",
+            "value":  "Leaderboard"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_TILL_NEXT_GAME",
+            "value":  "TILL NEXT GAME:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_HELPER",
+            "value":  "Instructions"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_TITLE",
+            "value":  "INSERT"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_SUMMARY",
+            "value":  "Type in 3 words, that are adjacent to headword"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_PLAY_BUTTON",
+            "value":  "Play"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_HELPER",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },          
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_END_BUTTON",
+            "value":  "End"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_LEADERBOARD_TITLE",
+            "value":  "Leaderboard"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_TILL_NEXT_GAME",
+            "value":  "TILL NEXT GAME:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_HELPER",
+            "value":  "Instructions"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_TITLE",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_SUMMARY",
+            "value":  "Drag word to the correct adjacent headword. There might be distraction words, those drag to thrash bin."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_PLAY_BUTTON",
+            "value":  "Play"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_FIRST",
+            "value":  "1. place"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_SECOND",
+            "value":  "2. place"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_THIRD",
+            "value":  "3. place"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_OK_TEXT",
+            "value":  "All OK?"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_TIP_TEXT",
+            "value":  "Please check placing again and fixed them accordingly"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_HELPER",
+            "value":  "Directions"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_TITLE",
+            "value":  "Classify"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_SUMMARY",
+            "value":  "Order 3 words from 1. to 3. place."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_TITLE",
+            "value":  "Score"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_HELPER",
+            "value":  "CHOOSE"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS",
+            "value":  "{{POINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS_MAX",
+            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_END_BUTTON",
+            "value":  "End"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+            "value":  "PLACING"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+            "value":  "Correct order!"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+            "value":  "Wrong order!"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+            "value":  "{{POINTS}} points"
+        },        
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+            "value":  "Continue"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_LEADERBOARD_TITLE",
+            "value":  "Leaderboard"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_TILL_NEXT_GAME",
+            "value":  "TILL NEXT GAME:"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_HELPER",
+            "value":  "Instructions"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_TITLE",
+            "value":  "DRAG"
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_SUMMARY",
+            "value":  "Out of 3 words, choose the one that is closer to headowrd. After that classify them in order."
+        },
+        {
+            "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_PLAY_BUTTON",
+            "value":  "Play"
+        }
+    ]
+}

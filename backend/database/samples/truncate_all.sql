@@ -1,0 +1,18 @@
+truncate structure;
+delete from structure_part;
+truncate collocation;
+truncate lemma;
+truncate linguistic_unit;
+truncate collocation_word;
+truncate collocation_shell;
+truncate collocation_shell_word;
+truncate free_form;
+truncate synonym;
+truncate possible_answer;
+truncate task_type;
+truncate task_cycle;
+truncate task;
+truncate user;
+truncate task_user;
+truncate task_possible_answer;
+truncate task_answer;

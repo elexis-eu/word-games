@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "749538314239",
+    "firebase_url": "https://igra-besed.firebaseio.com",
+    "project_id": "igra-besed",
+    "storage_bucket": "igra-besed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749538314239:android:d48a9e44f17b7808",
+        "android_client_info": {
+          "package_name": "si.cjvt.igrabesed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749538314239-k5gpu5hm29ckft6pca6if1jv1625pvtk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "si.cjvt.igrabesed",
+            "certificate_hash": "26b905a695b5149279a0ab4c56a953a6b95b7f37"
+          }
+        },
+        {
+          "client_id": "749538314239-8d14jpfhikk8h2una11j1bikmgnr2r09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "si.cjvt.igrabesed",
+            "certificate_hash": "47b33da37266801aa6ca75710903e9f90ef12904"
+          }
+        },
+        {
+          "client_id": "749538314239-07h1hri9i0ao7kgla7knlhbndcfvd344.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "si.cjvt.igrabesed",
+            "certificate_hash": "433d5f59992f1a46968da063178ed5353b6111f9"
+          }
+        },
+        {
+          "client_id": "749538314239-tt364fimkbvhppln7tkojtljlku653k0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqrfRRcSv5GacHP2M7aP4mMRg_naU72T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749538314239-tt364fimkbvhppln7tkojtljlku653k0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "749538314239-omt7itp11fjuhgvrfgs2fr1rbb9q2mok.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "si.cjvt.igrabesed"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

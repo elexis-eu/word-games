@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: beca99945951a6b4dacec37e5374e6d9
+  - enabled: 1
+    path: Assets/Scenes/Choose/WaitAChoose Info.unity
+    guid: fea3ab7d5390b1a4a995e27af8b11d3b
+  - enabled: 1
+    path: Assets/Scenes/Choose/Show Word.unity
+    guid: 54e3ab6d8797c7d4eb677033b8f23163
+  - enabled: 1
+    path: Assets/Scenes/Choose/Choose.unity
+    guid: 74af66beb199a0b4d8e6ae457be40b94
+  - enabled: 1
+    path: Assets/Scenes/Choose/Classify Info.unity
+    guid: 5712351366d0e2a4a91975ffd636d1d9
+  - enabled: 1
+    path: Assets/Scenes/Choose/Classify.unity
+    guid: c93138548279163439ca17dd4bc20d85
+  - enabled: 1
+    path: Assets/Scenes/Choose/Round Score.unity
+    guid: 94df59141d884f74a9058f7c52921675
+  - enabled: 1
+    path: Assets/Scenes/Choose/Scoreboard.unity
+    guid: 9df2e92b5cecc7848948e02f9a13696f
+  - enabled: 1
+    path: Assets/Scenes/Insert/WaitAInsert Info.unity
+    guid: 300ca377e0891964aa2f8d47a311b9a5
+  - enabled: 1
+    path: Assets/Scenes/Insert/Show Word.unity
+    guid: 3c64f200b350a154f81006195de69b01
+  - enabled: 1
+    path: Assets/Scenes/Insert/Insert.unity
+    guid: f2c679761837e0c41af7ea61dab5488e
+  - enabled: 1
+    path: Assets/Scenes/Insert/Round Score.unity
+    guid: 4c1be110514449f499d4a098f31ebeea
+  - enabled: 1
+    path: Assets/Scenes/Insert/Scoreboard.unity
+    guid: d258d4e00ef5a4848a9d286dd5e570a7
+  - enabled: 1
+    path: Assets/Scenes/Drag/WaitADrag Info.unity
+    guid: f2f3075534c59054d9aeecdb8871caa2
+  - enabled: 1
+    path: Assets/Scenes/Drag/Show Word.unity
+    guid: 96960609518b1cd4db03e37e487e45b2
+  - enabled: 1
+    path: Assets/Scenes/Drag/Drag.unity
+    guid: f36d30fb30e730946bdb826e3b19f609
+  - enabled: 1
+    path: Assets/Scenes/Drag/Round Score.unity
+    guid: bbd54c9fdd5c9d0428883835cd267465
+  - enabled: 1
+    path: Assets/Scenes/Drag/Scoreboard.unity
+    guid: 0f1debf8d019a8d41b945148c40cf7cb
+  - enabled: 1
+    path: Assets/Scenes/Competitive Mode Chooser.unity
+    guid: 792f5dc9977b7864dbecb55236b447a2
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 57662a25aa0477343b1ef379c056f10c
+  - enabled: 1
+    path: Assets/Scenes/Settings/Menu.unity
+    guid: ff0aa5589dba4094ba51e84354049348
+  - enabled: 1
+    path: Assets/Scenes/Settings/About policy.unity
+    guid: 2467c021fb938d443a6f522398df13ec
+  - enabled: 1
+    path: Assets/Scenes/Settings/About insert.unity
+    guid: 00ea870fed01cad4db70d52c8cc64a7c
+  - enabled: 1
+    path: Assets/Scenes/Settings/About game.unity
+    guid: 5aa3da1b2d8a3fb489a7297f3a5e1319
+  - enabled: 1
+    path: Assets/Scenes/Settings/About drag.unity
+    guid: 20feffa81c1c8ba4288179de1697578f
+  - enabled: 1
+    path: Assets/Scenes/Settings/About choose.unity
+    guid: 5dfdaa903577c66429a57430bcdc1b01
+  - enabled: 1
+    path: Assets/Scenes/Mode Selector.unity
+    guid: 446d2074babee8444b9bd6230fdf2429
+  - enabled: 1
+    path: Assets/Scenes/Register.unity
+    guid: d6a9afbd4be4eaf45ab0175c2d183df6
+  - enabled: 1
+    path: Assets/Scenes/Solo Mode Chooser.unity
+    guid: 92f43c8d011a9d444922a2752a6510f6
+  - enabled: 1
+    path: Assets/Scenes/Extra/Leaderboard Alltime.unity
+    guid: 356fa0c52622dc44f89c95a9648434c8
+  - enabled: 1
+    path: Assets/Scenes/Extra/MenuLeaderboards.unity
+    guid: 858702e517f863549946b97c3b359b99
+  - enabled: 1
+    path: Assets/Scenes/Extra/ThematicLeaderboards.unity
+    guid: 8609cef3d25223d499f45c37bb6f200b
+  - enabled: 1
+    path: Assets/Scenes/Settings/About scoring.unity
+    guid: 7f7b505bda864274d8834a6496880140
+  - enabled: 1
+    path: Assets/Scenes/Settings/About thematic.unity
+    guid: 6f344c23fdd5b824082417409eddcf92
+  - enabled: 1
+    path: Assets/Scenes/Add Info.unity
+    guid: 982ffc94070d99746820fcfe442016d8
+  - enabled: 1
+    path: Assets/Scenes/Synonym/WaitASynonym Info.unity
+    guid: d5a3d62d1466115498b0af55b4791420
+  - enabled: 1
+    path: Assets/Scenes/Synonym/Show Word.unity
+    guid: 166a1285592e59c4c981b36195f8f03e
+  - enabled: 1
+    path: Assets/Scenes/Synonym/Synonym.unity
+    guid: 5f06d140b96a2c0438937ada0a7dbf25
+  - enabled: 1
+    path: Assets/Scenes/Synonym/Round Score.unity
+    guid: 49f0a04b187e84e4eb1f2bd2666bcd69
+  - enabled: 1
+    path: Assets/Scenes/Synonym/Scoreboard.unity
+    guid: 8adf35a53821d414dad576b7481b45ef
+  - enabled: 1
+    path: Assets/Scenes/Settings/About synonym.unity
+    guid: 1723cb7705d487f49b1a4d480ed2a4e3
+  - enabled: 1
+    path: Assets/Scenes/Mode Choose.unity
+    guid: 61bc4c9306117674f9f395d26c246e2f
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/Choose GameMode.unity
+    guid: 3c65caa796a1386448b0f77a34243c24
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/FillerLevel.unity
+    guid: fdaa46e0dba8f72479edc698be2ecdf1
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/ChooseLevel.unity
+    guid: 6d0ab4f86b200b94f835a709c1532b83
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/RoomPicker.unity
+    guid: be8e64c88f5a70c489481134ae25b0ed
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/FillerWord.unity
+    guid: 1d62990954a8575428bb8b2a2bef745b
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/InputSynonym.unity
+    guid: 076702506ee0d2646bcabcd29609d4b2
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/Level Score.unity
+    guid: 3562569e7e14ac94cb6d7e94bfebfc19
+  - enabled: 1
+    path: Assets/Scenes/Synonym2/ScoreboardCampaign.unity
+    guid: d98136fe19a964d46bc4de05dcd5b232
+  - enabled: 1
+    path: Assets/Scenes/Settings/MenuNew.unity
+    guid: ad0e8dd89e09123408b96d92c530ca03
+  - enabled: 1
+    path: Assets/Scenes/Settings/About colocations new.unity
+    guid: 03dd8495cc9e70244a2fa26914d33b77
+  - enabled: 1
+    path: Assets/Scenes/Settings/About synonym new.unity
+    guid: cce9f850b9fe50941a86ee39352c9d71
+  - enabled: 1
+    path: Assets/Scenes/SoloMultiCollocations.unity
+    guid: 673dc6912d76b5543bb2c57b8058435a
+  - enabled: 1
+    path: Assets/Scenes/SoloMultiSynonym.unity
+    guid: afe89f692eb3e454d8834ec66902a6b4
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose GameMode Col.unity
+    guid: 1a817b3826979c84c833ba21e81eeb86
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/FillerLevelCol.unity
+    guid: d1d9bab8d15799249a12816cac9e2e4d
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/ChooseLevelCol.unity
+    guid: 730f2e0769340724fb326b1e9d2f0846
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/RoomPickerCol.unity
+    guid: ee0ca383cef82b740a0d311165421225
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/FillerWordCol.unity
+    guid: bd4087ec73bdd4f41b78757af9464160
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/ScoreboardCampaignCol.unity
+    guid: b2040515dc9564944bbb791263988d31
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose/GameChooseSolo.unity
+    guid: 819de4e0a6ab76640bad92de4653f942
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Insert/GameInsertSolo.unity
+    guid: e00f9a168b0db9245882744b24818d62
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Drag/GameDragSolo.unity
+    guid: 602c977084061fa48ab63ecd831dc2ad
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose/ClassifyInfoCol.unity
+    guid: c738f22e99d18864e9cbadaa7554c5a8
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose/ClassifyCol.unity
+    guid: 5bf619cc01fd08a4a90c2db8bf7a2ee2
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose/RoundScoreChoose.unity
+    guid: 2bdd81782745b6843a9c17a6029cf8a9
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Insert/RoundScoreInsert.unity
+    guid: ae1cfb325231e8b408b1df8b892c1912
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Drag/RoundScoreDrag.unity
+    guid: 90342d9aefc91794ca3e9328cb76e097
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Choose/ShowWordSolo.unity
+    guid: 5a0b8abbd2e495b48b1ef613527da994
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Drag/ShowWordSolo.unity
+    guid: 6e27d2b82fa45924aad844590a3839f5
+  - enabled: 1
+    path: Assets/Scenes/CollocationsSolo/Insert/ShowWordSolo.unity
+    guid: cfbcc731eb029f94998ccf077b08a1c8
+  - enabled: 1
+    path: Assets/Scenes/LanguageSelect.unity
+    guid: c0c91ab053f7c3243903886323a83e24
+  - enabled: 1
+    path: Assets/Scenes/LanguageLoad.unity
+    guid: 7e671b9a6a1d05f4582abb8c4e864ca3
+  m_configObjects: {}
