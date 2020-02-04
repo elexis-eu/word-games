@@ -1,7 +1,7 @@
 {
   "name": "igra-besed-server-",
   "version": "0.0.1",
-  "description": "Mobilna igra namenjena jezikoslovnim navdušencem.",
+  "description": "Mobile game for language enthusiasts",
   "main": "server.js",
   "scripts": {
     "start": "node start.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AGregorc/Igra-besed-server-.git"
+    "url": "https://github.com/elexis-eu/word-games.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/AGregorc/Igra-besed-server-/issues"
+    "url": "https://github.com/elexis-eu/word-games/issues"
   },
-  "homepage": "https://github.com/AGregorc/Igra-besed-server-#readme",
+  "homepage": "https://github.com/elexis-eu/word-games",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "body-parser": "^1.18.3",

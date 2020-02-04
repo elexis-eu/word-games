@@ -449,11 +449,15 @@ class Collocations {
 
                         //console.log(row.variants);
 
-                        if(row.variants.indexOf(body.word1Text.toLowerCase()) != -1 && score1 == 0){
+                        if((row.variants.substr(0, body.word1Text.length) == body.word1Text.toLowerCase() || row.variants.indexOf("/"+body.word1Text.toLowerCase()) != -1) && score1 == 0){
                             score1 = this.GetInputScore(row.order_value);
-                        } else if(row.variants.indexOf(body.word2Text.toLowerCase()) != -1 && score2 == 0){
+                        } 
+                        
+                        if((row.variants.substr(0, body.word2Text.length) == body.word2Text.toLowerCase() || row.variants.indexOf("/"+body.word2Text.toLowerCase()) != -1) && score2 == 0){
                             score2 = this.GetInputScore(row.order_value);
-                        } else if(row.variants.indexOf(body.word3Text.toLowerCase()) != -1 && score3 == 0){
+                        } 
+                        
+                        if((row.variants.substr(0, body.word3Text.length) == body.word3Text.toLowerCase() || row.variants.indexOf("/"+body.word3Text.toLowerCase()) != -1) && score3 == 0){
                             score3 = this.GetInputScore(row.order_value);
                         }
                     }

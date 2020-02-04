@@ -25,7 +25,7 @@ database="new_schema"
  
 
 ## Importing collocations vocabulary
-### Importing general vocabulary
+### Importing general vocabulary with Lexeme IDs
 
 Python script **load_data.py** in *database* folder will import main vocabulary for collocations.
 Filename can be set in *csv_filename* variable, must be in UTF-8 encoding and delimited with character | .
@@ -48,10 +48,34 @@ CSV file should have following fields:
  - Sailence (decimal value)
  - Headword variants (text max 255 characters, separated by /)
 
- Reimporting file is not viable, in case of error database will have to be cleared before.
+ Reimporting whole file is not viable, in case of error database will have to be cleared  or restarted from last successful line imported.
+ 
+### Importing general vocabulary without Lexeme IDs
 
- ### Calculating order values
- After succesful import of vocabulary run Python script **order_by_value.py** in *database* folder to calculcate order values that are used as base for scoring.
+Python script **load_data_no_lexeme.py** in *database* folder will import main vocabulary for collocations.
+Filename can be set in *csv_filename* variable, must be in UTF-8 encoding and delimited with character | .
+
+Before importing define *structures* tuples:
+Four fields  represent:
+
+    Unique ID, structure code, headword position (1 or 2), text that will be shown in app 
+
+CSV file should have following fields:
+
+ - Collocation ID (integer)
+ - Structure code ( look structure tuple )
+ - Headword position (1 or 2) 
+ - Word 1 (text max 255 characters)
+ - Word 2 (text max 255 characters)
+ - Frequency (integer)
+ - LogDice (decimal value)
+ - Specific weight (integer, adding this number will lower collocation priority after reaching weight limit - 20 by default)
+ - Headword variants (text max 255 characters, separated by /)
+
+ Reimporting whole file is not viable, in case of error database will have to be cleared or restarted from last successful line imported.
+
+### Calculating order values
+After succesful import of vocabulary run Python script **order_by_value.py** in *database* folder to calculate order values that are used as base for scoring.
 
 ### Importing collocations levels for SOLO mode
 Run Python script **set_collocations_solo_level_headwords.py** in *database* folder.
@@ -137,4 +161,6 @@ Run Python script **game_generator.py** in *game_generator* folder. Recommended 
 Install necessary modules with **npm install**.
 Default MySQL credentials can be set in file "game/Query,js" or use enviroment variables.
 Default hostname is localhost(127.0.0.1) and port 3000, which can be changed in **server.js** file.
+Start server with **npm start** or **node start.js**.
+
 For development reasons HTTPS part is commented out.
