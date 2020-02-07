@@ -515,7 +515,7 @@ class Query {
 
     get_defined_collocation_level(level){
 
-        let sql =   "SELECT * FROM collocation_level WHERE level = ?;";
+        let sql =   "SELECT * FROM collocation_level WHERE level = ? and active = 1;";
 
         let args = [level];
 
