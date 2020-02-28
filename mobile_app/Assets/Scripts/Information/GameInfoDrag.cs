@@ -10,6 +10,8 @@ public static class GameInfoDrag
     public static int currentRound;
     public static float timeLeft;
     public static int score;
+    public static int correct_subsequently = 0;
+    public static int correct_subsequently_max = 0;
     public static List<int> chosenButtonsScores;
     public static List<string> chosenButtonsNames;
     public static List<int> chosenButtonsGroups;
@@ -32,6 +34,8 @@ public static class GameInfoDrag
 
         timeLeft = 0;
         currentRoundTimeLeft = 0;
+        correct_subsequently = 0;
+        correct_subsequently_max = 0;
 
         temp.max_round_score = temp.buttons_number * temp.scoring[0];
 
@@ -89,6 +93,8 @@ public class DragInfo
     public int[] scoring;
     public long connect_immediate_lock_time;
     public string player_id;
+    public int bonus_condition;
+    public int bonus_condition_points;
 }
 
 [System.Serializable]

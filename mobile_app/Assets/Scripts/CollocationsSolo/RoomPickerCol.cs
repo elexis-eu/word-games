@@ -117,6 +117,9 @@ public class RoomPickerCol : MonoBehaviour
         if (this.currentRoom.score >= 0)
         {
 
+            GameObject RoomMulti = GetChildWithName(selectedRoom, "RoomMultiplier");
+            RoomMulti.SetActive(false);
+
             levelScore += this.currentRoom.score;
             scoreText.text = levelScore.ToString();
 
@@ -142,7 +145,8 @@ public class RoomPickerCol : MonoBehaviour
             {
                 RoomTypeText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_DRAG");
             }
-            else {
+            else
+            {
                 RoomTypeText.text = this.currentRoom.game_type;
             }
 
@@ -154,7 +158,8 @@ public class RoomPickerCol : MonoBehaviour
             RoomText.text = this.currentRoom.headword1;
             RoomWord.SetActive(true);
 
-            if (this.currentRoom.headword2 != "") {
+            if (this.currentRoom.headword2 != "")
+            {
                 GameObject RoomWord2 = GetChildWithName(selectedRoom, "RoomWord2");
                 Text RoomText2 = RoomWord2.GetComponent<Text>();
                 RoomText2.text = this.currentRoom.headword2;
@@ -164,6 +169,21 @@ public class RoomPickerCol : MonoBehaviour
             GameObject RoomScore = GetChildWithName(selectedRoom, "RoomScore");
             RoomScore.GetComponent<Text>().text = this.currentRoom.score.ToString();
             RoomScore.SetActive(true);
+        }
+        else {
+
+
+            GameObject RoomMulti = GetChildWithName(selectedRoom, "RoomMultiplier");
+
+            if (this.currentRoom.points_multiplier > 1)
+            {
+                Text RoomTextMulti = RoomMulti.GetComponent<Text>();
+                RoomTextMulti.text = this.currentRoom.points_multiplier.ToString() + "x";
+                RoomMulti.SetActive(true);
+            }
+            else {
+                RoomMulti.SetActive(false);
+            }
         }
     }
 
@@ -303,6 +323,7 @@ public class RoomPickerCol : MonoBehaviour
         public string level_title;
         public int next_round;
         public int collocation_level_id;
+        public int points_multiplier;
     }
 
     [System.Serializable]

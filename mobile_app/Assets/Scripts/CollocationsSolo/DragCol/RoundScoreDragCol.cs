@@ -87,7 +87,7 @@ public class RoundScoreDragCol: MonoBehaviour
     {
         int numOfWords  = GameInfoDrag.chosenButtonsNames.Count;
 
-        contentTrans.sizeDelta = new Vector2(0, numOfWords * wordsPrefabHeight);
+        contentTrans.sizeDelta = new Vector2(0, (numOfWords+1) * wordsPrefabHeight);
 
         int score = 0;
 
@@ -122,14 +122,34 @@ public class RoundScoreDragCol: MonoBehaviour
                 newPlayerScript.incorrectObj.SetActive(false);
             }
 
-            if (i == numOfWords-1)
+            if (i == numOfWords-1 && GameInfoDrag.correct_subsequently_max < GameInfoDrag.info.bonus_condition)
             {
                 newPlayerScript.helperLineObj.SetActive(false);
             }
         }
 
+        if (GameInfoDrag.correct_subsequently_max > GameInfoDrag.info.bonus_condition)
+        {
+            score += GameInfoDrag.info.bonus_condition_points;
+            sum_score = score;
+
+            GameObject newWordsObj = Instantiate(wordsPrefab, new Vector3(0, -numOfWords * wordsPrefabHeight, 0), Quaternion.identity);
+            newWordsObj.transform.SetParent(contentTrans, false);
+            DragResultPrefab newPlayerScript = newWordsObj.GetComponent<DragResultPrefab>();
+
+            //newPlayerScript.wordNameText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_BONUS_POINTS_TEXT");
+            newPlayerScript.wordNameText.text = "BONUS";
+
+            //newPlayerScript.wordScoreText.text = ""+GameInfoDrag.chosenButtonsScores[i] + " " + LanguageText.Translate("score");
+            newPlayerScript.wordScoreText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_SCORE_POINTS").Replace("{{POINTS}}", GameInfoDrag.info.bonus_condition_points.ToString());
+            newPlayerScript.correctObj.SetActive(true);
+            newPlayerScript.incorrectObj.SetActive(false);
+            newPlayerScript.helperLineObj.SetActive(false);
+        }
+
+
         //sumPointsText.text = score + "/" + GameInfoDrag.info.max_round_score + " " + LanguageText.Translate("score");
-        sumPointsText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX").Replace("{{POINTS}}", score.ToString()).Replace("{{MAXPOINTS}}", GameInfoDrag.info.max_round_score.ToString());
+        sumPointsText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX").Replace("{{POINTS}}", score.ToString()).Replace("{{MAXPOINTS}}", (GameInfoDrag.info.max_round_score + GameInfoDrag.info.bonus_condition_points).ToString());
     }
 
     void Start()

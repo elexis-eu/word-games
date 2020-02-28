@@ -76,7 +76,7 @@ public class LanguageSelect : MonoBehaviour
 
             flagBorder.GetComponent<Image>().color = GameSettings.COLOR_BLUE;
             gameTitle.text = "Igra besed";
-            languageName.text = "Slovensko";
+            languageName.text = "Slovenščina";
             forwardButton.text = "Naprej";
 
             selectedLangImage = flagBorder.GetComponent<Image>();
@@ -109,7 +109,7 @@ public class LanguageSelect : MonoBehaviour
             }
 
             flagBorder.GetComponent<Image>().color = GameSettings.COLOR_BLUE;
-            gameTitle.text = "Woordspel";
+            gameTitle.text = "Game of words";
             languageName.text = "Nederlands";
             forwardButton.text = "Voortgaan";
 
@@ -126,7 +126,7 @@ public class LanguageSelect : MonoBehaviour
             }
 
             flagBorder.GetComponent<Image>().color = GameSettings.COLOR_BLUE;
-            gameTitle.text = "Jogo de palavras";
+            gameTitle.text = "Jogo de Palavras";
             languageName.text = "Português";
             forwardButton.text = "Continuar";
 
@@ -145,7 +145,7 @@ public class LanguageSelect : MonoBehaviour
             flagBorder.GetComponent<Image>().color = GameSettings.COLOR_BLUE;
             gameTitle.text = "Sõnamäng";
             languageName.text = "Eesti";
-            forwardButton.text = "Jätkama";
+            forwardButton.text = "Jätka";
 
             selectedLangImage = flagBorder.GetComponent<Image>();
 
@@ -160,7 +160,7 @@ public class LanguageSelect : MonoBehaviour
             }
 
             flagBorder.GetComponent<Image>().color = GameSettings.COLOR_BLUE;
-            gameTitle.text = "Word games";
+            gameTitle.text = "Game of words";
             languageName.text = "English";
             forwardButton.text = "Continue";
 

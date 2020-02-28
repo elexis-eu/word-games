@@ -33,7 +33,9 @@ public static class GameInfoInsert
         chosenWords = new string[3];
         score = 0;
 
-        temp.max_round_score = 3 * temp.scoring[0];
+        if (temp.max_round_score == 0) {
+            temp.max_round_score = 3 * temp.scoring[0];
+        }
 
         // hacked stuff
         temp.collecting_results_duration_ms = 0;

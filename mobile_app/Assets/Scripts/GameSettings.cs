@@ -191,6 +191,12 @@ public static class GameSettings
 
     private static string languageCode;
 
+    //Development environments
+    private static string ENV_local = "local";
+    private static string ENV_mortar = "mortar";
+    private static string ENV_prod = "production";
+    private static string ENVIRONMENT = GameSettings.ENV_local;
+
 
     public static void SetLanguage(string language_code)
     {
@@ -200,7 +206,11 @@ public static class GameSettings
         LoadServerURLs();
 
         if (servers.ContainsKey(language_code)) {
-            API_CONNECTION = "https://" + servers[language_code] + "/api/v1/";
+            if(GameSettings.ENVIRONMENT == GameSettings.ENV_local){
+                API_CONNECTION = "http://" + servers[language_code] + "/api/v1/";
+            } else {
+                API_CONNECTION = "https://" + servers[language_code] + "/api/v1/";
+            }
             MyDebug("SET SERVER URL: " + API_CONNECTION);
             refreshURLs();
         }
@@ -208,19 +218,26 @@ public static class GameSettings
 
     public static void LoadServerURLs() {
         servers = new Dictionary<string, string>();
-        //servers.Add("sl", "192.168.3.150:3000");
-        //servers.Add("de", "192.168.3.150:3000");
-        //servers.Add("nl", "192.168.3.150:3000");
-        //servers.Add("pt", "192.168.3.150:3000");
-        //servers.Add("ee", "192.168.3.150:3000");
-        //servers.Add("en", "192.168.3.150:3000");
 
-        servers.Add("sl", "igrabesed.dev.mortar.tovarnaidej.com:443");
-        servers.Add("de", "igrabesed.dev.mortar.tovarnaidej.com:443");
-        servers.Add("nl", "igrabesed.dev.mortar.tovarnaidej.com:443");
-        servers.Add("pt", "igrabesed.dev.mortar.tovarnaidej.com:443");
-        servers.Add("ee", "igrabesed.dev.mortar.tovarnaidej.com:443");
-        servers.Add("en", "igrabesed.dev.mortar.tovarnaidej.com:443");
+        if (GameSettings.ENVIRONMENT == GameSettings.ENV_local)
+        {
+            servers.Add("sl", "127.0.0.1:3000");
+            servers.Add("de", "127.0.0.1:3000");
+            servers.Add("nl", "127.0.0.1:3000");
+            servers.Add("pt", "127.0.0.1:3000");
+            servers.Add("ee", "127.0.0.1:3000");
+            servers.Add("en", "127.0.0.1:3000");
+
+        } else if (GameSettings.ENVIRONMENT == GameSettings.ENV_mortar) {
+            
+            servers.Add("sl", "sl.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("de", "de.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("nl", "nl.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("pt", "pt.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("ee", "ee.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("en", "en.igrabesed.dev.mortar.tovarnaidej.com:443");
+
+        }
     }
 
     public static void refreshURLs() {

@@ -141,7 +141,7 @@ public class DragDragCol : MonoBehaviour
         GameInfoDrag.chosenButtonsNames.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].word);
         GameInfoDrag.chosenButtonsScores.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score);
 
-        txtWordsShownScore[userWordsChoices.Count % 2].text = "+"+GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score;
+        txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score;
 
         shownWordScoreObj[userWordsChoices.Count % 2].SetActive(true);
 
@@ -150,19 +150,45 @@ public class DragDragCol : MonoBehaviour
         GameInfoDrag.score += GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score;
 
         if (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score > 0)
+        {
             txtWordsShownScore[userWordsChoices.Count % 2].color = BLUE;
+            GameInfoDrag.correct_subsequently++;
+
+            if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
+            {
+                GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
+            }
+        }
         else
+        {
             txtWordsShownScore[userWordsChoices.Count % 2].color = RED;
+
+            if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
+            {
+                GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
+            }
+
+            GameInfoDrag.correct_subsequently = 0;
+        }
+
 
         if (belongs == 0)
         {
             shownWordScoreObj[userWordsChoices.Count % 2].transform.position = new Vector3(fake1Obj.transform.position.x, fake1Obj.transform.position.y, 0);
-        } else if (belongs == 1)
+        }
+        else if (belongs == 1)
         {
             shownWordScoreObj[userWordsChoices.Count % 2].transform.position = new Vector3(fake2Obj.transform.position.x, fake2Obj.transform.position.y, 0);
-        } else if (belongs == 2)
+        }
+        else if (belongs == 2)
         {
             shownWordScoreObj[userWordsChoices.Count % 2].transform.position = new Vector3(fake0Obj.transform.position.x, fake0Obj.transform.position.y, 0);
+        }
+
+
+        if (GameInfoDrag.correct_subsequently_max == GameInfoDrag.info.bonus_condition)
+        {
+            txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score + GameInfoDrag.info.bonus_condition_points).ToString();
         }
 
         txtWordsShownScore[userWordsChoices.Count % 2].CrossFadeAlpha(0.0f, 1f, false);

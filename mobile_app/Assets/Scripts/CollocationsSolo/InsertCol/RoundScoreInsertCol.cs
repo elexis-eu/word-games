@@ -187,9 +187,17 @@ public class RoundScoreInsertCol : MonoBehaviour
         if (chosenWordsText[i].text.Length == 0)
             chosenWordsText[i].text = "/";
 
-        int pos = Array.IndexOf(GameInfoInsert.info.scoring, score);
-        if (pos == 4)
-            pos = 5;
+        int pos = 0;
+
+        if (score > GameInfoInsert.info.scoring[0]) {
+            pos = 0;
+        } else {
+            pos = Array.IndexOf(GameInfoInsert.info.scoring, score);
+
+            if (pos == 4) {
+                pos = 5;
+            }
+        }
         starsScripts[i].EnableStarsObjects(5, GameInfoInsert.info.scoring.Length - pos);
     }
 
