@@ -53,6 +53,7 @@ CREATE TABLE `collocation_level` (
   `position` int(11) DEFAULT NULL,
   `active` int(1) DEFAULT '1',
   `deactivated` datetime DEFAULT NULL,
+  `points_multiplier` int(11) DEFAULT '1',
   PRIMARY KEY (`id_collocation_level`),
   KEY `game_type_idx` (`game_type`),
   KEY `FK_structure_idx` (`structure_id`),
