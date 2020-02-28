@@ -16,7 +16,7 @@ class Query {
         let port = process.env.IGRA_BESED_DATABASE_PORT || '3306';
         let user = process.env.IGRA_BESED_DATABASE_USER || 'igrabesed';
         let passwd = process.env.IGRA_BESED_DATABASE_PASSWD || 'igrabesed';
-        let schema = process.env.IGRA_BESED_DATABASE_SCHEMA || 'igra_besed';
+        let schema = process.env.IGRA_BESED_DATABASE_SCHEMA || 'igra_english';
 
         /*
         let host = process.env.IGRA_BESED_DATABASE_HOST || 'mortar.tovarnaidej.com';
@@ -475,7 +475,7 @@ class Query {
 
     get_user_collocations_level(user_id, level_id, type) {
 
-        let sql =   "SELECT cl.level, cl.headword1, cl.headword2, tt.name as game_type, ucl.type, ucl.score, ucl.collocation_level_id, ucl.position, clt.title as level_title, clt.next_round \
+        let sql =   "SELECT cl.level, cl.headword1, cl.headword2, cl.points_multiplier, tt.name as game_type, ucl.type, ucl.score, ucl.collocation_level_id, ucl.position, clt.title as level_title, clt.next_round \
                      FROM user_col_level ucl \
                      INNER JOIN collocation_level cl ON cl.id_collocation_level = ucl.collocation_level_id \
                      INNER JOIN task_type tt ON tt.id = cl.game_type \
@@ -697,15 +697,15 @@ class Query {
                     JOIN structure as s                                         \
                     ON cw.collocation_id=c.id AND w.id=cw.word_id AND s.id = c.structure_id         \
                     LEFT JOIN collocation_priority cp ON cp.collocation_id = c.id \
-                    WHERE cw.position!=s.headword_position AND s.id=?              \
+                    WHERE cw.position!=s.headword_position AND s.id=? AND w.text != ?              \
                     AND c.id IN (SELECT cw.collocation_id           \
                         FROM collocation_word as cw                                 \
                         JOIN word as w                                              \
                         ON w.id=cw.word_id                                          \
                         WHERE w.text= ?)                                            \
-                    ORDER BY cp.priority ASC, c.order_value DESC LIMIT ?;";
+                    ORDER BY cp.priority ASC, c.frequency DESC LIMIT ?;";
 
-        let args = [structureID, headwordText, limit];
+        let args = [structureID, headwordText, headwordText, limit];
 
         return util.promisify( this.connection.query )
             .call( this.connection, sql, args );        
@@ -754,6 +754,33 @@ class Query {
 
         return util.promisify( this.connection.query )
         .call( this.connection, sql, args );
+    }
+
+    get_random_words_structure(structure_id, limit, headword1, headword2){
+
+        let sql = " SELECT  c.id, w.text, wh.text \
+                    FROM collocation c \
+                    INNER JOIN ( \
+                        SELECT c.id \
+                        FROM collocation c \
+                        INNER JOIN structure s ON s.id= c.structure_id \
+                        WHERE c.structure_id = ? \
+                        ORDER BY RAND() \
+                        LIMIT ? \
+                    ) as ran ON ran.id = c.id \
+                    INNER JOIN structure s ON s.id = c.structure_id \
+                    INNER JOIN collocation_word cw ON cw.collocation_id = c.id AND cw.position != s.headword_position \
+                    INNER JOIN collocation_word cwh ON cwh.collocation_id = c.id AND cwh.position = s.headword_position \
+                    INNER JOIN word w ON w.id = cw.word_id \
+                    INNER JOIN word wh ON wh.id = cwh.word_id \
+                    WHERE wh.text NOT IN ( ?, ?) \
+                    LIMIT ? "
+
+        let args = [structure_id, limit*100, headword1, headword2, limit];
+
+        return util.promisify( this.connection.query )
+        .call( this.connection, sql, args );
+
     }
 
     get_collocation_priority(collocation_id, game_type){
