@@ -157,8 +157,8 @@ if __name__ == '__main__':
     arg_parser.add_argument("input_file")
     args = arg_parser.parse_args()
 
-    n = arg.num_pairs
-    lvl_size = arg.lvl_len
+    n = args.num_pairs
+    lvl_size = args.lvl_len
 
     if n <= 0 or lvl_size <= 0 or lvl_size > n or n % lvl_size != 0:
         print("Faulty parameters.")
