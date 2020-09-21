@@ -1,6 +1,13 @@
 
 igra-besed-testing-firebase-adminsdk-ez1lx-87fc0912ee.json
 
+uploads/
+backups/
+.vs/
+database/CJVT*
+database/cron/__pycache__/
+game_generator/__pycache__/
+database/*.xml
 # Certificates
 *.cert
 *.key
