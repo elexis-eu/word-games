@@ -785,3 +785,10 @@ INSERT INTO task_type (id, name) VALUES (2, "insert");
 INSERT INTO task_type (id, name) VALUES (3, "drag");
 INSERT INTO task_type (id, name) VALUES (4, "thematic");
 INSERT INTO task_type (id, name) VALUES (5, "synonym");
+
+/* Optimization with indexes */
+ALTER TABLE `synonym` ADD INDEX `synonym_difficulty_idx` (`difficulty` ASC);
+ALTER TABLE `user_level` ADD INDEX `user_level_level_idx` (`level` ASC);
+ALTER TABLE `collocation_level` ADD INDEX `col_level_level_idx` (`level` ASC);
+ALTER TABLE `user` ADD INDEX `'user_camp_score_idx'` (`campaign_score` ASC);
+ALTER TABLE `user` ADD INDEX `'user_camp_level_idx'` (`campaign_level` ASC);

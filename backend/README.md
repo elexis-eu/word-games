@@ -13,7 +13,36 @@
 - pick charset and collation best suited for planned language
 - import tables and basic task/game types using file **database/setup.sql**
 
-## Python import scripts
+## Import/export crons
+
+- set database credentials and root path in **database/cron/config.js** .
+- set up crons for all import/export scripts in **database/cron** folder using **crontab -e** command
+	Example:
+	```
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_collocations_dictionary.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_collocations_levels_headwords.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_collocations_levels_title.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_synonym_dictionary.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_synonym_levels.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_collocations_remove.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/load_collocations_status.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/game_generator/thematic_generator_cron.py
+
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_insert_log.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_choose_log.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_dictionary.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_drag_log.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_synonyms_dictionary.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_synonyms_insert_log.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_status_priority.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_all_inputs_log.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/export_collocations_thematic.py
+
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/update_collocations_dictionary.py
+	*/5 * * * * /usr/bin/python3 /home/user/backend/database/cron/remove_collocations_dictionary.py
+	```
+ 
+## Python import scripts (*deprecated - use admin*)
 - use command **pip install mysql-connector-python** to install MySQL connector for Python
 - **every script** has credentials for MySQL which **must be set** before use `mydb = mysql.connector.connect(
 host="localhost",
@@ -22,9 +51,8 @@ user="user",
 passwd="password",
 database="new_schema"
 )`
- 
 
-## Importing collocations vocabulary
+## Importing collocations vocabulary (*deprecated - use admin*)
 ### Importing general vocabulary with Lexeme IDs
 
 Python script **load_data.py** in *database* folder will import main vocabulary for collocations.
@@ -111,7 +139,7 @@ Themes are imported from **thematic.txt** file.
 
 
 
-## Importing synonyms vocabulary
+## Importing synonyms vocabulary (*deprecated - use admin*)
 
 ### Importing main vocabulary
 Run Python script **load_synonym.py** in *database* folder.
