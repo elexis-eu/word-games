@@ -22,6 +22,7 @@ public class SelectGameMode : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        SceneSwitcher.SetMainScreen(-1);
         scrConnect = objConnect.GetComponent<Connect>();
 
         thematicBtn = thematicBtnObj.GetComponent<Button>();

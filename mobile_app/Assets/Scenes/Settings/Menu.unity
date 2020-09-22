@@ -314,10 +314,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Choose Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -343,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Choose Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -484,11 +489,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &65936026 stripped
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objProgressCircle: {fileID: 132143421}
   statusText: {fileID: 0}
-  webClientId: 836198449315-4nom68qv8q1mgaf2a4qnnt4r0goqj2fb.apps.googleusercontent.com
+  webClientId: 749538314239-tt364fimkbvhppln7tkojtljlku653k0.apps.googleusercontent.com
   location: it's an old artifact
   btnLogin: {fileID: 0}
   btnGuest: {fileID: 0}
@@ -770,10 +770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Synonym Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -799,6 +799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Synonym Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -940,11 +945,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 40
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &249160381 stripped
@@ -1026,10 +1026,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Thematic Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1055,6 +1055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Thematic Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1196,11 +1201,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 33
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &351353348 stripped
@@ -1216,10 +1216,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Scoring Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1245,6 +1245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Scoring Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1385,11 +1390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
@@ -2551,10 +2551,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Login Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -2580,6 +2580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Login Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -2725,11 +2730,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
@@ -3107,10 +3107,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Insert Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3136,6 +3136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Insert Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3277,11 +3282,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &1357886491 stripped
@@ -3422,10 +3422,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Drag Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3451,6 +3451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Drag Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3592,11 +3597,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 24
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &1533208206 stripped
@@ -3612,15 +3612,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Email Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3646,6 +3641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Email Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3787,11 +3792,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 32
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &1670094466 stripped
@@ -3932,10 +3932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Unity policy Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -3961,6 +3961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Unity policy Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4087,11 +4092,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1627210391956066027, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
@@ -4108,10 +4108,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: Policy Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4137,6 +4137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Policy Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4278,11 +4283,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 21
       objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}
 --- !u!224 &2068637834 stripped
@@ -4298,10 +4298,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1094642570}
     m_Modifications:
-    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
-      propertyPath: m_Name
-      value: About game Button
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066020, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4322,6 +4322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_LineSpacing
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066022, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Name
+      value: About game Button
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4428,6 +4433,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1627210391956066026, guid: e0bab0bec84ec98448010a9d3f7679f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066027, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4462,16 +4472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293730483921780206, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627210391956066026, guid: e0bab0bec84ec98448010a9d3f7679f7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bab0bec84ec98448010a9d3f7679f7, type: 3}

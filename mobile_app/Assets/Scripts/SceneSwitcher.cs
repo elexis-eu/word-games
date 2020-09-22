@@ -3,14 +3,49 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
+
+    private static int mainScreen = -1;
+
     public void LoadScene(int scene)
     {
         SceneManager.LoadScene(scene);
     }
 
+    public void LoadScene2Back(int scene)
+    {
+
+        if (SceneSwitcher.mainScreen >= 0)
+        {
+            SceneManager.LoadScene(SceneSwitcher.mainScreen);
+            SceneSwitcher.mainScreen = -1;
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
+    }
+
     public static void LoadScene2(int scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    public static void LoadScene2Back2(int scene)
+    {
+        if (SceneSwitcher.mainScreen >= 0)
+        {
+            SceneManager.LoadScene(SceneSwitcher.mainScreen);
+            SceneSwitcher.mainScreen = -1;
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
+    }
+
+    public static void SetMainScreen(int scene)
+    {
+        SceneSwitcher.mainScreen = scene;
     }
 
     public void OpenWebPrivacyPolicy()

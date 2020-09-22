@@ -10,6 +10,10 @@ public class SaveScene : MonoBehaviour
     void Awake()
     {
         if (CURRENT_MODE != -1)
+            if (GameSettings.PREVIOUS_MODE != CURRENT_MODE) {
+                GameSettings.ANOTHER_PREVIOUS_MODE = GameSettings.PREVIOUS_MODE;
+            }
+
             GameSettings.PREVIOUS_MODE = CURRENT_MODE;
         if (ANOTHER_PREVIOUS_MODE != -1)
             GameSettings.ANOTHER_PREVIOUS_MODE = ANOTHER_PREVIOUS_MODE;

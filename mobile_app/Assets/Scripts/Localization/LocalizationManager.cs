@@ -10,6 +10,7 @@ public class LocalizationManager
 {
     bool ready = false;
     bool loaded = false;
+    bool error = false;
     Dictionary<string, string> localizedDictionary;
     StringBuilder filenameStringBuilder = new StringBuilder();
     string loadedJsonText = "";
@@ -46,6 +47,10 @@ public class LocalizationManager
         if (www.isNetworkError || www.isHttpError)
         {
             // Log an error due to missing file
+            this.error = true;
+        }
+        else {
+            this.error = false;
         }
         
         loadedJsonText = www.downloadHandler.text;
@@ -87,6 +92,11 @@ public class LocalizationManager
     public bool IsLoaded()
     {
         return loaded;
+    }
+
+    public bool IsError()
+    {
+        return error;
     }
 
     public string GetTextForKey(string localizationKey)

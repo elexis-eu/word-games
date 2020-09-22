@@ -35,6 +35,7 @@ public class RoundScoreInsertCol : MonoBehaviour
     public GameObject objProgressCircle;
 
     public GameObject[] starsObj;
+    public GameObject[] topThreeObj;
     private StarsPrefab[] starsScripts;
 
     private LevelCheckResponse LevelCheckResponseMessage;
@@ -199,6 +200,10 @@ public class RoundScoreInsertCol : MonoBehaviour
             }
         }
         starsScripts[i].EnableStarsObjects(5, GameInfoInsert.info.scoring.Length - pos);
+
+        if (score > GameInfoInsert.info.scoring[0]) {
+            topThreeObj[i].SetActive(true);
+        }
     }
 
     void TimeOver()

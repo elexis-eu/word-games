@@ -91,8 +91,14 @@ public class RoomPickerCol : MonoBehaviour
         GameInfoCollocation.currentGame.currentRoom = roomSelected.position;
         GameInfoCollocation.currentGame.currentCollocationLevelID = roomSelected.collocation_level_id;
         GameInfoCollocation.currentGame.currentGameType = roomSelected.game_type;
+        GameInfoCollocation.currentGame.currentGamePointsMultiplier = roomSelected.points_multiplier;
 
-        SceneSwitcher.LoadScene2(GameSettings.SCENE_FILLER_WORD_COL);
+        if (roomSelected.points_multiplier > 1)
+        {
+            SceneSwitcher.LoadScene2(GameSettings.SCENE_FILLER_DOUBLE_POINTS);
+        } else {
+            SceneSwitcher.LoadScene2(GameSettings.SCENE_FILLER_WORD_COL);
+        }
 
     }
 
@@ -100,8 +106,8 @@ public class RoomPickerCol : MonoBehaviour
     {
         if (GameInfoCollocation.info.currentLevel < GameSettings.COLLOCATIONS_SOLO_MAX_LEVELS){
 
-            //GameInfoCollocation.info.currentLevel++;
-            SceneSwitcher.LoadScene2(GameSettings.SCENE_LEVEL_SCORE_COL);
+            GameInfoCollocation.info.currentLevel++;
+            SceneSwitcher.LoadScene2(GameSettings.SCENE_FILLER_LEVEL_COL);
 
         } else {
 
@@ -169,6 +175,11 @@ public class RoomPickerCol : MonoBehaviour
             GameObject RoomScore = GetChildWithName(selectedRoom, "RoomScore");
             RoomScore.GetComponent<Text>().text = this.currentRoom.score.ToString();
             RoomScore.SetActive(true);
+
+            if (this.currentRoom.points_multiplier > 1) {
+                GameObject DoublePoints = GetChildWithName(selectedRoom, "DoublePoints");
+                DoublePoints.SetActive(true);
+            }
         }
         else {
 
@@ -203,7 +214,7 @@ public class RoomPickerCol : MonoBehaviour
                 forwardRoomButton.SetActive(true);
             }
 
-            endRoomButton.SetActive(true);
+            //endRoomButton.SetActive(true);
         }
     }
 

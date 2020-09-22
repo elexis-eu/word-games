@@ -18,6 +18,8 @@ public class ChooseChooseCol : MonoBehaviour
 
     private ChooseInfo info;
 
+    public GameObject structureTextObj;
+
     // Use this for initialization
     void Awake()
     {
@@ -37,6 +39,10 @@ public class ChooseChooseCol : MonoBehaviour
         //GameInfoChoose.info = JsonUtility.FromJson<ChooseInfo>(GameInfoCollocation.currentGame.currentGameData);
         //GameInfoChoose.SetNewRound();
         //GameInfoChoose.currentRound = 0;
+
+        structureTextObj.SetActive(true);
+        structureTextObj.GetComponent<Text>().text = GameInfoChoose.info.words[GameInfoChoose.currentRound].structure_text;
+
     }
 
     private void Start()
@@ -84,7 +90,7 @@ public class ChooseChooseCol : MonoBehaviour
         GameInfoChoose.selectedButtons[GameInfoChoose.currentRound, roundOfRound].group = -1;
         GameInfoChoose.chosenButtons.Add((GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 0]));
 
-        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 0].collocation_id);
+        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 0].collocation_id, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 0].word, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 0].score);
 
         WordChoose();
     }
@@ -95,7 +101,7 @@ public class ChooseChooseCol : MonoBehaviour
         GameInfoChoose.selectedButtons[GameInfoChoose.currentRound, roundOfRound].group = -1;
         GameInfoChoose.chosenButtons.Add((GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 1]));
 
-        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 1].collocation_id);
+        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 1].collocation_id, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 1].word, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 1].score);
 
         WordChoose();
     }
@@ -106,7 +112,7 @@ public class ChooseChooseCol : MonoBehaviour
         GameInfoChoose.selectedButtons[GameInfoChoose.currentRound, roundOfRound].group = -1;
         GameInfoChoose.chosenButtons.Add((GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 2]));
 
-        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 2].collocation_id);
+        SendSetWeight(GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 2].collocation_id, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 2].word, GameInfoChoose.info.words[GameInfoChoose.currentRound].buttons[3 * roundOfRound + 2].score);
 
         WordChoose();
     }
@@ -138,9 +144,9 @@ public class ChooseChooseCol : MonoBehaviour
         }
     }
 
-    public void SendSetWeight(int collocation_id)
+    public void SendSetWeight(int collocation_id, string word_selected, int score)
     {
-        string url = GameSettings.POSTCollocationSetWieghtSoloURL + GameSettings.GetUserFBToken() + "&level_id=" + GameInfoCollocation.info.currentLevel + "&type=" + GameInfoCollocation.info.gameMode;
+        string url = GameSettings.POSTCollocationSetWieghtSoloURL + GameSettings.GetUserFBToken() + "&level_id=" + GameInfoCollocation.info.currentLevel + "&type=" + GameInfoCollocation.info.gameMode + "&game_id="+GameInfoCollocation.currentGame.currentCollocationLevelID;
 
         GameSettings.MyDebug(url);
 
@@ -148,6 +154,9 @@ public class ChooseChooseCol : MonoBehaviour
 
         postData.collocation_id = collocation_id;
         postData.game_mode = "choose";
+        postData.word_selected = word_selected;
+        postData.score = score;
+        postData.log_session = GameInfoChoose.info.log_session;
 
         string json = JsonUtility.ToJson(postData);
 
@@ -185,6 +194,9 @@ public class ChooseChooseCol : MonoBehaviour
     {
         public int collocation_id;
         public string game_mode;
+        public string word_selected;
+        public int score;
+        public string log_session;
     }
 
     [System.Serializable]

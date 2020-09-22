@@ -54,6 +54,7 @@ public class CollocationGameInfo
     public int secondWordCollocationID;
     public string currentGameType;
     public string currentGameData;
+    public int currentGamePointsMultiplier;
 }
 
 

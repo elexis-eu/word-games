@@ -227,6 +227,8 @@ public class ThematicTimre : MonoBehaviour
         string endDateString = SloFormat(endDate);
 
         GameSettings.fromToDate = startDateString + "-" + endDateString;
+        GameSettings.ThematicStartDate = startDate;
+        GameSettings.ThematicEndDate = endDate;
     }
 
     private string SloFormat(DateTime dateTime)

@@ -52,7 +52,7 @@ public class Register : MonoBehaviour
     {
         if (GameSettings.user == null)
         {
-            SceneSwitcher.LoadScene2(GameSettings.INTRO_SCREEN);
+            //SceneSwitcher.LoadScene2(GameSettings.INTRO_SCREEN);
         }
     }
 
@@ -101,7 +101,7 @@ public class Register : MonoBehaviour
     {
         if (scrConnect.dataReceived)
         {
-            SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
+            SceneSwitcher.LoadScene2(GameSettings.SCENE_GAME_MODE);
             scrConnect.dataReceived = false;
         }
 

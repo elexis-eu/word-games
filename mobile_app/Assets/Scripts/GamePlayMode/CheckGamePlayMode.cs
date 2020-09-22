@@ -32,10 +32,10 @@ public class CheckGamePlayMode : MonoBehaviour
         solo_button.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
 
         GameObject button_text = GetChildWithName(ButtonObj, "Text");
-        button_text.GetComponent<Text>().color = GameSettings.COLOR_GRAY;
+        button_text.GetComponent<Text>().color = GameSettings.COLOR_WHITE;
 
         GameObject button_subtext = GetChildWithName(ButtonObj, "SubText");
-        button_subtext.GetComponent<Text>().color = GameSettings.COLOR_GRAY;
+        button_subtext.GetComponent<Text>().color = GameSettings.COLOR_WHITE;
     }
 
     // Start is called before the first frame update

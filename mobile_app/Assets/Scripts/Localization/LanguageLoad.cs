@@ -10,17 +10,30 @@ public class LanguageLoad : MonoBehaviour
     IEnumerator Start()
     {
         string language_code = PlayerPrefs.GetString("LanguageCode", GameSettings.defaultLanguageCode);
-        
+
+        if (language_code == "sl")
+        {
+            GameSettings.username = "Gost";
+        }
+        else {
+            GameSettings.username = "Guest";
+        }
+
+        GameSettings.GenerateRandomGuest();
+
         GameSettings.localizationManager = new LocalizationManager();
         yield return GameSettings.localizationManager.LoadJsonLanguageData(language_code);
         GameSettings.translationLoaded = true;
 
-        SceneSwitcher.LoadScene2(0);
+        LanguageText.SetNativeLanguages();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (GameSettings.translationLoaded && !GameSettings.localizationManager.IsError())
+        {
+            SceneSwitcher.LoadScene2(0);
+        }
     }
 }

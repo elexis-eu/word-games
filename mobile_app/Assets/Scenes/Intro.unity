@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objProgressCircle: {fileID: 914411723}
   statusText: {fileID: 819223847}
-  webClientId: 836198449315-4nom68qv8q1mgaf2a4qnnt4r0goqj2fb.apps.googleusercontent.com
+  webClientId: 749538314239-tt364fimkbvhppln7tkojtljlku653k0.apps.googleusercontent.com
   location: introScene
   btnLogin: {fileID: 1921533756}
   btnGuest: {fileID: 271543134}
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6b9941cc099ec4a81ac15e5623d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CURRENT_MODE: -1
+  CURRENT_MODE: 0
   ANOTHER_PREVIOUS_MODE: 0
 --- !u!1001 &1327531215
 PrefabInstance:

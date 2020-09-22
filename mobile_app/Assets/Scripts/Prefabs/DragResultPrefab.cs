@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DragResultPrefab : MonoBehaviour
 {
-    public GameObject correctObj, incorrectObj, wordNameObj, wordScoreObj, helperLineObj;
+    public GameObject correctObj, incorrectObj, wordNameObj, wordScoreObj, helperLineObj, bonusObj;
 
     [HideInInspector]
     public Text wordNameText;

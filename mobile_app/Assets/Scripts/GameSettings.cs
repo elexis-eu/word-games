@@ -3,6 +3,7 @@
 using Firebase.Auth;
 using System.Threading.Tasks;
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -73,6 +74,7 @@ public static class GameSettings
     // Scene numbers for game mode - synonym2
     public const int SCENE_ROOM_PICKER = 45;
     public const int SCENE_GAME_MODE = 41;
+    public const int SCENE_GAME_MODE_SYN = 42;
     public const int SCENE_LEVEL_PICKER = 44;
     public const int SCENE_FILLER_LEVEL = 43;
     public const int SCENE_FILLER_WORD = 46;
@@ -106,6 +108,8 @@ public static class GameSettings
     public const int SCENE_LANGUAGE_SELECT = 72;
     public const int SCENE_LANGUAGE_LOAD = 73;
 
+    public const int SCENE_FILLER_DOUBLE_POINTS = 74;
+
 
     // Game mode settings
     public const string GAME_MODE_CHOOSE = "choose";
@@ -126,6 +130,7 @@ public static class GameSettings
     public static Color COLOR_RED = new Color(244 / 255f, 67 / 255f, 54 / 255f);
     public static Color COLOR_WHITE = new Color(1, 1, 1);
     public static Color COLOR_DARK_BORDER = new Color(63 / 255f, 72 / 255f, 90 / 255f);
+    public static Color COLOR_GREEN = new Color(17 / 255f, 148 / 255f, 46 / 255f);
 
     // Connection settings
     public const int IMMEDIATE = 1; // Connect to current game
@@ -151,6 +156,10 @@ public static class GameSettings
     public static int numberOfPlayedRounds;
     public static bool midGameThematicChange;
     public static bool currentThematic;
+
+    public static DateTime ThematicStartDate;
+    public static DateTime ThematicEndDate;
+
     // competitive leaderboard
     public static ThematicInfoRes[] past_and_current_games_info;
 
@@ -168,9 +177,13 @@ public static class GameSettings
     }
 
     static GameSettings() {
+        GenerateRandomGuest();
+    }
+
+    public static void GenerateRandomGuest() {
         for (int i = 0; i < 6; i++)
         {
-            username += "" + Random.Range(0, 9);
+            username += "" + UnityEngine.Random.Range(0, 9);
         }
     }
 
@@ -195,7 +208,7 @@ public static class GameSettings
     private static string ENV_local = "local";
     private static string ENV_mortar = "mortar";
     private static string ENV_prod = "production";
-    private static string ENVIRONMENT = GameSettings.ENV_local;
+    private static string ENVIRONMENT = GameSettings.ENV_prod;
 
 
     public static void SetLanguage(string language_code)
@@ -225,7 +238,7 @@ public static class GameSettings
             servers.Add("de", "127.0.0.1:3000");
             servers.Add("nl", "127.0.0.1:3000");
             servers.Add("pt", "127.0.0.1:3000");
-            servers.Add("ee", "127.0.0.1:3000");
+            servers.Add("et", "127.0.0.1:3000");
             servers.Add("en", "127.0.0.1:3000");
 
         } else if (GameSettings.ENVIRONMENT == GameSettings.ENV_mortar) {
@@ -234,8 +247,18 @@ public static class GameSettings
             servers.Add("de", "de.igrabesed.dev.mortar.tovarnaidej.com:443");
             servers.Add("nl", "nl.igrabesed.dev.mortar.tovarnaidej.com:443");
             servers.Add("pt", "pt.igrabesed.dev.mortar.tovarnaidej.com:443");
-            servers.Add("ee", "ee.igrabesed.dev.mortar.tovarnaidej.com:443");
+            servers.Add("et", "et.igrabesed.dev.mortar.tovarnaidej.com:443");
             servers.Add("en", "en.igrabesed.dev.mortar.tovarnaidej.com:443");
+
+        } else if (GameSettings.ENVIRONMENT == GameSettings.ENV_prod) {
+            
+            //servers.Add("sl", "igre.cjvt.si:8456");
+            servers.Add("sl", "igre.cjvt.si:8556");
+            servers.Add("de", "de.elexis-wordgames.ijs.si:443");
+            servers.Add("nl", "nl.elexis-wordgames.ijs.si:443");
+            servers.Add("pt", "pt.elexis-wordgames.ijs.si:443");
+            servers.Add("et", "et.elexis-wordgames.ijs.si:443");
+            servers.Add("en", "en.elexis-wordgames.ijs.si:443");
 
         }
     }
@@ -264,6 +287,7 @@ public static class GameSettings
         POSTLevelSaveScoreDragSoloURL = API_CONNECTION + "col/drag/save_score?user_id=";
         POSTLevelSaveScoreChooseSoloURL = API_CONNECTION + "col/choose/save_score?user_id=";
         POSTCollocationSetWieghtSoloURL = API_CONNECTION + "col/choose/set_weight?user_id=";
+        POSTCollocationDragLogURL = API_CONNECTION + "col/drag/log?user_id=";
         GETCollocationLeaderBoardCampaignURL = API_CONNECTION + "col/leaderboard_campaign?user_id=";
 
         GETPlayModeURL = API_CONNECTION + "game/modes";
@@ -289,11 +313,11 @@ public static class GameSettings
     //public static string port = "3000";
     //public static string connectionURL = "192.168.3.150";
 
-    //const string connectionURL = "igre.cjvt.si";
-    //const string port = "8456";
+    const string connectionURL = "igre.cjvt.si";
+    const string port = "8456";
 
-    const string connectionURL = "igrabesed.dev.mortar.tovarnaidej.com";
-    const string port = "443";
+    //const string connectionURL = "igrabesed.dev.mortar.tovarnaidej.com";
+    //const string port = "443";
 
     // Queries URL
     public static string API_CONNECTION = "https://" + connectionURL + ":" + port + "/api/v1/";
@@ -322,6 +346,7 @@ public static class GameSettings
     public static string POSTLevelSaveScoreDragSoloURL = API_CONNECTION + "col/drag/save_score?user_id=";
     public static string POSTLevelSaveScoreChooseSoloURL = API_CONNECTION + "col/choose/save_score?user_id=";
     public static string POSTCollocationSetWieghtSoloURL = API_CONNECTION + "col/choose/set_weight?user_id=";
+    public static string POSTCollocationDragLogURL = API_CONNECTION + "col/drag/log?user_id=";
     public static string GETCollocationLeaderBoardCampaignURL = API_CONNECTION + "col/leaderboard_campaign?user_id=";
 
     public static string GETPlayModeURL = API_CONNECTION + "game/modes";

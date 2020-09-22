@@ -237,6 +237,16 @@ public class RoundScoreChooseCol : MonoBehaviour
 
         postData.collocationLevelID = GameInfoCollocation.currentGame.currentCollocationLevelID;
         postData.score = sum_score;
+        postData.order = new ColClassifyOrder[GameInfoChoose.classyfiedBtns.Count];
+
+        for (int i = 0; i < GameInfoChoose.classyfiedBtns.Count; i++)
+        {
+            postData.order[i] = new ColClassifyOrder();
+            postData.order[i].position = i;
+            postData.order[i].collocation_id = GameInfoChoose.classyfiedBtns[i].collocation_id;
+        }
+
+        postData.log_session = GameInfoChoose.info.log_session;
 
         string json = JsonUtility.ToJson(postData);
 
@@ -274,7 +284,18 @@ public class RoundScoreChooseCol : MonoBehaviour
     {
         public int collocationLevelID;
         public int score;
+        public ColClassifyOrder[] order;
+        public string log_session;
     }
+
+    [System.Serializable]
+    class ColClassifyOrder
+    {
+        public int collocation_id;
+        public int position;
+
+    }
+
 
     [System.Serializable]
     class LevelSaveScoreResponse

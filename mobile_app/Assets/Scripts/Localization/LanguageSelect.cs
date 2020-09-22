@@ -16,7 +16,7 @@ public class LanguageSelect : MonoBehaviour
     public GameObject FlagDE;
     public GameObject FlagNL;
     public GameObject FlagPT;
-    public GameObject FlagEE;
+    public GameObject FlagET;
     public GameObject FlagUK;
 
     private Image selectedLangImage;
@@ -45,9 +45,9 @@ public class LanguageSelect : MonoBehaviour
             {
                 this.SetFlagImageSprite(FlagPT);
             }
-            else if (language_code == "ee")
+            else if (language_code == "et")
             {
-                this.SetFlagImageSprite(FlagEE);
+                this.SetFlagImageSprite(FlagET);
             }
             else if (language_code == "en")
             {
@@ -134,8 +134,8 @@ public class LanguageSelect : MonoBehaviour
 
             this.SetFlagImageSprite(FlagPT);
 
-        } else if(language_code == "ee"){
-            GameObject flagBorder = GetChildWithName(FlagEE, "Border");
+        } else if(language_code == "et"){
+            GameObject flagBorder = GetChildWithName(FlagET, "Border");
 
             if (selectedLangImage != flagBorder.GetComponent<Image>() && selectedLangImage != null)
             {
@@ -149,7 +149,7 @@ public class LanguageSelect : MonoBehaviour
 
             selectedLangImage = flagBorder.GetComponent<Image>();
 
-            this.SetFlagImageSprite(FlagEE);
+            this.SetFlagImageSprite(FlagET);
 
         } else if(language_code == "en"){
             GameObject flagBorder = GetChildWithName(FlagUK, "Border");
@@ -170,6 +170,7 @@ public class LanguageSelect : MonoBehaviour
         }
 
         PlayerPrefs.SetString("LanguageCode", language_code);
+        GameSettings.translationLoaded = false;
     }
 
     private void SetFlagImageSprite(GameObject flagObject) {

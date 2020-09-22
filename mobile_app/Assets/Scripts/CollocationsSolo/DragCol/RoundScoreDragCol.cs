@@ -120,6 +120,11 @@ public class RoundScoreDragCol: MonoBehaviour
             {
                 newPlayerScript.correctObj.SetActive(true);
                 newPlayerScript.incorrectObj.SetActive(false);
+
+                if (GameInfoDrag.chosenButtonsBonus[i] > 1) {
+                    newPlayerScript.bonusObj.SetActive(true);
+                }
+
             }
 
             if (i == numOfWords-1 && GameInfoDrag.correct_subsequently_max < GameInfoDrag.info.bonus_condition)
@@ -138,11 +143,13 @@ public class RoundScoreDragCol: MonoBehaviour
             DragResultPrefab newPlayerScript = newWordsObj.GetComponent<DragResultPrefab>();
 
             //newPlayerScript.wordNameText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_BONUS_POINTS_TEXT");
-            newPlayerScript.wordNameText.text = "BONUS";
+            //newPlayerScript.wordNameText.text = "5 Words in a Row";
+            newPlayerScript.wordNameText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_SCORE_IN_ROW_BONUS");
 
             //newPlayerScript.wordScoreText.text = ""+GameInfoDrag.chosenButtonsScores[i] + " " + LanguageText.Translate("score");
             newPlayerScript.wordScoreText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_DRAG_SCORE_POINTS").Replace("{{POINTS}}", GameInfoDrag.info.bonus_condition_points.ToString());
-            newPlayerScript.correctObj.SetActive(true);
+            newPlayerScript.bonusObj.SetActive(true);
+            newPlayerScript.correctObj.SetActive(false);
             newPlayerScript.incorrectObj.SetActive(false);
             newPlayerScript.helperLineObj.SetActive(false);
         }

@@ -98,6 +98,7 @@ public class ChooseInfo
     public int bonus_points;
     public long connect_immediate_lock_time;
     public string player_id;
+    public string log_session;
 }
 
 [System.Serializable]

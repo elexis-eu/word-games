@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objProgressCircle: {fileID: 132143421}
   statusText: {fileID: 0}
-  webClientId: 836198449315-4nom68qv8q1mgaf2a4qnnt4r0goqj2fb.apps.googleusercontent.com
+  webClientId: 749538314239-tt364fimkbvhppln7tkojtljlku653k0.apps.googleusercontent.com
   location: it's an old artifact
   btnLogin: {fileID: 0}
   btnGuest: {fileID: 0}
@@ -443,8 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6b9941cc099ec4a81ac15e5623d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CURRENT_MODE: -1
-  ANOTHER_PREVIOUS_MODE: 50
+  CURRENT_MODE: 50
+  ANOTHER_PREVIOUS_MODE: -1
 --- !u!114 &204079975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,15 +492,15 @@ RectTransform:
   m_Children:
   - {fileID: 882091381}
   - {fileID: 1662269682}
-  - {fileID: 1129633130}
+  - {fileID: 1357886491}
   - {fileID: 1364116457}
-  - {fileID: 2068637834}
+  - {fileID: 249160381}
   - {fileID: 1198652314}
+  - {fileID: 2068637834}
   - {fileID: 1171286187}
   - {fileID: 2046500928}
-  - {fileID: 1357886491}
   - {fileID: 1472188812}
-  - {fileID: 249160381}
+  - {fileID: 1129633130}
   - {fileID: 549666807}
   - {fileID: 1670094466}
   m_Father: {fileID: 897621876}
@@ -630,7 +630,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -650,12 +650,12 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 119.99999
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1370
+      value: -1130
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1577,7 +1577,7 @@ PrefabInstance:
     - target: {fileID: 159522172490823633, guid: 5e00bef70a2a641478bacf959e2b6a82,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoBack
+      value: GoGoBack
       objectReference: {fileID: 0}
     - target: {fileID: 159522172490823633, guid: 5e00bef70a2a641478bacf959e2b6a82,
         type: 3}
@@ -1879,7 +1879,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -1904,7 +1904,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1050
+      value: -1370
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -2002,19 +2002,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1129633129}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1129633132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129633131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f788fcbeac5f8cd4ea0d3742ec1c8979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localizationKey: OPTIONS_LOGIN_BUTTON
 --- !u!1 &1141333757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2157,7 @@ PrefabInstance:
     - target: {fileID: 8707264059092506269, guid: fb6059b31b032d447afe41b064f8275c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8707264059092506269, guid: fb6059b31b032d447afe41b064f8275c,
         type: 3}
@@ -2905,7 +2892,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -2930,7 +2917,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1290
+      value: -1050
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4036,7 +4023,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4061,7 +4048,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1210
+      value: -1290
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4212,7 +4199,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
@@ -4237,7 +4224,7 @@ PrefabInstance:
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1130
+      value: -1210
       objectReference: {fileID: 0}
     - target: {fileID: 1627210391956066023, guid: e0bab0bec84ec98448010a9d3f7679f7,
         type: 3}

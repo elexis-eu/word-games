@@ -44,7 +44,7 @@ public class LocalizedText : MonoBehaviour
         }
         catch (Exception e)
         {
-            textComponent.text = "No translation!";
+            textComponent.text = localizationKey;
             // handle the exception your way
             GameSettings.MyDebug("Translate error");
         }

@@ -65,15 +65,20 @@ public class ScoreBoardCampaignCol : MonoBehaviour
             thisPlayerObj.SetActive(false);
         } else {
 
-            LeaderboardPlayerPrefab thisPlayerScript = thisPlayerObj.GetComponent<LeaderboardPlayerPrefab>();
-            thisPlayerScript.positionText.text = "" + LeaderBoardResponseMessage.player.mainPosition.ToString();
-            thisPlayerScript.positionImage.color = colorBlue;
-            thisPlayerScript.playerNameText.text = "" + GameSettings.username;
-            thisPlayerScript.levelText.text = "" + LeaderBoardResponseMessage.player.maxLevel.ToString();
-            //thisPlayerScript.playerScoreText.text = "" + LeaderBoardResponseMessage.player.mainScore.ToString();
-            thisPlayerScript.playerScoreText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_SCOREBOARD_POINTS").Replace("{{POINTS}}", LeaderBoardResponseMessage.player.mainScore.ToString());
+            try {
+                thisPlayerObj.SetActive(true);
 
-            thisPlayerObj.SetActive(true);
+                LeaderboardPlayerPrefab thisPlayerScript = thisPlayerObj.GetComponent<LeaderboardPlayerPrefab>();
+                thisPlayerScript.positionText.text = "" + LeaderBoardResponseMessage.player.mainPosition.ToString();
+                thisPlayerScript.positionImage.color = colorBlue;
+                thisPlayerScript.playerNameText.text = "" + GameSettings.username;
+                thisPlayerScript.levelText.text = "" + LeaderBoardResponseMessage.player.maxLevel.ToString();
+                //thisPlayerScript.playerScoreText.text = "" + LeaderBoardResponseMessage.player.mainScore.ToString();
+                thisPlayerScript.playerScoreText.text = "" + GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_SCOREBOARD_POINTS").Replace("{{POINTS}}", LeaderBoardResponseMessage.player.mainScore.ToString());
+            }
+            catch (Exception ex) {
+                GameSettings.MyDebug(ex.Message);
+            }
         }
 
         int i = 0;
@@ -91,7 +96,7 @@ public class ScoreBoardCampaignCol : MonoBehaviour
             newPlayerScript.levelText.text = "" + player.max_level.ToString();
             newPlayerScript.playerNameText.text = player.display_name;
             //newPlayerScript.playerScoreText.text = "" + player.col_solo_score.ToString() + " " + LanguageText.Translate("score");
-            newPlayerScript.playerScoreText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_SCOREBOARD_POINTS").Replace("{{POINTS}}", player.col_solo_score.ToString());
+            newPlayerScript.playerScoreText.text = "" + GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_SCOREBOARD_POINTS").Replace("{{POINTS}}", player.col_solo_score.ToString());
 
             if (player.display_name == GameSettings.username) {
                 newPlayerScript.positionImage.color = colorBlue;

@@ -13,6 +13,7 @@ public static class GameInfoDrag
     public static int correct_subsequently = 0;
     public static int correct_subsequently_max = 0;
     public static List<int> chosenButtonsScores;
+    public static List<int> chosenButtonsBonus;
     public static List<string> chosenButtonsNames;
     public static List<int> chosenButtonsGroups;
     public static float currentRoundTimeLeft;
@@ -37,7 +38,7 @@ public static class GameInfoDrag
         correct_subsequently = 0;
         correct_subsequently_max = 0;
 
-        temp.max_round_score = temp.buttons_number * temp.scoring[0];
+        temp.max_round_score = temp.buttons_number * temp.scoring[0] + temp.scoring[0];
 
         for (int i = 0; i < info.words.Length; i++)
         {
@@ -53,6 +54,7 @@ public static class GameInfoDrag
         chosenButtonsScores = new List<int>();
         chosenButtonsNames = new List<string>();
         chosenButtonsGroups = new List<int>();
+        chosenButtonsBonus = new List<int>();
 
         temp.round_pause_duration_ms = temp.collecting_results_duration_ms;
         // hacked stuff
@@ -95,6 +97,8 @@ public class DragInfo
     public string player_id;
     public int bonus_condition;
     public int bonus_condition_points;
+    public int double_points_round;
+    public string log_session;
 }
 
 [System.Serializable]
@@ -113,4 +117,5 @@ public class DragButtons
     public string word;
     public int group_position;
     public int score;
+    public int collocation_id;
 }

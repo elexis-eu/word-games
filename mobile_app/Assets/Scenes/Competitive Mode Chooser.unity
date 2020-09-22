@@ -663,7 +663,7 @@ PrefabInstance:
     - target: {fileID: 1355711416791717940, guid: 9b5df5327a6795c42bf6ae24eab48859,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InsertMode
+      value: DragMode
       objectReference: {fileID: 0}
     - target: {fileID: 1355711416791717941, guid: 9b5df5327a6795c42bf6ae24eab48859,
         type: 3}
@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: 1355711416791717940, guid: 9b5df5327a6795c42bf6ae24eab48859,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DragMode
+      value: InsertMode
       objectReference: {fileID: 0}
     - target: {fileID: 1355711416791717941, guid: 9b5df5327a6795c42bf6ae24eab48859,
         type: 3}

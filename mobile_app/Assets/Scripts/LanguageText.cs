@@ -63,7 +63,38 @@ public class LanguageText
 
         dict.Add("score", "točk");
 
-        AddToNativeLanguage("slovenščina", "albanščina,angleščina,arabščina,baskovščina,beloruščina,bolgarščina,bosanščina,bretonščina,čečenščina,češčina,črnogorščina,danščina,DRUGI JEZIKI,estonščina,finščina,francoščina,furlanščina,grščina,gruzinščina,hrvaščina,irščina,islandščina,italijanščina,japonščina,katalonščina,kitajščina,korejščina,latvijščina,litvanščina,lužiškasrbščina,madžarščina,makedonščina,malteščina,nemščina,nizozemščina,norveščina,poljščina,portugalščina,romščina,romunščina,ruščina,slovaščina,slovenščina,srbščina,španščina,švedščina,turščina,ukrajinščina,VEČ JEZIKOV,znakovni jezik,...");
+        SetNativeLanguages();
+    }
+
+    public static void SetNativeLanguages() {
+        nativeLanguages = new List<string>();
+
+        string language_code = PlayerPrefs.GetString("LanguageCode", GameSettings.defaultLanguageCode);
+
+        if (language_code == "sl") {
+            AddToNativeLanguage("slovenščina", "čeština,dansk,Deutsch,eesti keel,English,español,français,Frysk,Gaelige,hrvatski,íslenska,italiano,język polski,latviešu valoda,lietuvių kalba,limba română,magyar,Malti,Nederlands,norsk,português,pусский язык,shqip,slovenčina,slovenščina,suomi,svenska,Türkçe,Ivrit,ελληνικά,Български,македонски,српски,українська мова,DRUGO,");
+        }
+
+        if (language_code == "en")
+        {
+            AddToNativeLanguage("English", "čeština,dansk,Deutsch,eesti keel,English,español,français,Frysk,Gaelige,hrvatski,íslenska,italiano,język polski,latviešu valoda,lietuvių kalba,limba română,magyar,Malti,Nederlands,norsk,português,pусский язык,shqip,slovenčina,slovenščina,suomi,svenska,Türkçe,Ivrit,ελληνικά,Български,македонски,српски,українська мова,OTHER,");
+        }
+
+        if (language_code == "et")
+        {
+            AddToNativeLanguage("eesti keel", "čeština,dansk,Deutsch,eesti keel,English,español,français,Frysk,Gaelige,hrvatski,íslenska,italiano,język polski,latviešu valoda,lietuvių kalba,limba română,magyar,Malti,Nederlands,norsk,português,pусский язык,shqip,slovenčina,slovenščina,suomi,svenska,Türkçe,Ivrit,ελληνικά,Български,македонски,српски,українська мова,MUU,");
+        }
+
+        if (language_code == "pt")
+        {
+            AddToNativeLanguage("português", "čeština,dansk,Deutsch,eesti keel,English,español,français,Frysk,Gaelige,hrvatski,íslenska,italiano,język polski,latviešu valoda,lietuvių kalba,limba română,magyar,Malti,Nederlands,norsk,português,pусский язык,shqip,slovenčina,slovenščina,suomi,svenska,Türkçe,Ivrit,ελληνικά,Български,македонски,српски,українська мова,OUTROS,");
+        }
+
+        if (language_code == "nl")
+        {
+            AddToNativeLanguage("Nederlands", "čeština,dansk,Deutsch,eesti keel,English,español,français,Frysk,Gaelige,hrvatski,íslenska,italiano,język polski,latviešu valoda,lietuvių kalba,limba română,magyar,Malti,Nederlands,norsk,português,pусский язык,shqip,slovenčina,slovenščina,suomi,svenska,Türkçe,Ivrit,ελληνικά,Български,македонски,српски,українська мова,ANDERE,");
+        }
+
     }
 
     private static void AddToNativeLanguage(string defaultLanguage, string listOfLanguages)

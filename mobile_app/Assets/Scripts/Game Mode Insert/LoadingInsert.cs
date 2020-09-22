@@ -57,7 +57,7 @@ public class LoadingInsert : MonoBehaviour
         }
         else if (scrGetScoreboard.dataReceived)
         {
-            SceneSwitcher.LoadScene2(GameSettings.SCOREBOARD_INSERT);
+            SceneSwitcher.LoadScene2Back2(GameSettings.SCOREBOARD_INSERT);
         }
     }
 
@@ -65,7 +65,7 @@ public class LoadingInsert : MonoBehaviour
     {
         if (!pause)
         {
-            SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
+            SceneSwitcher.LoadScene2Back2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
         }
     }
 }

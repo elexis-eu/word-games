@@ -909,7 +909,7 @@ PrefabInstance:
     - target: {fileID: 159522172490823633, guid: 5e00bef70a2a641478bacf959e2b6a82,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: LoadScene2Back
       objectReference: {fileID: 0}
     - target: {fileID: 159522172490823633, guid: 5e00bef70a2a641478bacf959e2b6a82,
         type: 3}

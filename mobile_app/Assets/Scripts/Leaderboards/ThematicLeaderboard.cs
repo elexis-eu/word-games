@@ -195,6 +195,6 @@ public class ThematicLeaderboard : MonoBehaviour
     {
         leaderboard.BeOnDestroy();
 
-        SceneSwitcher.LoadScene2(GameSettings.MENU_LEADERBOARDS);
+        SceneSwitcher.LoadScene2Back2(GameSettings.MENU_LEADERBOARDS);
     }
 }

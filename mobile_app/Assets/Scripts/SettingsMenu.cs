@@ -33,11 +33,11 @@ public class SettingsMenu : MonoBehaviour
 
 #elif UNITY_IOS
             //loginLogoutTxt.text = "Prijavljen: " + GameSettings.username;
-            loginLogoutTxt.text = GameSettings.localizationManager.GetTextForKey("OPTIONS_LOGIN_BUTTON").Replace("{{USER}}", GameSettings.username);
+            loginLogoutTxt.text = GameSettings.localizationManager.GetTextForKey("OPTIONS_LOGED_BUTTON").Replace("{{USER}}", GameSettings.username);
 
 #elif UNITY_ANDROID
             //loginLogoutTxt.text = "Odjava (" + GameSettings.username + ")";
-            loginLogoutTxt.text = GameSettings.localizationManager.GetTextForKey("OPTIONS_LOGIN_BUTTON").Replace("{{USER}}", GameSettings.username);
+            loginLogoutTxt.text = GameSettings.localizationManager.GetTextForKey("OPTIONS_LOGOUT_BUTTON").Replace("{{USER}}", GameSettings.username);
 
 #endif
 

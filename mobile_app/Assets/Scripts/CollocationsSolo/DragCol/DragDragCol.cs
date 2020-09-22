@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class DragDragCol : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class DragDragCol : MonoBehaviour
     public GameObject objSendScore;
     SendScore sendScore;
 
+    public GameObject doublePointsRound;
+    public GameObject bonusStars;
+    public GameObject bonusText;
+
     private float saveY, saveX;
 
     private Color RED = new Color(244/255f, 67/255f, 54/255f);
@@ -31,7 +37,19 @@ public class DragDragCol : MonoBehaviour
     public GameObject previewWordObjTop, previewWordObjBot;
     private PreviewWordPrefab scrPrWPreTop, scrPrWPreBot;
 
+    private int multiplyscore = 1;
+
     public GameObject fake0Obj, fake1Obj, fake2Obj, fake3Obj, fake4Obj;
+
+    private float timeLeft;
+    private float timeLeftDefault = 0.5f;
+    private bool hideBonusStars = false;
+
+    private float timeLeftEnd;
+    private float timeLeftEndDefault = 1.0f;
+    private bool endGame = false;
+
+    public GameObject structureTextObj;
 
     void Awake()
     {
@@ -62,11 +80,15 @@ public class DragDragCol : MonoBehaviour
 
         userWordsChoices = new List<DragWords>();
         userChoicesGroup = new List<int>();
+
+        structureTextObj.SetActive(true);
+        structureTextObj.GetComponent<Text>().text = GameInfoDrag.info.words[GameInfoDrag.currentRound].structure_text;
     }
 
     private void Start()
     {
         //scrTimer.Activate(GameInfoDrag.timeLeft);
+        ResetBonusStars();
 
         saveX = shownWordScoreObj[0].transform.position.x;
         saveY = shownWordScoreObj[0].transform.position.y;
@@ -101,8 +123,19 @@ public class DragDragCol : MonoBehaviour
     {
         if (userWordsChoices.Count == GameInfoDrag.info.words.Length)
         {
-            GameOver();
+            //GameOver();
+            timeLeftEnd = timeLeftEndDefault;
+            endGame = true;
             return;
+        }
+
+        if (userWordsChoices.Count == GameInfoDrag.info.double_points_round)
+        {
+            doublePointsRound.SetActive(true);
+        }
+        else
+        {
+            doublePointsRound.SetActive(false);
         }
 
         btnText[userWordsChoices.Count % 2].text = GameInfoDrag.info.words[userWordsChoices.Count].word;
@@ -138,37 +171,59 @@ public class DragDragCol : MonoBehaviour
     private float screenHeight2 = Screen.height / 2.8f;
     void ShowScore(int belongs)
     {
-        GameInfoDrag.chosenButtonsNames.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].word);
-        GameInfoDrag.chosenButtonsScores.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score);
 
-        txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score;
+        if (userWordsChoices.Count == GameInfoDrag.info.double_points_round)
+        {
+            multiplyscore = 2;
+        } else {
+            multiplyscore = 1;
+        }
+
+        GameInfoDrag.chosenButtonsNames.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].word);
+        GameInfoDrag.chosenButtonsScores.Add(GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score * multiplyscore);
+        GameInfoDrag.chosenButtonsBonus.Add(multiplyscore);
+
+        SendSetWeight(GameInfoDrag.info.words[userWordsChoices.Count].word, GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].word, GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].collocation_id, GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score * multiplyscore);
+
+        txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score * multiplyscore;
 
         shownWordScoreObj[userWordsChoices.Count % 2].SetActive(true);
 
         txtWordsShownScore[userWordsChoices.Count % 2].CrossFadeAlpha(1.0f, 0f, false);
 
-        GameInfoDrag.score += GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score;
+        GameInfoDrag.score += GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score * multiplyscore;
 
         if (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score > 0)
         {
             txtWordsShownScore[userWordsChoices.Count % 2].color = BLUE;
-            GameInfoDrag.correct_subsequently++;
-
-            if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
-            {
-                GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
-            }
         }
         else
         {
             txtWordsShownScore[userWordsChoices.Count % 2].color = RED;
+        }
 
-            if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
+        if (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].word != "")
+        {
+            if (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score >= GameInfoDrag.info.scoring[0])
             {
-                GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
-            }
+                GameInfoDrag.correct_subsequently++;
 
-            GameInfoDrag.correct_subsequently = 0;
+                if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
+                {
+                    GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
+                }
+            }
+            else
+            {
+                if (GameInfoDrag.correct_subsequently > GameInfoDrag.correct_subsequently_max)
+                {
+                    GameInfoDrag.correct_subsequently_max = GameInfoDrag.correct_subsequently;
+                }
+
+                GameInfoDrag.correct_subsequently = 0;
+
+                ResetBonusStars();
+            }
         }
 
 
@@ -186,9 +241,55 @@ public class DragDragCol : MonoBehaviour
         }
 
 
-        if (GameInfoDrag.correct_subsequently_max == GameInfoDrag.info.bonus_condition)
+        if (GameInfoDrag.correct_subsequently_max == GameInfoDrag.info.bonus_condition && hideBonusStars == false)
         {
-            txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score + GameInfoDrag.info.bonus_condition_points).ToString();
+            txtWordsShownScore[userWordsChoices.Count % 2].text = "+" + (GameInfoDrag.info.words[userWordsChoices.Count].buttons[belongs].score * multiplyscore).ToString();
+
+            bonusStars.SetActive(false);
+            bonusText.SetActive(true);
+            bonusText.GetComponent<Text>().text = "+ " + GameInfoDrag.info.bonus_condition_points;
+
+            hideBonusStars = true;
+            timeLeft = timeLeftDefault;
+        } else {
+            if (GameInfoDrag.correct_subsequently_max > GameInfoDrag.info.bonus_condition)
+            {
+                bonusStars.SetActive(false);
+                bonusText.SetActive(false);
+            }
+
+            if (GameInfoDrag.correct_subsequently < GameInfoDrag.info.bonus_condition)
+            {
+                if (GameInfoDrag.correct_subsequently == 1)
+                {
+                    GameObject BonusStar = GetChildWithName(bonusStars, "1Star");
+                    BonusStar.GetComponent<Image>().color = GameSettings.COLOR_GREEN;
+                }
+
+                if (GameInfoDrag.correct_subsequently == 2)
+                {
+                    GameObject BonusStar = GetChildWithName(bonusStars, "2Star");
+                    BonusStar.GetComponent<Image>().color = GameSettings.COLOR_GREEN;
+                }
+
+                if (GameInfoDrag.correct_subsequently == 3)
+                {
+                    GameObject BonusStar = GetChildWithName(bonusStars, "3Star");
+                    BonusStar.GetComponent<Image>().color = GameSettings.COLOR_GREEN;
+                }
+
+                if (GameInfoDrag.correct_subsequently == 4)
+                {
+                    GameObject BonusStar = GetChildWithName(bonusStars, "4Star");
+                    BonusStar.GetComponent<Image>().color = GameSettings.COLOR_GREEN;
+                }
+
+                if (GameInfoDrag.correct_subsequently == 5)
+                {
+                    GameObject BonusStar = GetChildWithName(bonusStars, "5Star");
+                    BonusStar.GetComponent<Image>().color = GameSettings.COLOR_GREEN;
+                }
+            }
         }
 
         txtWordsShownScore[userWordsChoices.Count % 2].CrossFadeAlpha(0.0f, 1f, false);
@@ -200,6 +301,23 @@ public class DragDragCol : MonoBehaviour
         {
             //GameOver();
         }
+        
+        if (hideBonusStars) {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                bonusText.SetActive(false);
+            }
+        }
+
+        if (endGame)
+        {
+            timeLeftEnd -= Time.deltaTime;
+            if (timeLeftEnd < 0)
+            {
+                GameOver();
+            }
+        }
     }
 
     private void OnApplicationPause(bool pause)
@@ -208,5 +326,97 @@ public class DragDragCol : MonoBehaviour
         {
             //SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
         }
+    }
+
+    public void SendSetWeight(string word_shown, string word_selected, int collocation_id, int score)
+    {
+        string url = GameSettings.POSTCollocationDragLogURL + GameSettings.GetUserFBToken() + "&level_id=" + GameInfoCollocation.info.currentLevel + "&type=" + GameInfoCollocation.info.gameMode+"&game_id=" + GameInfoCollocation.currentGame.currentCollocationLevelID;
+
+        GameSettings.MyDebug(url);
+
+        ColSetWeightRequest postData = new ColSetWeightRequest();
+
+        postData.collocation_id = collocation_id;
+        postData.game_mode = "drag";
+        postData.word_shown = word_shown;
+        postData.word_selected = word_selected;
+        postData.score = score;
+
+        string json = JsonUtility.ToJson(postData);
+
+        StartCoroutine(PostRequest(url, json));
+    }
+
+    IEnumerator PostRequest(string url, string json)
+    {
+
+        var uwr = new UnityWebRequest(url, "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        uwr.certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey();
+        uwr.SetRequestHeader("Content-Type", "application/json");
+
+        uwr.timeout = 5;
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isHttpError || uwr.isNetworkError)
+        {
+            GameSettings.MyDebug("Error While Sending: " + uwr.error);
+            //SceneSwitcher.LoadScene2(GameSettings.MENU_LEADERBOARDS);
+        }
+        else
+        {
+            GameSettings.MyDebug("Received: " + uwr.downloadHandler.text);
+            //ColSetWeightResponseMessage = JsonUtility.FromJson<ColSetWeightResponse>(uwr.downloadHandler.text);
+
+        }
+    }
+
+    [System.Serializable]
+    class ColSetWeightRequest
+    {
+        public int collocation_id;
+        public string game_mode;
+        public string word_shown;
+        public string word_selected;
+        public int score;
+    }
+
+    [System.Serializable]
+    class ColSetWeightResponse
+    {
+        public string message;
+    }
+
+    GameObject GetChildWithName(GameObject obj, string name)
+    {
+        Transform trans = obj.transform;
+        Transform childTrans = trans.Find(name);
+        if (childTrans != null)
+        {
+            return childTrans.gameObject;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    void ResetBonusStars() {
+        GameObject BonusStar1 = GetChildWithName(bonusStars, "1Star");
+        BonusStar1.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
+
+        GameObject BonusStar2 = GetChildWithName(bonusStars, "2Star");
+        BonusStar2.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
+
+       GameObject BonusStar3 = GetChildWithName(bonusStars, "3Star");
+       BonusStar3.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
+        
+       GameObject BonusStar4 = GetChildWithName(bonusStars, "4Star");
+       BonusStar4.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
+
+        GameObject BonusStar5 = GetChildWithName(bonusStars, "5Star");
+        BonusStar5.GetComponent<Image>().color = GameSettings.COLOR_GRAY;
     }
 }

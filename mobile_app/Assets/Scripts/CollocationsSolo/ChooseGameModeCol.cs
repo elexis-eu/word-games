@@ -11,6 +11,7 @@ public class ChooseGameModeCol : MonoBehaviour
     private CampaignLevelResponse CampaignLevelResponseMessage;
 
     private readonly Color colorGray = new Color(193 / 255f, 200 / 255f, 210 / 255f);
+    private readonly Color colorWhite = new Color(255 / 255f, 255 / 255f, 255 / 255f);
 
     // Use this for initialization
     void Awake()
@@ -18,10 +19,13 @@ public class ChooseGameModeCol : MonoBehaviour
         if (GameSettings.usertype == "guest")
         {
             Image imgCampaign = CampaignButton.GetComponent<Image>();
-            //imgCampaign.color = colorGray;
+            imgCampaign.color = colorGray;
 
             Button btnCampaign = CampaignButton.GetComponent<Button>();
-            //btnCampaign.interactable = false;
+            btnCampaign.interactable = false;
+
+            GameObject subText = GetChildWithName(CampaignButton, "SubText");
+            subText.GetComponent<Text>().color = colorWhite;
 
             //levelText.text = "Stopnja x";
             levelText.text = GameSettings.localizationManager.GetTextForKey("COLLOCATION_SOLO_CAMPAIGN").Replace("{{LEVEL}}", "x");
@@ -111,5 +115,19 @@ public class ChooseGameModeCol : MonoBehaviour
     class CampaignLevelResponse
     {
         public int campaignLevel;
+    }
+
+    GameObject GetChildWithName(GameObject obj, string name)
+    {
+        Transform trans = obj.transform;
+        Transform childTrans = trans.Find(name);
+        if (childTrans != null)
+        {
+            return childTrans.gameObject;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

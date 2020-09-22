@@ -180,7 +180,7 @@ public class SynonymSynonym : MonoBehaviour
     {
         if (!pause)
         {
-            SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
+            SceneSwitcher.LoadScene2Back2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
         }
     }
 

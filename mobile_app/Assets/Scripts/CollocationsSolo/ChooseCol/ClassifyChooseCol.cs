@@ -259,4 +259,5 @@ public class ClassifyChooseCol : MonoBehaviour
             //SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
         }
     }
+
 }

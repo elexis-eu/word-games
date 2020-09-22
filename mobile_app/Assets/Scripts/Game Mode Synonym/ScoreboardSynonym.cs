@@ -72,6 +72,6 @@ public class ScoreboardSynonym : MonoBehaviour
     {
         leaderboard.BeOnDestroy();
 
-        SceneSwitcher.LoadScene2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
+        SceneSwitcher.LoadScene2Back2(GameSettings.COMPETITIVE_MODE_SELECTION_MENU);
     }
 }

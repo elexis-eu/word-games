@@ -24,6 +24,8 @@ public class InsertInsertCol : MonoBehaviour
     public GameObject objSendScore;
     private SendScore scrSendScore;
 
+    public GameObject structureTextObj;
+
     void Awake()
     {
         objTimer.SetActive(false);
@@ -35,6 +37,9 @@ public class InsertInsertCol : MonoBehaviour
         previewWordPos = GameInfoInsert.info.words[0].position;
 
         scrSendScore = objSendScore.GetComponent<SendScore>();
+
+        structureTextObj.SetActive(true);
+        structureTextObj.GetComponent<Text>().text = GameInfoInsert.info.words[GameInfoInsert.currentRound].structure_text;
     }
 
     void Start()
