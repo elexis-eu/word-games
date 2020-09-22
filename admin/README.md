@@ -6,7 +6,9 @@
 
 ## Preparation
 **vue.config.js** - set default path to admin page (seek *publicPath*)
+
 **src/utils/request.js** - set backend URL (seek *baseUrl*)
+
 **src/apis/translations.js** - set default translation language (seek *defaultTranslation* function) or set *DEFAULT_TRANSLATION* in .env files
 
 ## Build Setup
