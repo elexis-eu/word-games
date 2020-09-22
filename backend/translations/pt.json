@@ -1,0 +1,787 @@
+{
+	"strings": [{
+			"key": "INTRO_TITLE",
+			"value": "Jogo de Palavras"
+		},
+		{
+			"key": "INTRO_TITLE_INFO",
+			"value": "CELGA-ILTEC, Universidade de Coimbra"
+		},
+		{
+			"key": "INTRO_LOGIN",
+			"value": "Login"
+		},
+		{
+			"key": "INTRO_PLAY_AS_GUEST",
+			"value": "Jogar como convidado"
+		},
+		{
+			"key": "MODE_COLLOCATIONS",
+			"value": "Colocações"
+		},
+		{
+			"key": "MODE_COL_INFO",
+			"value": "Palavras que normalmente ocorrem juntas"
+		},
+		{
+			"key": "MODE_SYNONYMS",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "MODE_SYNONYMS_INFO",
+			"value": "Palavras com significados semelhantes"
+		},
+		{
+			"key": "MODE_SYNONYMS_SOLO",
+			"value": "Solo"
+		},
+		{
+			"key": "MODE_SYNONYMS_SOLO_INFO",
+			"value": "Jogar sozinho"
+		},
+		{
+			"key": "MODE_SYNONYMS_MULTI",
+			"value": "Múltiplos jogadores"
+		},
+		{
+			"key": "MODE_SYNONYMS_MULTI_INFO",
+			"value": "Jogar contra outros jogadores"
+		},
+		{
+			"key": "MODE_COLLOCATIONS_SOLO",
+			"value": "Solo"
+		},
+		{
+			"key": "MODE_COLLOCATIONS_SOLO_INFO",
+			"value": "Jogar sozinho"
+		},
+		{
+			"key": "MODE_COLLOCATIONS_MULTI",
+			"value": "Múltiplos jogadores"
+		},
+		{
+			"key": "MODE_COLLOCATIONS_MULTI_INFO",
+			"value": "Jogar contra outros jogadores"
+		},
+		{
+			"key": "REGISTRATION_TITLE",
+			"value": "Registro"
+		},
+		{
+			"key": "REGISTRATION_NICKNAME",
+			"value": "Nickname"
+		},
+		{
+			"key": "REGISTRATION_NICKNAME_TAKEN",
+			"value": "Nickname já existente!"
+		},
+		{
+			"key": "REGISTRATION_NATIVE_LANGUAGE",
+			"value": "Idioma"
+		},
+		{
+			"key": "REGISTRATION_LANG_SLO",
+			"value": "Português"
+		},
+		{
+			"key": "REGISTRATION_AGE",
+			"value": "Idade"
+		},
+		{
+			"key": "REGISTRATION_PRIVACY_POLICY_BUTTON",
+			"value": "Política de privacidade"
+		},
+		{
+			"key": "REGISTRATION_REGISTER_BUTTON",
+			"value": "Registrar"
+		},
+		{
+			"key": "REGISTRATION_NOTICE",
+			"value": "Ao pressionar o botão <color = blue> \"Registrar\" </color>, confirmo que li as informações sobre o projeto e que concordo com os termos de uso."
+		},
+		{
+			"key": "COL_SELECT_MODE_CHOOSE",
+			"value": "Selecionar"
+		},
+		{
+			"key": "COL_SELECT_MODE_DRAG",
+			"value": "Arrastar"
+		},
+		{
+			"key": "COL_SELECT_MODE_INSERT",
+			"value": "Tipo"
+		},
+		{
+			"key": "COL_SELECT_MODE_THEMATIC",
+			"value": "Temático"
+		},
+		{
+			"key": "COL_SELECT_MODE_SYNONYMS",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "THEMATIC_INFO_EMAIL",
+			"value": "E-mail"
+		},
+		{
+			"key": "THEMATIC_INFO_EMAIL_HELPER",
+			"value": "E-mail"
+		},
+		{
+			"key": "THEMATIC_INFO_INVALID_EMAIL",
+			"value": "E-mail inválido!"
+		},
+		{
+			"key": "THEMATIC_INFO_DETAILS",
+			"value": "Os melhores jogadores no modo temático recebem um prêmio <color = blue> </color>. Precisamos do seu <color = blue> e-mail </color>, pois você pode ser um deles."
+		},
+		{
+			"key": "THEMATIC_INFO_SEND_BUTTON",
+			"value": "Enviar"
+		},
+		{
+			"key": "SYNONYM_SOLO_TITLE",
+			"value": "Selecionar nível"
+		},
+		{
+			"key": "SYNONYM_SOLO_CAMPAIGN_LOADING",
+			"value": "Verificando nível..."
+		},
+		{
+			"key": "SYNONYM_SOLO_CAMPAIGN",
+			"value": "Nível {{LEVEL}}"
+		},
+		{
+			"key": "SYNONYM_SOLO_CAMPAIGN_INFO",
+			"value": "Continuar"
+		},
+		{
+			"key": "SYNONYM_SOLO_PRACTICE",
+			"value": "Praticar"
+		},
+		{
+			"key": "SYNONYM_SOLO_PRACTICE_INFO",
+			"value": "Escolher nível"
+		},
+		{
+			"key": "SYNONYM_SOLO_PICK_LEVEL_INFO",
+			"value": "Todos os níveis: 500"
+		},
+		{
+			"key": "SYNONYM_SOLO_PICK_LEVEL_HELPER",
+			"value": "Nível {{LEVEL}} selecionado!"
+		},
+		{
+			"key": "SYNONYM_SOLO_PICK_LEVEL_PLAY_BUTTON",
+			"value": "Jogar!"
+		},
+		{
+			"key": "SYNONYM_SOLO_LEVEL_FILLER",
+			"value": "Nível {{LEVEL}}"
+		},
+		{
+			"key": "SYNONYM_SOLO_WORD_FILLER",
+			"value": "{{WORD}}"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_HEADWORD",
+			"value": "Palavra"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_HELPER_TEXT",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_CHECK_BUTTON",
+			"value": "Verificar"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_FORWARD_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT",
+			"value": "Você pensou em {{WORD}} ?"
+		},
+		{
+			"key": "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT_2_STARS",
+			"value": "Muito bem! Você pensou em {{WORD}} ?"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_INFO",
+			"value": "Os seu pontos"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_SUM_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_TYPE_HELPER_TEXT",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_SUM_HELPER_TEXT",
+			"value": "TOTAL"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_MAIN_SCORE",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_MAIN_POSITION",
+			"value": "{{POSITION}}. lugar"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCORE_FORWARD_BUTTON",
+			"value": "Encaminhar"
+		},
+		{
+			"key": "SYNONYM_SOLO_ROOM_PICKER_TITLE",
+			"value": "Palavras"
+		},
+		{
+			"key": "SYNONYM_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+			"value": "Fim do nível"
+		},
+		{
+			"key": "SYNONYM_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+			"value": "Encaminhar"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCOREBOARD_TITLE",
+			"value": "Tabela de resultados"
+		},
+		{
+			"key": "SYNONYM_SOLO_SCOREBOARD_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "OPTIONS_TITLE",
+			"value": "Menu"
+		},
+		{
+			"key": "OPTIONS_ABOUT_TITLE",
+			"value": "Sobre"
+		},
+		{
+			"key": "OPTIONS_ABOUT_SUMMARY",
+			"value": "O Jogo de Palavras faz parte das atividades do <b> CELGA-ILTEC da Universidade de Coimbra </b> que são apoiadas pelo projeto ELEXIS, destinado ao desenvolvimento de infraestrutura lexicográfica europeia. As atividades do projeto incluem o desenvolvimento de jogos de palavras, que são usados com dois propósitos: a) envolver o público em geral no processo de criação de dicionários por meio de métodos de crowdsourcing e b) demonstrar o potencial de dados lexicográficos para a aprendizagem de idiomas. O Jogo de Palavras foi elaborado, portanto, de forma que as decisões dos jogadores sejam <b> usadas para novos desenvolvimentos</b> de vários recursos linguísticos e dicionários, que são de livre acesso a toda a comunidade. Sua participação é, assim, muito útil para nós. Também estamos tentando torná-la divertida e agradável, portanto seus comentários são bem-vindos! \n \n Este projeto recebeu financiamento do programa de pesquisa e inovação Horizonte 2020 da União Europeia sob o contrato de financiamento nº 731015."
+		},
+		{
+			"key": "OPTIONS_LOGIN_BUTTON",
+			"value": "Login"
+		},
+		{
+			"key": "OPTIONS_LOGED_BUTTON",
+			"value": "Usuário {{USER}}"
+		},
+		{
+			"key": "OPTIONS_LOGOUT_BUTTON",
+			"value": "Logout {{USER}}"
+		},
+		{
+			"key": "OPTIONS_POLICY_BUTTON",
+			"value": "Jogo de Palavras: Legal"
+		},
+		{
+			"key": "OPTIONS_UNITY_POLICY_BUTTON",
+			"value": "Unidade: Legal"
+		},
+		{
+			"key": "OPTIONS_COLLOCATIONS_BUTTON",
+			"value": "Colocações"
+		},
+		{
+			"key": "OPTIONS_SYNONYMS_BUTTON",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "OPTIONS_EMAIL_BUTTON",
+			"value": "E-mail"
+		},
+		{
+			"key": "OPTIONS_RULES_COLLOCATION_TITLE",
+			"value": "Colocações"
+		},
+		{
+			"key": "OPTIONS_RULES_COLLOCATION_SUMMARY",
+			"value": "<size=50><b><color=red>Como jogar</color></b></size>\nEste modo testa o seu conhecimento de palavras que geralmente combinam ou que podem ocorrer juntas. Os linguistas chamam esse fenômeno de <b> colocações </b>. Depois de receber uma palavra (um substantivo, um adjetivo, um verbo ou um advérbio), o jogador deverá adivinhar uma palavra que normalmente ocorre com ela - antes ou depois dela. Existem três tipos diferentes de jogos: \n <b> Escolher </b> \nVocê escolhe as três colocações mais típicas/ melhores dentre nove candidatas (três grupos de três) e, em seguida, organiza as três palavras selecionadas, na seguinte ordem: da mais típica à menos típica. \n <b> Digitar </b> \nVocê escreve palavras que combinem com a palavra recebida, por exemplo, três substantivos que normalmente são usados com determinado adjetivo. \n <b> Arrastar </b> \nVocê deverá arrastar a palavra recebida para uma das duas palavras apresentadas ou jogá-la na lixeira, caso a palavra não ocorra com nenhuma das palavras apresentadas."
+		},
+		{
+			"key": "OPTIONS_RULES_COLLOCATION_ABOUT_PROJECT",
+			"value": "Sobre o projeto"
+		},
+		{
+			"key": "OPTIONS_RULES_SYNONYMS_TITLE",
+			"value": "Sinônimos"
+		},
+		{
+			"key": "OPTIONS_RULES_SYNONYMS_SUMMARY",
+			"value": "<b><size=50><color=red>Em breve</color></size></b>\n\nNo momento, este modo está disponível apenas para o esloveno."
+		},
+		{
+			"key": "COLLOCATION_SOLO_TITLE",
+			"value": "Selecione o nível"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CAMPAIGN_LOADING",
+			"value": "Verificando o nível"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CAMPAIGN",
+			"value": "Nível {{LEVEL}}"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CAMPAIGN_INFO",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_PRACTICE",
+			"value": "Praticar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_PRACTICE_INFO",
+			"value": "Selecionar o nível"
+		},
+		{
+			"key": "COLLOCATION_SOLO_PICK_LEVEL_INFO",
+			"value": "Todos os níveis: 500"
+		},
+		{
+			"key": "COLLOCATION_SOLO_PICK_LEVEL_HELPER",
+			"value": "Nível {{LEVEL}} selecionado!"
+		},
+		{
+			"key": "COLLOCATION_SOLO_PICK_LEVEL_PLAY_BUTTON",
+			"value": "Jogar!"
+		},
+		{
+			"key": "COLLOCATION_SOLO_LEVEL_FILLER",
+			"value": "Nível {{LEVEL}}"
+		},
+		{
+			"key": "COLLOCATION_SOLO_WORD_FILLER",
+			"value": "Carregando..."
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_TITLE",
+			"value": "Palavras"
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_CHOOSE",
+			"value": "Escolher"
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_INSERT",
+			"value": "TIPO"
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_DRAG",
+			"value": "ARRASTAR"
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
+			"value": "Fim do nível"
+		},
+		{
+			"key": "COLLOCATION_SOLO_ROOM_PICKER_FORWARD_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_SCOREBOARD_TITLE",
+			"value": "Tabela de resultados"
+		},
+		{
+			"key": "COLLOCATION_SOLO_SCOREBOARD_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_WORD1",
+			"value": "Palavra 1"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_WORD2",
+			"value": "Palavra 2"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_WORD3",
+			"value": "Palavra 3"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_END_BUTTON",
+			"value": "Enviar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_SCORE_TITLE",
+			"value": "Pontuação"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_SCORE_HELPER",
+			"value": "RESPOSTAS"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_INSERT_SCORE_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_FIRST",
+			"value": "1. lugar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_SECOND",
+			"value": "2. lugar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_THIRD",
+			"value": "3. lugar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_OK_TEXT",
+			"value": "Satisfeito?"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_TIP_TEXT",
+			"value": "Verifique novamente a classificação e corrija-a, se necessário."
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_HELPER",
+			"value": "INSTRUÇÕES"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_TITLE",
+			"value": "Classificação"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_SUMMARY",
+			"value": "Classifique as 3 palavras selecionadas em 1., 2. e 3. lugar; a palavra mais típica vem em primeiro lugar.\n"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+			"value": "Classificação"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_TITLE",
+			"value": "Pontuação"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_HELPER",
+			"value": "RESPOSTAS"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+			"value": "CLASSIFICAÇÃO"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+			"value": "Classificação correta!"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+			"value": "Classificação errada!"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_SOLO_DRAG_SCORE_TITLE",
+			"value": "PONTUAÇÃO"
+		},
+		{
+			"key": "COLLOCATION_SOLO_DRAG_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_SOLO_DRAG_SCORE_HELPER",
+			"value": "ARRASTAR"
+		},
+		{
+			"key": "COLLOCATION_SOLO_DRAG_SCORE_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_TITLE",
+			"value": "Tipo de jogo:"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_CHOOSE_BUTTON",
+			"value": "ESCOLHER"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_INSERT_BUTTON",
+			"value": "TIPO"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_DRAG_BUTTON",
+			"value": "ARRASTAR"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_BUTTON",
+			"value": "TODOS"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADERBOARD_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_COMPETITIVE_TITLE",
+			"value": "Ranking do modo competição"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_THEMATIC_TITLE",
+			"value": "Ranking do modo temático"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_THEMATIC_LEADERBOARD_TITLE",
+			"value": "Tema: "
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD1",
+			"value": "Palavra 1"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD2",
+			"value": "Palavra 2"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD3",
+			"value": "Palavra 3"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_INPUT_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_TITLE",
+			"value": "Pontuação"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_HELPER",
+			"value": "RESPOSTAS"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_SCORE_END_BUTTON",
+			"value": "Fim"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_LEADERBOARD_TITLE",
+			"value": "Ranking"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_WAIT_TILL_NEXT_GAME",
+			"value": "Próximo jogo em:"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_WAIT_HELPER",
+			"value": "Instruções"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_TITLE",
+			"value": "Inserir"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_SUMMARY",
+			"value": "Digite 3 palavras que normalmente ocorrem com a palavra."
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_INSERT_WAIT_PLAY_BUTTON",
+			"value": "Jogar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_TITLE",
+			"value": "Pontuação"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_HELPER",
+			"value": "RESPOSTAS"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_SCORE_END_BUTTON",
+			"value": "Fim"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_LEADERBOARD_TITLE",
+			"value": "Ranking"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_WAIT_TILL_NEXT_GAME",
+			"value": "PRÓXIMO JOGO EM:"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_WAIT_HELPER",
+			"value": "Instruções"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_TITLE",
+			"value": "ARRASTAR"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_SUMMARY",
+			"value": "Arraste as palavras recebidas para as palavras corretas. Algumas palavras não ocorrem com nenhuma das palavras apresentadas, arraste-as para a lixeira."
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_DRAG_WAIT_PLAY_BUTTON",
+			"value": "Jogar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_FIRST",
+			"value": "1. lugar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_SECOND",
+			"value": "2. lugar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_THIRD",
+			"value": "3. lugar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_OK_TEXT",
+			"value": "Satisfeito?"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_TIP_TEXT",
+			"value": "Por favor, verifique novamente a classificação e corrija-a, se necessário."
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_HELPER",
+			"value": "INSTRUÇÕES"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_TITLE",
+			"value": "Classificação"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_SUMMARY",
+			"value": "Classifique as 3 palavras selecionadas em 1., 2. e 3. lugar; a palavra mais típica vem em primeiro lugar.\n"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
+			"value": "Classificação"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_TITLE",
+			"value": "PONTUAÇÃO"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_HELPER",
+			"value": "RESPOSTAS"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS_MAX",
+			"value": "{{POINTS}}/{{MAXPOINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_END_BUTTON",
+			"value": "Fim"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
+			"value": "CLASSIFICAÇÃO"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
+			"value": "Classificação correta!"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_WRONG_ORDER_TEXT",
+			"value": "Classificação errada!"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
+			"value": "{{POINTS}} pontos"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
+			"value": "Continuar"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_LEADERBOARD_TITLE",
+			"value": "Ranking"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_TILL_NEXT_GAME",
+			"value": "PRÓXIMO JOGO EM:"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_HELPER",
+			"value": "Instruções"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_TITLE",
+			"value": "ARRASTAR"
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_SUMMARY",
+			"value": "Dentre as três palavras apresentadas, escolha aquela que mais ocorre com a palavra recebida. No final, classifique todas as palavras selecionadas."
+		},
+		{
+			"key": "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_PLAY_BUTTON",
+			"value": "Jogar"
+		}
+	]
+}

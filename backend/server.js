@@ -14,8 +14,11 @@ import InsertTypeRoom from "./game/InsertTypeRoom";
 import SynonymTypeRoom from "./game/SynonymTypeRoom";
 import Synonym2 from "./game/Synonym2";
 import Collocations from "./game/Collocations";
+import AdminPage from "./admin/AdminPage";
+import AdminTokenMiddleware from "./admin/middleware/AuthToken";
 import ThematicRoom from "./game/ThematicRoom";
 import default_room from "./game/Room";
+import multer from "multer";
 
 // TODO:
 //var session = require('express-session');
@@ -37,6 +40,8 @@ let synonym_type_room = new SynonymTypeRoom(query, game_conf);
 let synonym_new = new Synonym2(query);
 
 let collocations_new = new Collocations(query, game_conf);
+
+let admin_page = new AdminPage(query);
 
 function switch_room(type) {
 	console.log("Switch room: ", type);
@@ -65,7 +70,15 @@ admin.initializeApp({
 });
 
 function authentication(user_token) {
+    /*
     return new Promise((resolve, reject) => {
+        let uid = "F18OwBMqA0b1CnVp9VdTvlsVnZW2";
+        resolve(uid);
+    });
+    */
+    return new Promise((resolve, reject) => {
+        if (user_token.startsWith("Guest") || user_token.startsWith("Gost")) resolve(null);
+
         admin.auth().verifyIdToken(user_token)
             .then(function (decodedToken) {
                 let uid = decodedToken.uid;
@@ -433,11 +446,33 @@ app.post('/api/v1/col/choose/set_weight', async function(req, res) {
     let game_type = req.query.game_type;
     let collocation_id = req.body.collocation_id;
     let game_mode = req.body.game_mode;
+    let level_id = req.query.level_id;
+    let game_id = req.query.game_id;
 
     let uid = await authentication(user_token);
     if (uid == null && ( user_token.startsWith("Guest") || user_token.startsWith("Gost"))) uid = user_token;
 
     let response = await collocations_new.IncreaseCollocationWeight(collocation_id, game_mode);
+
+    let response_log = await collocations_new.LogChoose(game_id, uid, req.body);
+
+    if(response.error){
+        res.status(500).send(JSON.stringify(response));
+    } else {
+        res.send(JSON.stringify(response));
+    }
+});
+
+app.post('/api/v1/col/drag/log', async function(req, res) {
+    let user_token = req.query.user_id;
+    let game_type = req.query.game_type;
+    let level_id = req.query.level_id;
+    let game_id = req.query.game_id;
+
+    let uid = await authentication(user_token);
+    if (uid == null && ( user_token.startsWith("Guest") || user_token.startsWith("Gost"))) uid = user_token;
+
+    let response = await collocations_new.LogDrag(game_id, uid, req.body);
 
     if(response.error){
         res.status(500).send(JSON.stringify(response));
@@ -510,7 +545,9 @@ app.get('/api/v1/col/leaderboard_campaign', async function(req, res) {
 });
 
 app.get('/api/v1/game/modes', async function(req, res) {
-    let response = {collocations: game_conf.MODES_COLLOCATIONS, synonyms: game_conf.MODES_SYNONYM};
+
+    let gamemodes = await admin_page.gamemodesInfoGet();
+    let response = {collocations: {solo: gamemodes['collocations_solo'] == 1 ? true : false, multi: gamemodes['collocations_multiplayer'] == 1 ? true : false}, synonyms: {solo: gamemodes['synonyms_solo'] == 1 ? true : false, multi: gamemodes['synonyms_multiplayer'] == 1 ? true : false}};
 
     if(response.error){
         res.status(500).send(JSON.stringify(response));
@@ -529,6 +566,426 @@ app.get('/api/v1/language', async function(req, res) {
     } catch(e){
         res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
     }
+});
+
+app.get('/api/v1/admin/users/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin'){
+            let response = {};
+            response.data = await admin_page.listUsers();
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/users/add', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin'){
+            let response = {};
+            response.data = await admin_page.saveUser(req.body);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins!");
+        }
+
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/users/edit', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin'){
+            let response = {};
+            response.data = await admin_page.editUser(req.query.id, req.body);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/users/info', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+
+        let response = {};
+        response.data = req.user;
+        response.code = 20000;
+
+        res.send(JSON.stringify(response));
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/users/get', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.userInfoGet(req.query.id);
+            response.code = 20000;
+    
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/users/login', async function(req, res) {
+    let username = req.body.username;
+    let password = req.body.password;
+
+    try{
+
+        let response = await admin_page.checkLogin(username, password);
+
+        res.send(JSON.stringify(response));
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/users/logout', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+            let response = {};
+            response.data = {message: "OK"};
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/structures/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.listStructures();
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+
+app.get('/api/v1/admin/structures/get', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.structureInfoGet(req.query.id);
+            response.code = 20000;
+    
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/structures/delete', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.structureDeleteGet(req.query.id);
+            response.code = 20000;
+    
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/structures/save', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.saveStructure(req.query.id, req.body);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/imports/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    let page = req.query.page;
+    let limit = 15;
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.listImports(limit, (page-1)*limit);
+            response.page = page;
+            response.limit = limit;
+            response.total = await admin_page.countImports();
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/imports/save', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.saveImport(req.query.id, req.body, req.user);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/imports/logs', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.listImportLogs(req.query.id);
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/imports/get', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.importsInfoGet(req.query.id);
+            response.code = 20000;
+    
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/exports/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    let page = req.query.page;
+    let limit = 15;
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.listExports(limit,(page-1)*limit);
+            response.page = page;
+            response.limit = limit;
+            response.total = await admin_page.countExports();
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/exports/save', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.saveExport(req.query.id, req.body, req.user);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+
+app.get('/api/v1/admin/exports/file', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+    let filename = req.query.filename;
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+
+            let response = fs.readFileSync("exports/"+filename, 'utf8');
+
+            res.setHeader('Content-Type', 'text/csv');
+            res.setHeader('Content-Disposition', 'attachment; filename=\"' + filename + '\"');
+            res.send(response);
+
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/translations/get', async function(req, res) {
+    let code = req.query.code;
+
+    try{
+        let response = {};
+        response.data = JSON.parse(fs.readFileSync("translations/"+code+'.json', 'utf8'));
+        response.code = 20000;
+
+        res.send(JSON.stringify(response));
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/translations/save', async function(req, res) {
+    let code = req.query.code;
+
+    try{
+        let response = {};
+        let result = fs.writeFileSync("translations/"+code+'.json', req.body.json_file);
+        response.data = {"status": "OK"};
+        response.code = 20000;
+
+        res.send(JSON.stringify(response));
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/crons/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+    let type = req.query.type;
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            response.data = await admin_page.listCrons(type);
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.get('/api/v1/admin/gamemodes/get', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin'){
+            let response = {};
+            response.data = await admin_page.gamemodesInfoGet();
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+
+app.post('/api/v1/admin/gamemodes/save', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
+
+    try{
+        if(req.user.role == 'admin'){
+            let response = {};
+            response.data = await admin_page.saveGamemodes(req.body);
+            response.code = 20000;
+
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});
+// FILE UPLOADS
+const imports = multer({ dest: 'uploads/imports/' });
+
+app.post('/api/v1/admin/imports/upload', imports.single("importcsv"), AdminTokenMiddleware.checkAdminToken, async function (req, res, next) {
+
+    try{
+        if(req.user.role == 'admin' || req.user.role == 'editor'){
+            let response = {};
+            req.body.fileondisk = req.file.path;
+            req.body.status = "uploaded";
+            response.data = await admin_page.saveImportFile(req.body.id, req.body);
+            response.code = 20000;
+            res.send(JSON.stringify(response));
+        } else {
+            throw new Error("Only for admins/editors!");
+        }
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+
+})
+
+
+// CORS HEADERS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
 });
 
 app.use('/api/v1', router);

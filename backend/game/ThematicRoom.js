@@ -289,6 +289,7 @@ class ThematicRoom {
                                 results.choose_score,
                                 results.insert_score,
                                 results.drag_score,
+                                results.synonym_score,
                                 score,
                                 position,
                                 this.query)

@@ -16,6 +16,127 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `admin_crons`
+--
+
+DROP TABLE IF EXISTS `admin_crons`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_crons` (
+  `code` varchar(32) NOT NULL,
+  `title` varchar(64) DEFAULT NULL,
+  `type` enum('import','export') NOT NULL,
+  `format` text,
+  `description` text,
+  PRIMARY KEY (`code`,`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `admin_exports`
+--
+
+DROP TABLE IF EXISTS `admin_exports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_exports` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `admin_user_id` int(11) DEFAULT NULL,
+  `filename` varchar(64) DEFAULT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `title` varchar(64) DEFAULT NULL,
+  `type` varchar(32) DEFAULT NULL,
+  `date_from` date DEFAULT NULL,
+  `date_to` date DEFAULT NULL,
+  `finished` datetime DEFAULT NULL,
+  `started` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_admin_user_id_idx` (`admin_user_id`),
+  CONSTRAINT `fk_admin_user_id` FOREIGN KEY (`admin_user_id`) REFERENCES `admin_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `admin_gamemodes`
+--
+
+DROP TABLE IF EXISTS `admin_gamemodes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_gamemodes` (
+  `id` int(1) NOT NULL DEFAULT '1',
+  `collocations_solo` int(1) NOT NULL DEFAULT '1',
+  `collocations_multiplayer` int(1) NOT NULL DEFAULT '1',
+  `synonyms_solo` int(1) NOT NULL DEFAULT '1',
+  `synonyms_multiplayer` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `admin_imports`
+--
+
+DROP TABLE IF EXISTS `admin_imports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_imports` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(32) DEFAULT NULL,
+  `filename` varchar(64) DEFAULT NULL,
+  `status` enum('uploaded','in_progress','finish','error') DEFAULT NULL,
+  `delimiter` char(1) DEFAULT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `started` datetime DEFAULT NULL,
+  `finished` datetime DEFAULT NULL,
+  `admin_user_id` int(11) DEFAULT NULL,
+  `fileondisk` varchar(255) DEFAULT NULL,
+  `task_all` int(11) DEFAULT '1',
+  `task_done` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_admin_user_id_idx` (`admin_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `admin_report_log`
+--
+
+DROP TABLE IF EXISTS `admin_report_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_report_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `import_id` int(11) DEFAULT NULL,
+  `error` varchar(256) DEFAULT NULL,
+  `line` text,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `admin_import_id_idx` (`import_id`),
+  CONSTRAINT `fk_admin_import_id` FOREIGN KEY (`import_id`) REFERENCES `admin_imports` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `admin_user`
+--
+
+DROP TABLE IF EXISTS `admin_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL,
+  `role` varchar(64) DEFAULT NULL,
+  `active` tinyint(4) DEFAULT '1',
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `collocation`
 --
 
@@ -23,17 +144,17 @@ DROP TABLE IF EXISTS `collocation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `collocation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `form` varchar(64) NOT NULL,
   `frequency` int(11) NOT NULL,
-  `sailence` float(8,5) DEFAULT NULL,
+  `sailence` float(21,19) DEFAULT NULL,
   `order_value` float(8,5) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
+  `status` enum('unknown','valid','invalid','') NOT NULL DEFAULT 'unknown',
   `structure_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `structure_id` (`structure_id`),
   CONSTRAINT `collocation_ibfk_1` FOREIGN KEY (`structure_id`) REFERENCES `structure` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,13 +174,13 @@ CREATE TABLE `collocation_level` (
   `position` int(11) DEFAULT NULL,
   `active` int(1) DEFAULT '1',
   `deactivated` datetime DEFAULT NULL,
-  `points_multiplier` int(11) DEFAULT '1',
+  `points_multiplier` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_collocation_level`),
   KEY `game_type_idx` (`game_type`),
   KEY `FK_structure_idx` (`structure_id`),
   CONSTRAINT `FK_game_type` FOREIGN KEY (`game_type`) REFERENCES `task_type` (`id`),
   CONSTRAINT `FK_structure` FOREIGN KEY (`structure_id`) REFERENCES `structure` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +195,124 @@ CREATE TABLE `collocation_level_title` (
   `title` varchar(255) DEFAULT NULL,
   `next_round` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `collocation_level_user_choose`
+--
+
+DROP TABLE IF EXISTS `collocation_level_user_choose`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collocation_level_user_choose` (
+  `collocation_level_id` int(11) NOT NULL,
+  `uid` varchar(45) NOT NULL,
+  `type` enum('campaign','practice') NOT NULL,
+  `choose_position` int(11) DEFAULT NULL,
+  `group` int(11) DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `word` varchar(255) DEFAULT NULL,
+  `collocation_id` int(11) NOT NULL,
+  `session` char(32) NOT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`collocation_level_id`,`uid`,`type`,`collocation_id`,`session`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `collocation_log_choose`
+--
+
+DROP TABLE IF EXISTS `collocation_log_choose`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collocation_log_choose` (
+  `id_collocation_log_choose` int(11) NOT NULL AUTO_INCREMENT,
+  `collocation_level_id` int(11) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `structure_id` int(11) DEFAULT NULL,
+  `headword` varchar(255) DEFAULT NULL,
+  `word_selected` varchar(255) DEFAULT NULL,
+  `col` int(11) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `score` int(11) DEFAULT '0',
+  `session` char(32) DEFAULT NULL,
+  PRIMARY KEY (`id_collocation_log_choose`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `collocation_log_choose_order`
+--
+
+DROP TABLE IF EXISTS `collocation_log_choose_order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collocation_log_choose_order` (
+  `collocation_level_id` int(11) NOT NULL,
+  `uid` varchar(45) NOT NULL,
+  `type` enum('campaign','practice') NOT NULL,
+  `choose_position` int(11) NOT NULL,
+  `collocation_id` int(11) NOT NULL,
+  `session` char(32) NOT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`collocation_level_id`,`uid`,`type`,`choose_position`,`session`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `collocation_log_drag`
+--
+
+DROP TABLE IF EXISTS `collocation_log_drag`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collocation_log_drag` (
+  `id_collocation_log_drag` int(11) NOT NULL AUTO_INCREMENT,
+  `collocation_level_id` int(11) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `structure_id` int(11) DEFAULT NULL,
+  `word_shown` varchar(255) DEFAULT NULL,
+  `word_selected` varchar(255) DEFAULT NULL,
+  `col` int(11) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `score` int(11) DEFAULT '0',
+  PRIMARY KEY (`id_collocation_log_drag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `collocation_log_insert`
+--
+
+DROP TABLE IF EXISTS `collocation_log_insert`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `collocation_log_insert` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `collocation_level_id` int(11) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `headword` varchar(255) DEFAULT NULL,
+  `word1` varchar(255) DEFAULT NULL,
+  `variant1` int(1) DEFAULT NULL,
+  `score1` int(11) DEFAULT NULL,
+  `col1` int(11) DEFAULT NULL,
+  `word2` varchar(255) DEFAULT NULL,
+  `score2` int(11) DEFAULT NULL,
+  `col2` int(11) DEFAULT NULL,
+  `variant2` int(1) DEFAULT NULL,
+  `word3` varchar(255) DEFAULT NULL,
+  `score3` int(11) DEFAULT NULL,
+  `col3` int(11) DEFAULT NULL,
+  `variant3` int(1) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `structure_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +333,7 @@ CREATE TABLE `collocation_priority` (
   KEY `FK_game_type_col_priority_idx` (`game_type`),
   CONSTRAINT `FK_collocation` FOREIGN KEY (`collocation_id`) REFERENCES `collocation` (`id`),
   CONSTRAINT `FK_game_type_col_priority` FOREIGN KEY (`game_type`) REFERENCES `task_type` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +349,7 @@ CREATE TABLE `collocation_shell` (
   PRIMARY KEY (`id`),
   KEY `structure_id` (`structure_id`),
   CONSTRAINT `collocation_shell_ibfk_1` FOREIGN KEY (`structure_id`) REFERENCES `structure` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +367,7 @@ CREATE TABLE `collocation_shell_word` (
   KEY `collocation_shell_id` (`collocation_shell_id`),
   CONSTRAINT `collocation_shell_word_ibfk_1` FOREIGN KEY (`word_id`) REFERENCES `word` (`id`),
   CONSTRAINT `collocation_shell_word_ibfk_2` FOREIGN KEY (`collocation_shell_id`) REFERENCES `collocation_shell` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +387,7 @@ CREATE TABLE `collocation_word` (
   KEY `word_id` (`word_id`),
   CONSTRAINT `collocation_word_ibfk_1` FOREIGN KEY (`collocation_id`) REFERENCES `collocation` (`id`),
   CONSTRAINT `collocation_word_ibfk_2` FOREIGN KEY (`word_id`) REFERENCES `word` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +403,7 @@ CREATE TABLE `free_form` (
   `linguistic_unit_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `linguistic_unit_id` (`linguistic_unit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +416,7 @@ DROP TABLE IF EXISTS `lexeme`;
 CREATE TABLE `lexeme` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,7 +429,7 @@ DROP TABLE IF EXISTS `linguistic_unit`;
 CREATE TABLE `linguistic_unit` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +444,7 @@ CREATE TABLE `possible_answer` (
   `linguistic_unit_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `linguistic_unit_id` (`linguistic_unit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +460,7 @@ CREATE TABLE `structure` (
   `headword_position` int(11) DEFAULT NULL,
   `text` varchar(80) NOT NULL DEFAULT '_',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +479,7 @@ CREATE TABLE `synonym` (
   `tid` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`linguistic_unit_id`,`linguistic_unit_id_syn`),
   KEY `synonym_ibfk_2_idx` (`linguistic_unit_id_syn`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -264,7 +502,7 @@ CREATE TABLE `synonym_log` (
   `user` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +518,7 @@ CREATE TABLE `synonym_unknown` (
   `synonym` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,7 +537,7 @@ CREATE TABLE `synonym_word` (
   KEY `linguistic_unit_id` (`linguistic_unit_id`),
   KEY `lexeme_id` (`lexeme_id`),
   KEY `text` (`text`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -317,7 +555,7 @@ CREATE TABLE `task` (
   PRIMARY KEY (`id`),
   KEY `collocation_shell_id` (`collocation_shell_id`),
   KEY `task_cycle_id` (`task_cycle_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -336,7 +574,7 @@ CREATE TABLE `task_answer` (
   PRIMARY KEY (`id`),
   KEY `task_user_id` (`task_user_id`),
   KEY `task_possible_answer_id` (`task_possible_answer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -354,7 +592,7 @@ CREATE TABLE `task_cycle` (
   `to_timestamp` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `task_type_id` (`task_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,7 +612,7 @@ CREATE TABLE `task_possible_answer` (
   PRIMARY KEY (`id`),
   KEY `possible_answer_id` (`possible_answer_id`),
   KEY `task_id` (`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -389,7 +627,7 @@ CREATE TABLE `task_type` (
   `name` varchar(45) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -408,7 +646,7 @@ CREATE TABLE `task_user` (
   PRIMARY KEY (`id`),
   KEY `task_id` (`task_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -424,7 +662,7 @@ CREATE TABLE `thematic` (
   `task_type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `task_type_id` (`task_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,9 +677,10 @@ CREATE TABLE `thematic_user` (
   `user_id` varchar(45) NOT NULL,
   `thematic_score` int(11) NOT NULL DEFAULT '0',
   `thematic_position` int(11) NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`thematic_id`,`user_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -470,7 +709,7 @@ CREATE TABLE `user` (
   `col_solo_score` int(11) DEFAULT '0',
   `co_solo_level` int(11) DEFAULT '1',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -489,7 +728,7 @@ CREATE TABLE `user_col_level` (
   PRIMARY KEY (`user_id`,`collocation_level_id`,`type`),
   KEY `FK_collocation_level_idx` (`collocation_level_id`),
   CONSTRAINT `FK_collocation_level` FOREIGN KEY (`collocation_level_id`) REFERENCES `collocation_level` (`id_collocation_level`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -507,7 +746,7 @@ CREATE TABLE `user_level` (
   `position` int(11) DEFAULT '1',
   `type` enum('campaign','practice') NOT NULL DEFAULT 'practice',
   PRIMARY KEY (`id_user`,`level`,`linguistic_unit_id`,`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -527,7 +766,7 @@ CREATE TABLE `word` (
   KEY `linguistic_unit_id` (`linguistic_unit_id`),
   KEY `lexeme_id` (`lexeme_id`),
   KEY `text` (`text`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

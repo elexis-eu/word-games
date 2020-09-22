@@ -219,6 +219,8 @@ class Synonym2 {
 
             }
 
+            await this.query.log_words_check(levelID, body.headword, body.word1Text, score1, body.word2Text, score2, body.word3Text, score3, user);
+
             return {score1: score1, score2: score2, score3: score3, suggestion: suggestion};        
 
         } catch(e){

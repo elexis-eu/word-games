@@ -1,0 +1,1 @@
+module.exports =  { jwt_key: "SET_JWT_KEY_BEFORE_FIRST_RUN" }

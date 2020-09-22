@@ -783,6 +783,42 @@
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_PLAY_BUTTON",
             "value":  "Igraj"
-        } 
+        },
+        {
+            "key" : "COLLOCATION_SOLO_CHOOSE_SHOW_GAME_TYPE",
+            "value":  "Izberi"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SHOW_GAME_TYPE",
+            "value":  "Povleci"
+        },
+        {
+            "key" : "COLLOCATION_SOLO_INSERT_SHOW_GAME_TYPE",
+            "value":  "Vtipkaj"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_DOUBLE_POINTS_MAIN_TEXT",
+            "value":  "Bonus igra"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_DOUBLE_POINTS_HELPER_TEXT",
+            "value":  "Dvojne točke!"
+        },        
+        {
+            "key" : "COLLOCATION_SOLO_DRAG_SCORE_IN_ROW_BONUS",
+            "value":  "5 po vrsti"
+        },         
+        {
+            "key" : "MODE_THEMATIC",
+            "value":  "Tematska igra"
+        },        
+        {
+            "key" : "MODE_THEMATIC_TOPIC",
+            "value":  "Tema:"
+        },        
+        {
+            "key" : "MODE_THEMATIC_DATE",
+            "value":  "Na voljo do:"
+        }
     ]
 }

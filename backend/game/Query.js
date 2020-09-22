@@ -1,5 +1,6 @@
 import mysql from "mysql";
 import util from "util";
+import { unlink } from "fs";
 
 let date_to_string = function(date) {
     let str = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getUTCDate() + " " + date.getUTCHours() + ":"
@@ -14,16 +15,9 @@ class Query {
 
         let host = process.env.IGRA_BESED_DATABASE_HOST || 'localhost';
         let port = process.env.IGRA_BESED_DATABASE_PORT || '3306';
-        let user = process.env.IGRA_BESED_DATABASE_USER || 'igrabesed';
-        let passwd = process.env.IGRA_BESED_DATABASE_PASSWD || 'igrabesed';
+        let user = process.env.IGRA_BESED_DATABASE_USER || 'root';
+        let passwd = process.env.IGRA_BESED_DATABASE_PASSWD || 'root';
         let schema = process.env.IGRA_BESED_DATABASE_SCHEMA || 'igra_english';
-
-        /*
-        let host = process.env.IGRA_BESED_DATABASE_HOST || 'mortar.tovarnaidej.com';
-        let port = process.env.IGRA_BESED_DATABASE_PORT || '3306';
-        let user = process.env.IGRA_BESED_DATABASE_USER || 'igrabesed_tovarna';
-        let passwd = process.env.IGRA_BESED_DATABASE_PASSWD || 'tezkogeslo';
-        */
 
         // console.log("query PASS: ", passwd);
 
@@ -147,7 +141,7 @@ class Query {
             "   join collocation_word as cw2 " +
             "        join collocation as c " +
             "   on cw.collocation_id=cw2.collocation_id and c.id=cw.collocation_id and w.id = cw.word_id  and cw2.word_id=w2.id and w.id!=w2.id " +
-            "        where BINARY w.text = ? and BINARY w2.text = ? and c.structure_id = ?;", [first_word.toLowerCase(), second_word.toLowerCase(), structure_id], callback);
+            "        where w.text = BINARY ? and w2.text = BINARY ? and c.structure_id = ?;", [first_word.toLowerCase(), second_word.toLowerCase(), structure_id], callback);
     }
 
     find_synonym_score(first_word, second_word, structure_id, callback) {
@@ -155,7 +149,7 @@ class Query {
         " FROM synonym s " +
         " INNER JOIN word w1 on s.linguistic_unit_id = w1.linguistic_unit_id " +
         " INNER JOIN word w2 on s.linguistic_unit_id_syn = w2.linguistic_unit_id " +
-        " WHERE BINARY w1.text = ? and BINARY w2.text = ?;", [first_word.toLowerCase(), second_word.toLowerCase(), structure_id], callback);
+        " WHERE w1.text = BINARY ? and w2.text = BINARY ?;", [first_word.toLowerCase(), second_word.toLowerCase(), structure_id], callback);
     }
 
     unknown_synonym_word(headword, synonym_word) {
@@ -465,7 +459,8 @@ class Query {
                      WHERE ul.linguistic_unit_id = w.linguistic_unit_id \
                      AND ul.level = ? \
                      AND ul.id_user = ? \
-                     AND ul.type = ? ;";
+                     AND ul.type = ? \
+                     GROUP BY ul.position;";
 
         let args = [level_id, user_id, type];
 
@@ -570,6 +565,17 @@ class Query {
             return true;
         }
     
+    }
+
+    log_words_check(level, headword, word1, score1, word2, score2,  word3, score3, user ){
+
+        let sql =   "INSERT INTO synonym_log (level, headword, word1, score1, word2, score2, word3, score3, user, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [level, headword, word1, score1, word2, score2, word3, score3, user];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
     }
 
     update_words_level_score(score, user_id, level_id, type, words_id){
@@ -690,7 +696,7 @@ class Query {
 
     get_choose_words(structureID, headwordText, limit){
         
-        let sql =   "SELECT DISTINCT w.linguistic_unit_id, w.text, c.frequency, cw.collocation_id, c.order_value  \
+        let sql =   "SELECT DISTINCT w.linguistic_unit_id, w.text, c.frequency, cw.collocation_id, c.order_value, cp.priority  \
                     FROM collocation_word as cw                                 \
                     JOIN word as w                                              \
                     JOIN collocation as c                                       \
@@ -728,6 +734,28 @@ class Query {
                         LIMIT ? ;";
 
         let args = [structureID, headwordID1, headwordID2, limit];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );        
+    }
+
+    get_drag_words_single(structureID, headwordID1, limit){
+        
+        let sql =   "   SELECT  w.text, cw.position, c.order_value, w.linguistic_unit_id, c.frequency, cw.collocation_id, w2.text as headword, count(distinct w2.id) as nr_distinct \
+                        FROM collocation c \
+                        INNER JOIN collocation_word cw ON cw.collocation_id = c.id \
+                        INNER JOIN word w ON w.id= cw.word_id \
+                        INNER JOIN collocation_word cw2 ON cw2.collocation_id = c.id \
+                        INNER JOIN word w2 ON w2.id= cw2.word_id \
+                        INNER JOIN structure s ON s.id = c.structure_id \
+                        WHERE s.id = ? \
+                        AND w2.text IN (?) \
+                        AND cw.position!=s.headword_position  \
+                        GROUP BY w.text \
+                        ORDER BY RAND() \
+                        LIMIT ? ;";
+
+        let args = [structureID, headwordID1, limit];
 
         return util.promisify( this.connection.query )
             .call( this.connection, sql, args );        
@@ -836,7 +864,7 @@ class Query {
                         LEFT JOIN word ww ON ww.id = cww.word_id \
                         WHERE cl.id_collocation_level = ? AND cl.active = 1\
                         HAVING c.id IS NOT NULL \
-                        ORDER BY c.order_value ASC;";
+                        ORDER BY c.sailence DESC;";
 
         let args = [collocationLevelID];
 
@@ -931,6 +959,61 @@ class Query {
 
         return util.promisify( this.connection.query )
             .call( this.connection, sql, args );        
+    }
+
+    collocation_log_insert(level_id, level, structure_id, headword, word1, score1, col1, var1, word2, score2, col2, var2, word3, score3, col3, var3, user ){
+
+        let sql =   "INSERT INTO collocation_log_insert (collocation_level_id, level, structure_id, headword, word1, score1, col1, variant1, word2, score2, col2, variant2, word3, score3, col3, variant3, user, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [level_id, level, structure_id, headword, word1, score1, col1, var1, word2, score2, col2, var2, word3, score3, col3, var3, user];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
+    }
+
+    collocation_log_drag(level_id, level, structure_id, word_shown, word_selected, col_id, score, user ){
+
+        let sql =   "INSERT INTO collocation_log_drag (collocation_level_id, level, structure_id, word_shown, word_selected, col, score, user, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [level_id, level, structure_id, word_shown, word_selected, col_id, score, user];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
+    }
+
+    collocation_log_choose(level_id, level, structure_id, headword, word_selected, col_id, score, user, session ){
+
+        let sql =   "INSERT INTO collocation_log_choose (collocation_level_id, level, structure_id, headword, word_selected, col, score, user, session, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [level_id, level, structure_id, headword, word_selected, col_id, score, user, session];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
+    }
+
+    collocation_save_user_choose(collocation_level_id, user, type, choose_position, group, score, word, collocation_id, session ){
+
+        let sql =   "REPLACE INTO collocation_level_user_choose (collocation_level_id, uid, type, choose_position, `group`, score, word, collocation_id, session, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [collocation_level_id, user, type, choose_position, group, score, word, collocation_id, session];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
+    }
+
+    collocation_save_user_choose_order(collocation_level_id, user, type, choose_position, collocation_id, session){
+
+        let sql =   "REPLACE INTO collocation_log_choose_order (collocation_level_id, uid, type, choose_position, collocation_id, session, created) VALUES (?, ?, ?, ?, ?, ?, NOW())";
+
+        let args = [collocation_level_id, user, type, choose_position, collocation_id, session];
+
+        return util.promisify( this.connection.query )
+            .call( this.connection, sql, args );
+
     }
        
 }

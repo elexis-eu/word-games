@@ -1,6 +1,6 @@
 import Query from "./Query";
 import '@babel/polyfill'
-import { createDecipher } from "crypto";
+import { createDecipher, createHash } from "crypto";
 
 class Collocations {
 
@@ -138,6 +138,16 @@ class Collocations {
                                         "bonus_points": this.GameConfig.SOLO_CHOOSE_BONUS * collocation_level_info[0].points_multiplier
                                     };
 
+                    
+                    let hash = createHash('md5').update(JSON.stringify(response) + user + type + Date()).digest('hex');
+                    response["log_session"] = hash;
+
+                    response_buttons.forEach(
+                        async function(item){
+                            await this.query.collocation_save_user_choose(collocation_level_info[0].id_collocation_level, user, type, item['choose_position'], item['group'], item['score'], item['word'], item['collocation_id'], hash);
+                        }.bind(this)
+                    );
+
                 } else if(collocation_level_info[0].game_type_name == 'insert'){
 
                     let words = Array({ "word": collocation_level_info[0].headword1, 
@@ -153,13 +163,20 @@ class Collocations {
                                         "number_of_rounds": this.GameConfig.SOLO_INSERT_NUMBER_OF_WORDS_IN_ONE_CYCLE,
                                         "buttons_number": this.GameConfig.SOLO_INSERT_NUMBER_OF_WORDS_IN_ONE_ROUND,
                                         "scoring": this.MultiplyScoreValues(this.GameConfig.SOLO_INSERT_SCORING, collocation_level_info[0].points_multiplier),
-                                        "max_round_score": (this.GameConfig.SOLO_INSERT_SCORING[0] * 3 + this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION * SOLO_INSERT_BONUS_TOP_POSITION_POINTS) * collocation_level_info[0].points_multiplier,
+                                        "max_round_score": (this.GameConfig.SOLO_INSERT_SCORING[0] * 3 + this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION * this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION_POINTS) * collocation_level_info[0].points_multiplier,
                                         "bonus_points": 0
                                     };
+                    
+                    let hash = createHash('md5').update(JSON.stringify(response) + user + type + Date()).digest('hex');
+                    response["log_session"] = hash;
+                
 
                 } else if(collocation_level_info[0].game_type_name == 'drag'){
 
-                    let dragWords = await this.query.get_drag_words(collocation_level_info[0].id, collocation_level_info[0].headword1, collocation_level_info[0].headword2, this.GameConfig.DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND);
+                    let dragWords = await this.query.get_drag_words_single(collocation_level_info[0].id, collocation_level_info[0].headword1, this.GameConfig.SOLO_DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND_FIRST);
+                    let dragWords2 = await this.query.get_drag_words_single(collocation_level_info[0].id, collocation_level_info[0].headword2, this.GameConfig.SOLO_DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND_SECOND);
+
+                    dragWords = dragWords.concat(dragWords2);
 
                     let position_counter = 1;
 
@@ -175,7 +192,7 @@ class Collocations {
                         var row = dragWords[i];
 
                         if(i == random_word_position){
-                            continue;
+                            //continue;
                         }
 
                         let response_buttons = [];
@@ -184,21 +201,24 @@ class Collocations {
 
                             let word_object1 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[0] * collocation_level_info[0].points_multiplier, 
-                                "word": collocation_level_info[0].headword1
+                                "word": collocation_level_info[0].headword1,
+                                "collocation_id": row.collocation_id
                             };
 
                             response_buttons.push(word_object1);
 
                             let word_object2 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[0] * collocation_level_info[0].points_multiplier, 
-                                "word": collocation_level_info[0].headword2
+                                "word": collocation_level_info[0].headword2,
+                                "collocation_id": row.collocation_id
                             };
 
                             response_buttons.push(word_object2);
 
                             let word_object3 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[2] * collocation_level_info[0].points_multiplier, 
-                                "word": ""
+                                "word": "",
+                                "collocation_id": 0
                             };
 
                             response_buttons.push(word_object3);
@@ -209,14 +229,16 @@ class Collocations {
 
                                 let word_object1 =   {   
                                     "score": this.GameConfig.SOLO_DRAG_SCORING[0] * collocation_level_info[0].points_multiplier, 
-                                    "word": collocation_level_info[0].headword1
+                                    "word": collocation_level_info[0].headword1,
+                                    "collocation_id": row.collocation_id
                                 };
     
                                 response_buttons.push(word_object1);
 
                                 let word_object2 =   {   
                                     "score": this.GameConfig.SOLO_DRAG_SCORING[2] * collocation_level_info[0].points_multiplier, 
-                                    "word": collocation_level_info[0].headword2
+                                    "word": collocation_level_info[0].headword2,
+                                    "collocation_id": 0
                                 };
     
                                 response_buttons.push(word_object2);
@@ -226,14 +248,16 @@ class Collocations {
 
                                 let word_object1 =   {   
                                     "score": this.GameConfig.SOLO_DRAG_SCORING[0] * collocation_level_info[0].points_multiplier, 
-                                    "word": collocation_level_info[0].headword2
+                                    "word": collocation_level_info[0].headword2,
+                                    "collocation_id": row.collocation_id
                                 };
     
                                 response_buttons.push(word_object1);
 
                                 let word_object2 =   {   
                                     "score": this.GameConfig.SOLO_DRAG_SCORING[2] * collocation_level_info[0].points_multiplier, 
-                                    "word": collocation_level_info[0].headword1
+                                    "word": collocation_level_info[0].headword1,
+                                    "collocation_id": 0
                                 };
     
                                 response_buttons.push(word_object2);
@@ -241,7 +265,8 @@ class Collocations {
 
                             let word_object3 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[1] * collocation_level_info[0].points_multiplier, 
-                                "word": ""
+                                "word": "",
+                                "collocation_id": 0
                             };
 
                             response_buttons.push(word_object3);
@@ -266,7 +291,7 @@ class Collocations {
 
                         //let randomWords = await this.query.get_random_words(this.GameConfig.DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND - (position_counter-1));
 
-                        let randomWords = await this.query.get_random_words_structure(collocation_level_info[0].structure_id, this.GameConfig.DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND - (position_counter-1), collocation_level_info[0].headword1, collocation_level_info[0].headword2);
+                        let randomWords = await this.query.get_random_words_structure(collocation_level_info[0].structure_id, this.GameConfig.SOLO_DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND - (position_counter-1), collocation_level_info[0].headword1, collocation_level_info[0].headword2);
 
                         for (var i = 0; i < randomWords.length; i++) {
                             var row = randomWords[i];
@@ -275,21 +300,24 @@ class Collocations {
 
                             let word_object1 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[2] * collocation_level_info[0].points_multiplier, 
-                                "word": collocation_level_info[0].headword1
+                                "word": collocation_level_info[0].headword1,
+                                "collocation_id": 0
                             };
 
                             response_buttons.push(word_object1);
 
                             let word_object2 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[2] * collocation_level_info[0].points_multiplier, 
-                                "word": collocation_level_info[0].headword2
+                                "word": collocation_level_info[0].headword2,
+                                "collocation_id": 0
                             };
 
                             response_buttons.push(word_object2);
 
                             let word_object3 =   {   
                                 "score": this.GameConfig.SOLO_DRAG_SCORING[0] * collocation_level_info[0].points_multiplier, 
-                                "word": ""
+                                "word": "",
+                                "collocation_id": 0
                             };
 
                             response_buttons.push(word_object3);
@@ -309,7 +337,7 @@ class Collocations {
 
                     words = this.shuffle(words);
 
-                    response = {    "words": words,   
+                    response = {        "words": words,   
                                         "game_type": collocation_level_info[0].game_type_name,
                                         "max_select": this.GameConfig.SOLO_INSERT_MAX_SELECT,
                                         "number_of_rounds": this.GameConfig.SOLO_DRAG_NUMBER_OF_WORDS_IN_ONE_CYCLE,
@@ -317,8 +345,12 @@ class Collocations {
                                         "scoring": this.MultiplyScoreValues(this.GameConfig.DRAG_SCORING, collocation_level_info[0].points_multiplier),
                                         "bonus_points": 0,
                                         "bonus_condition": this.GameConfig.SOLO_DRAG_BONUS_CONDITION,
-                                        "bonus_condition_points": this.GameConfig.SOLO_DRAG_BONUS_POINTS
+                                        "bonus_condition_points": this.GameConfig.SOLO_DRAG_BONUS_POINTS,
+                                        "double_points_round": (Math.floor(Math.random() * Math.floor(this.GameConfig.SOLO_DRAG_NUMBER_OF_WORDS_IN_ONE_ROUND) + 1))
                                     };
+
+                    let hash = createHash('md5').update(JSON.stringify(response) + user + type + Date()).digest('hex');
+                    response["log_session"] = hash;
 
                 } else {
                     throw new Error("Unknown game type!");
@@ -400,6 +432,42 @@ class Collocations {
         
     }
 
+    async LogDrag(level_id, uid, body){
+        try{
+
+            let collocation_level_info = await this.query.get_defined_collocation_byid(level_id);
+
+            await this.query.collocation_log_drag(collocation_level_info[0].id_collocation_level, collocation_level_info[0].level, collocation_level_info[0].structure_id, body.word_shown, body.word_selected, body.collocation_id, body.score, uid);
+
+            //console.log(body.word_shown);
+            //console.log(body.word_selected);
+
+            return {"message": "OK"};
+
+        } catch(e){
+            throw e;
+        }
+        
+    }
+
+    async LogChoose(level_id, uid, body){
+        try{
+
+            let collocation_level_info = await this.query.get_defined_collocation_byid(level_id);
+
+            await this.query.collocation_log_choose(collocation_level_info[0].id_collocation_level, collocation_level_info[0].level, collocation_level_info[0].structure_id, collocation_level_info[0].headword1, body.word_selected, body.collocation_id, body.score, uid, body.log_session);
+
+            //console.log(body.word_shown);
+            //console.log(body.word_selected);
+
+            return {"message": "OK"};
+
+        } catch(e){
+            throw e;
+        }
+        
+    }
+
     async GetCampaignLevel(user){
         try{
             let maxLevel = 1;
@@ -431,6 +499,14 @@ class Collocations {
             let score2 = 0;
             let score3 = 0;
 
+            let col1 = 0;
+            let col2 = 0;
+            let col3 = 0;
+
+            let variant1 = 0;
+            let variant2 = 0;
+            let variant3 = 0;
+
             let words = await this.query.get_collocation_words(body.collocationLevelID);
 
             let collocation_level_info = await this.query.get_defined_collocation_byid(body.collocationLevelID);
@@ -443,11 +519,14 @@ class Collocations {
                     //console.log(row);
 
                     if(row.text == body.word1Text.toLowerCase()){
-                        score1 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                        score1 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                        col1 = row.id;
                     } else if(row.text == body.word2Text.toLowerCase()){
-                        score2 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                        score2 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                        col2 = row.id;
                     } else if(row.text == body.word3Text.toLowerCase()){
-                        score3 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                        score3 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                        col3 = row.id;
                     } else {
 
                     }
@@ -457,15 +536,21 @@ class Collocations {
                         //console.log(row.variants);
 
                         if((row.variants.substr(0, body.word1Text.length) == body.word1Text.toLowerCase() || row.variants.indexOf("/"+body.word1Text.toLowerCase()) != -1) && score1 == 0){
-                            score1 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                            score1 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                            col1 = row.id;
+                            variant1 = true;
                         } 
                         
                         if((row.variants.substr(0, body.word2Text.length) == body.word2Text.toLowerCase() || row.variants.indexOf("/"+body.word2Text.toLowerCase()) != -1) && score2 == 0){
-                            score2 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                            score2 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                            col2 = row.id;
+                            variant2 = true;
                         } 
                         
                         if((row.variants.substr(0, body.word3Text.length) == body.word3Text.toLowerCase() || row.variants.indexOf("/"+body.word3Text.toLowerCase()) != -1) && score3 == 0){
-                            score3 = this.GetInputScore(row.order_value, i) * collocation_level_info[0].points_multiplier;
+                            score3 = this.GetInputScore(words.length, i) * collocation_level_info[0].points_multiplier;
+                            col3 = row.id;
+                            variant3 = true;
                         }
                     }
 
@@ -485,6 +570,12 @@ class Collocations {
                     let updateResult = await this.query.update_collocations_campaign_score(resultLevels[0].sum_score, user);
                 }
             }
+            
+            try{
+                await this.query.collocation_log_insert(collocation_level_info[0].id_collocation_level, collocation_level_info[0].level, collocation_level_info[0].structure_id, collocation_level_info[0].headword1, body.word1Text, score1, col1, variant1, body.word2Text, score2, col2, variant2, body.word3Text, score3, col3, variant3, user);
+            } catch(e){
+
+            }
 
             return {score1: score1, score2: score2, score3: score3};        
 
@@ -495,19 +586,35 @@ class Collocations {
         
     }
 
-    GetInputScore(value, i){
+    GetInputScore(count_words, i){
         let score = 0;
+        let value = 0;
 
-        if (value <= 0.25)
-            score = this.GameConfig.SOLO_INSERT_SCORING[0];
-        else if (value <= 0.40)
-            score = this.GameConfig.SOLO_INSERT_SCORING[1];
-        else if (value <= 0.55)
-            score = this.GameConfig.SOLO_INSERT_SCORING[2];
-        else
-            score = this.GameConfig.SOLO_INSERT_SCORING[3];
+        value = i/count_words;
 
-        if(i <= this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION){
+        if(count_words > 30){
+
+            if (value <= 0.10)
+                score = this.GameConfig.SOLO_INSERT_SCORING[0];
+            else if (value <= 0.30)
+                score = this.GameConfig.SOLO_INSERT_SCORING[1];
+            else if (value <= 0.55)
+                score = this.GameConfig.SOLO_INSERT_SCORING[2];
+            else
+                score = this.GameConfig.SOLO_INSERT_SCORING[3];
+
+        } else {
+            if (i+1 <= 3)
+                score = this.GameConfig.SOLO_INSERT_SCORING[0];
+            else if (i+1 <= 6)
+                score = this.GameConfig.SOLO_INSERT_SCORING[1];
+            else if (i+1 <= 10)
+                score = this.GameConfig.SOLO_INSERT_SCORING[2];
+            else
+                score = this.GameConfig.SOLO_INSERT_SCORING[3];
+        }
+
+        if(i+1 <= this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION){
             score += this.GameConfig.SOLO_INSERT_BONUS_TOP_POSITION_POINTS;
         }
         
@@ -520,6 +627,14 @@ class Collocations {
             console.log(body);
 
             await this.query.update_collocations_level_score(body.score, user, type, body.collocationLevelID);
+
+            if(body.order){
+                body.order.forEach(
+                    async function(item){
+                        await this.query.collocation_save_user_choose_order( body.collocationLevelID, user, type, item['position'], item['collocation_id'], body.log_session);
+                    }.bind(this)
+                );
+            }
 
             if(type == 'campaign'){
 
@@ -548,7 +663,7 @@ class Collocations {
             let mainScoreSet = await this.query.get_collocation_campaign_score_position(user);        
 
             if(mainScoreSet.length == 1){
-                mainScore = mainScoreSet[0].campaign_score;
+                mainScore = mainScoreSet[0].col_solo_score;
                 mainPosition = mainScoreSet[0].rank_position;
             }
 

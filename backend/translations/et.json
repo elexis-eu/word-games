@@ -2,183 +2,183 @@
     "strings" : [
         {
             "key" : "INTRO_TITLE",
-            "value":  "Game of words"
+            "value":  "Sõnamäng"
         },
         {
             "key" : "INTRO_TITLE_INFO",
-            "value":  "© Jožef Stefan Institute"
+            "value":  "Eesti Keele Instituut"
         },
         {
             "key" : "INTRO_LOGIN",
-            "value":  "Login"
+            "value":  "Logi sisse"
         },        
         {
             "key" : "INTRO_PLAY_AS_GUEST",
-            "value":  "Play as guest"
+            "value":  "Mängi külalisena"
         },
         {
             "key" : "MODE_COLLOCATIONS",
-            "value":  "Collocations"
+            "value":  "Naabersõnad"
         },
         {
             "key" : "MODE_COL_INFO",
-            "value":  "Words that often go together"
+            "value":  "Sõnad, mis sageli koos esinevad"
         },        
         {
             "key" : "MODE_SYNONYMS",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "MODE_SYNONYMS_INFO",
-            "value":  "Words with similar meaning"
+            "value":  "Sõnad, millel on sarnane tähendus"
         },
         {
             "key" : "MODE_SYNONYMS_SOLO",
-            "value":  "Solo"
+            "value":  "Üksimäng"
         }, 
         {
             "key" : "MODE_SYNONYMS_SOLO_INFO",
-            "value":  "Play alone"
+            "value":  "Mängi üksi"
         },
         {
             "key" : "MODE_SYNONYMS_MULTI",
-            "value":  "Multiplayer"
+            "value":  "Mitmikmäng"
         }, 
         {
             "key" : "MODE_SYNONYMS_MULTI_INFO",
-            "value":  "Play against others"
+            "value":  "Mängi teiste vastu"
         },
         {
             "key" : "MODE_COLLOCATIONS_SOLO",
-            "value":  "Solo"
+            "value":  "Üksimäng"
         }, 
         {
             "key" : "MODE_COLLOCATIONS_SOLO_INFO",
-            "value":  "Play alone"
+            "value":  "Mängi üksi"
         },
         {
             "key" : "MODE_COLLOCATIONS_MULTI",
-            "value":  "Multiplayer"
+            "value":  "Mitmikmäng"
         }, 
         {
             "key" : "MODE_COLLOCATIONS_MULTI_INFO",
-            "value":  "Play against others"
+            "value":  "Mängi teiste vastu"
         },
         {
             "key" : "REGISTRATION_TITLE",
-            "value":  "Registration"
+            "value":  "Registreeri"
         },
         {
             "key" : "REGISTRATION_NICKNAME",
-            "value":  "Nickname"
+            "value":  "Hüüdnimi"
         },
         {
             "key" : "REGISTRATION_NICKNAME_TAKEN",
-            "value":  "Nickname taken!"
+            "value":  "Hüüdnimi on juba võetud!"
         },
         {
             "key" : "REGISTRATION_NATIVE_LANGUAGE",
-            "value":  "Native language"
+            "value":  "Emakeel"
         },
         {
             "key" : "REGISTRATION_LANG_SLO",
-            "value":  "English"
+            "value":  "eesti"
         },
         {
             "key" : "REGISTRATION_AGE",
-            "value":  "Age"
+            "value":  "Vanus"
         },
         {
             "key" : "REGISTRATION_PRIVACY_POLICY_BUTTON",
-            "value":  "Privacy policy"
+            "value":  "Privaatsuspoliitika"
         },
         {
             "key" : "REGISTRATION_REGISTER_BUTTON",
-            "value":  "Register"
+            "value":  "Registreeri"
         },
         {
             "key" : "REGISTRATION_NOTICE",
-            "value":  "By pressing the button <color=blue>“Register”</color> I confirm that I read the information about the project and that I agree with the terms of use."
+            "value":  "Vajutades nuppu <color=blue>“Registreeri”</color> kinnitan, et olen lugenud infot projekti kohta ning nõustun kasutustingimustega."
         },
         {
             "key" : "COL_SELECT_MODE_CHOOSE",
-            "value":  "Choose"
+            "value":  "Vali"
         },
         {
             "key" : "COL_SELECT_MODE_DRAG",
-            "value":  "Drag"
+            "value":  "Lohista"
         },
         {
             "key" : "COL_SELECT_MODE_INSERT",
-            "value":  "Type"
+            "value":  "Trüki"
         },
         {
             "key" : "COL_SELECT_MODE_THEMATIC",
-            "value":  "Thematic"
+            "value":  "Temaatiline"
         },
         {
             "key" : "COL_SELECT_MODE_SYNONYMS",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "THEMATIC_INFO_EMAIL",
-            "value":  "E-mail"
+            "value":  "E-post"
         },
         {
             "key" : "THEMATIC_INFO_EMAIL_HELPER",
-            "value":  "E-mail"
+            "value":  "E-post"
         },
         {
             "key" : "THEMATIC_INFO_INVALID_EMAIL",
-            "value":  "Invalid e-mail!"
+            "value":  "Kehtetu e-post!"
         },
         {
             "key" : "THEMATIC_INFO_DETAILS",
-            "value":  "Best players in thematic mode get an <color=blue>award</color>. We need your <color=blue>e-mail</color> as you may be one of them."
+            "value":  "Temaatilise mängu parimad saavad <color=blue>auhinna</color>. Meil on vaja sinu <color=blue>e-posti aadressi</color>, kuna selleks võid olla just sina!"
         },
         {
             "key" : "THEMATIC_INFO_SEND_BUTTON",
-            "value":  "Send"
+            "value":  "Saada"
         },
         {
             "key" : "SYNONYM_SOLO_TITLE",
-            "value":  "Select level"
+            "value":  "Vali tase"
         },
         {
             "key" : "SYNONYM_SOLO_CAMPAIGN_LOADING",
-            "value":  "Checking level..."
+            "value":  "Kontrollin taset..."
         },
         {
             "key" : "SYNONYM_SOLO_CAMPAIGN",
-            "value":  "Level {{LEVEL}}"
+            "value":  "Tase {{LEVEL}}"
         },
         {
             "key" : "SYNONYM_SOLO_CAMPAIGN_INFO",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "SYNONYM_SOLO_PRACTICE",
-            "value":  "Practice"
+            "value":  "Harjuta"
         },
         {
             "key" : "SYNONYM_SOLO_PRACTICE_INFO",
-            "value":  "Choose level"
+            "value":  "Vali tase"
         },
         {
             "key" : "SYNONYM_SOLO_PICK_LEVEL_INFO",
-            "value":  "All levels: 500"
+            "value":  "Tasemeid kokku: 500"
         },
         {
             "key" : "SYNONYM_SOLO_PICK_LEVEL_HELPER",
-            "value":  "Level {{LEVEL}} selected!"
+            "value":  "Tase {{LEVEL}} valitud!"
         },
         {
             "key" : "SYNONYM_SOLO_PICK_LEVEL_PLAY_BUTTON",
-            "value":  "Play!"
+            "value":  "Mängi!"
         },
         {
             "key" : "SYNONYM_SOLO_LEVEL_FILLER",
-            "value":  "Level {{LEVEL}}"
+            "value":  "Tase {{LEVEL}}"
         },
         {
             "key" : "SYNONYM_SOLO_WORD_FILLER",
@@ -186,627 +186,603 @@
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_HEADWORD",
-            "value":  "Headword"
+            "value":  "Märksõna"
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_HELPER_TEXT",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_CHECK_BUTTON",
-            "value":  "Check"
+            "value":  "Kontrolli"
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_FORWARD_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT",
-            "value":  "Did you think of {{WORD}} ?"
+            "value":  "Kas sa mõtlesid sõna {{WORD}} ?"
         },
         {
             "key" : "SYNONYM_SOLO_INPUT_SUGGESTION_TEXT_2_STARS",
-            "value":  "Very good! Did you think of {{WORD}} ?"
+            "value":  "Väga tubli! Kas sa mõtlesid sõna {{WORD}} ?"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_INFO",
-            "value":  "YOUR SCORE"
+            "value":  "SINU PUNKTID"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_SUM_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_TYPE_HELPER_TEXT",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_SUM_HELPER_TEXT",
-            "value":  "TOTAL"
+            "value":  "KOKKU"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_MAIN_SCORE",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_MAIN_POSITION",
-            "value":  "{{POSITION}}. place"
+            "value":  "{{POSITION}}. koht"
         },
         {
             "key" : "SYNONYM_SOLO_SCORE_FORWARD_BUTTON",
-            "value":  "Forward"
+            "value":  "Edasi"
         },
         {
             "key" : "SYNONYM_SOLO_ROOM_PICKER_TITLE",
-            "value":  "Words"
+            "value":  "Sõnad"
         },
         {
             "key" : "SYNONYM_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
-            "value":  "End level"
+            "value":  "Viimane tase"
         },
         {
             "key" : "SYNONYM_SOLO_ROOM_PICKER_FORWARD_BUTTON",
-            "value":  "Forward"
+            "value":  "Edasi"
         },
         {
             "key" : "SYNONYM_SOLO_SCOREBOARD_TITLE",
-            "value":  "Scoreboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "SYNONYM_SOLO_SCOREBOARD_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "OPTIONS_TITLE",
-            "value":  "Menu"
+            "value":  "Menüü"
         },
         {
             "key" : "OPTIONS_ABOUT_TITLE",
-            "value":  "About"
+            "value":  "Mängust"
         },
         {
             "key" : "OPTIONS_ABOUT_SUMMARY",
-            "value":  "Game of words is part of the activities at the <b>Jožef Stefan Institute</b>, Ljubljana, and in particular the ELEXIS project, aimed at developing European lexicographic infrastructure. Project activities include the development of language games, which are used for two purposes: a) to involve the general public in the dictionary-making process through crowdsourcing methods, and b) to demonstrate language learning potential of lexicographic data. Game of words is thus designed in a way that the decisions of the players are <b>used for further development</b> of various language resources and dictionaries, which can be openly used by the entire language community. Your participation is therefore very useful, we are also trying to make it fun and pleasant. Your feedback is welcome!\n\nThis project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 731015."
+            "value":  "Sõnamäng on osa Ljubljanas asuva <b>Jožef Stefani Instituudi</b> tegevustest ning ka osa ELEXISe projektist, mille eesmärk on arendada Euroopa leksikograafilist taristut. Projekti tegevused hõlmavad muuhulgas keelemängude arendamist, mida saab kasutada kahel eesmärgil: a) kaasata rahvahanke meetodil üldsust sõnastiku koostamise protsessi ja b) näidata, et leksikograafilisi andmeid saab kasutada keeleõppes. Seepärast on sõnamäng üles ehitatud nii, et mängijate otsuste najal saab <b>edasi arendada</b> erinevaid keeleressursse ja sõnastikke, mida lõpuks saab terve keelekogukond tasuta kasutada. Sinu osalus on seega väga meile väga vajalik, ning meie püüame sinu osalemise omakorda teha lõbusaks ja meeldivaks. Tagasiside on väga oodatud!\n\n Seda projekti on rahastanud Horisont 2020 programmi projekt 731015 \"European Lexicographic Infrastructure\"."
         },
         {
             "key" : "OPTIONS_LOGIN_BUTTON",
-            "value":  "Login"
+            "value":  "Logi sisse"
         },
         {
             "key" : "OPTIONS_LOGED_BUTTON",
-            "value":  "User {{USER}}"
+            "value":  "Kasutaja {{USER}}"
         },
         {
             "key" : "OPTIONS_LOGOUT_BUTTON",
-            "value":  "Logout {{USER}}"
+            "value":  "Logi välja {{USER}}"
         },
         {
             "key" : "OPTIONS_POLICY_BUTTON",
-            "value":  "Game of words: Legal"
+            "value":  "Sõnamäng: Seaduslik"
         },
         {
             "key" : "OPTIONS_UNITY_POLICY_BUTTON",
-            "value":  "Unity: Legal"
+            "value":  "Unity: Seaduslik"
         },
         {
             "key" : "OPTIONS_COLLOCATIONS_BUTTON",
-            "value":  "Collocations"
+            "value":  "Naabersõnad"
         },
         {
             "key" : "OPTIONS_SYNONYMS_BUTTON",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "OPTIONS_EMAIL_BUTTON",
-            "value":  "E-mail"
+            "value":  "E-post"
         },
         {
             "key" : "OPTIONS_RULES_COLLOCATION_TITLE",
-            "value":  "Collocations"
+            "value":  "Naabersõnad"
         },
         {
             "key" : "OPTIONS_RULES_COLLOCATION_SUMMARY",
-            "value":  "<size=50><b><color=red>How to play</color></b></size>\nThis mode tests your knowledge of words that often go together or are likely to occur with each other. Linguists call them <b>collocations</b>. After being presented with a word (a noun, an adjective, a verb or an adverb), the player needs to guess a word that is most typically found with it – either before or after it. There are three different types of games used: \n<b>Choose</b>\nYou need to choose three most typical/best collocations from nine given candidates (three groups of three), and then arrange the selected three words according from the most to the least typical.\n<b>Type</b>\nYou need to complete word-phrases, e.g. provide three nouns that typically follow a certain adjective.\n<b>Drag</b>\nYou need to drag the given words to one of the two headwords, or throw them in the bin, in the case the word does not go with any of the headwords provided."
+            "value":  "<size=50><b><color=red>Kuidas mängida</color></b></size>\nSee mäng testib sinu teadmisi sõnadest, mis suure tõenäosusega sageli koos esinevad. Keeleteadlased kutsuvad neid <b>kollokatsioonideks ehk naabersõnadeks</b>. Pärast seda, kui mängijale esitatakse märksõna (nimisõna, omadussõna, tegusõna või määrsõna), peab ta ära arvama, missugune teine sõna selle märksõnaga tüüpiliselt koos esineb – kas siis enne või pärast märksõna. Sõnamängus on kasutatud kolme erinevat mängurežiimi: \n<b>Vali</b>\nSa pead valima kolm kõige tüüpilisemat/paremat naabersõna üheksa pakutud kandidaadi seast (need esitatakse kolmeste gruppidena), ning seejärel need kolm välja valitud sõna järjestama kõige tüüpilisemast kõige vähemtüüpiliseks.\n<b>Trüki</b>\nSa pead lõpetama sõnapaari (fraasi), nt pakkuma kolm nimisõna, mis tüüpiliselt teatud omadussõnale järgnevad.\n<b>Lohista</b>\nSulle on korraga antud kaks märksõna ja sa pead lohistama pakutud sõna emma-kumma märksõna juurde; või viskama pakutud sõna prügikasti, kui see kummagi märksõnaga kokku ei sobi."
         },
         {
             "key" : "OPTIONS_RULES_COLLOCATION_ABOUT_PROJECT",
-            "value":  "About the project"
+            "value":  "Projektist"
         },
         {
             "key" : "OPTIONS_RULES_SYNONYMS_TITLE",
-            "value":  "Synonyms"
+            "value":  "Sünonüümid"
         },
         {
             "key" : "OPTIONS_RULES_SYNONYMS_SUMMARY",
-            "value":  "<b><size=50><color=red>Coming soon</color></size></b>\n\nAt the moment, this mode is only available for Slovenian."
+            "value":  "<b><size=50><color=red>Tulekul</color></size></b>\n\nPraegu on see mängurežiim saadaval vaid sloveeni keele jaoks."
         },        
         {
             "key" : "COLLOCATION_SOLO_TITLE",
-            "value":  "Select level"
+            "value":  "Vali tase"
         },
         {
             "key" : "COLLOCATION_SOLO_CAMPAIGN_LOADING",
-            "value":  "Checking level"
+            "value":  "Kontrollin taset"
         },
         {
             "key" : "COLLOCATION_SOLO_CAMPAIGN",
-            "value":  "Level {{LEVEL}}"
+            "value":  "Tase {{LEVEL}}"
         },
         {
             "key" : "COLLOCATION_SOLO_CAMPAIGN_INFO",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_SOLO_PRACTICE",
-            "value":  "Practice"
+            "value":  "Harjuta"
         },
         {
             "key" : "COLLOCATION_SOLO_PRACTICE_INFO",
-            "value":  "Select level"
+            "value":  "Vali tase"
         },
         {
             "key" : "COLLOCATION_SOLO_PICK_LEVEL_INFO",
-            "value":  "All levels: 500"
+            "value":  "Tasemeid kokku: 500"
         },
         {
             "key" : "COLLOCATION_SOLO_PICK_LEVEL_HELPER",
-            "value":  "Level {{LEVEL}} picked!"
+            "value":  "Tase {{LEVEL}} valitud!"
         },
         {
             "key" : "COLLOCATION_SOLO_PICK_LEVEL_PLAY_BUTTON",
-            "value":  "Play!"
+            "value":  "Mängi!"
         },
         {
             "key" : "COLLOCATION_SOLO_LEVEL_FILLER",
-            "value":  "Level {{LEVEL}}"
+            "value":  "Tase {{LEVEL}}"
         },
         {
             "key" : "COLLOCATION_SOLO_WORD_FILLER",
-            "value":  "Loading..."
+            "value":  "Laen..."
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_TITLE",
-            "value":  "Words"
+            "value":  "Sõnad"
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_CHOOSE",
-            "value":  "CHOOSE"
+            "value":  "VALI"
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_INSERT",
-            "value":  "TYPE"
+            "value":  "TRÜKI"
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_GAME_TYPE_DRAG",
-            "value":  "DRAG"
+            "value":  "LOHISTA"
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_END_LEVEL_BUTTON",
-            "value":  "End level"
+            "value":  "Lõpeta tase"
         },
         {
             "key" : "COLLOCATION_SOLO_ROOM_PICKER_FORWARD_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_SOLO_SCOREBOARD_TITLE",
-            "value":  "Scoreboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "COLLOCATION_SOLO_SCOREBOARD_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_WORD1",
-            "value":  "Word 1"
+            "value":  "Sõna 1"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_WORD2",
-            "value":  "Word 2"
+            "value":  "Sõna 2"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_WORD3",
-            "value":  "Word 3"
+            "value":  "Sõna 3"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_END_BUTTON",
-            "value":  "Submit"
+            "value":  "Esita"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_SCORE_HELPER",
-            "value":  "ANSWERS"
+            "value":  "VASTUSED"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_INSERT_SCORE_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_FIRST",
-            "value":  "1. place"
+            "value":  "1. koht"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_SECOND",
-            "value":  "2. place"
+            "value":  "2. koht"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_HELPER_THIRD",
-            "value":  "3. place"
+            "value":  "3. koht"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_OK_TEXT",
-            "value":  "Satisfied?"
+            "value":  "Oled rahul?"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_TIP_TEXT",
-            "value":  "Please check the ranking again and correct it if necessary."
+            "value":  "Palun kontrolli järjestust uuesti ja vajadusel paranda."
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_HELPER",
-            "value":  "INSTRUCTIONS"
+            "value":  "JUHISED"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_TITLE",
-            "value":  "Rank"
+            "value":  "Järjesta"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_SUMMARY",
-            "value":  "Rank the selected 3 words from 1. to 3. place, most typical word comes first.\n"
+            "value":  "Järjesta valitud kolm sõna 1. kohast 3. kohani, kõige tüüpilisem sõna pane esimeseks.\n"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
-            "value":  "Rank"
+            "value":  "Järjesta"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_HELPER",
-            "value":  "ANSWERS"
+            "value":  "VASTUSED"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
-            "value":  "RANKING"
+            "value":  "JÄRJESTUS"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
-            "value":  "Correct ranking!"
+            "value":  "Õige järjestus!"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_WRONG_ORDER_TEXT",
-            "value":  "Wrong ranking!"
+            "value":  "Vale järjestus!"
         },
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },        
         {
             "key" : "COLLOCATION_SOLO_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_SOLO_DRAG_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_DRAG_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_SOLO_DRAG_SCORE_HELPER",
-            "value":  "DRAG"
+            "value":  "LOHISTA"
         },
         {
             "key" : "COLLOCATION_SOLO_DRAG_SCORE_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_TITLE",
-            "value":  "Game type:"
+            "value":  "Mängu tüüp:"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_CHOOSE_BUTTON",
-            "value":  "CHOOSE"
+            "value":  "VALI"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_INSERT_BUTTON",
-            "value":  "TYPE"
+            "value":  "TRÜKI"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_DRAG_BUTTON",
-            "value":  "DRAG"
+            "value":  "LOHISTA"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_ALL_BUTTON",
-            "value":  "ALL"
+            "value":  "KÕIK"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADERBOARD_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_COMPETITIVE_TITLE",
-            "value":  "Competition leaderboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_LEADEBOARD_MENU_THEMATIC_TITLE",
-            "value":  "Thematic leaderboard"
+            "value":  "Temaatiline edetabel"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_THEMATIC_LEADERBOARD_TITLE",
-            "value":  "Theme: "
+            "value":  "Teema: "
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD1",
-            "value":  "Word 1"
+            "value":  "Sõna 1"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD2",
-            "value":  "Word 2"
+            "value":  "Sõna 2"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_HELPER_WORD3",
-            "value":  "Word 3"
+            "value":  "Sõna 3"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_INPUT_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_HELPER",
-            "value":  "ANSWERS"
+            "value":  "VASTUSED"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },          
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_SCORE_END_BUTTON",
-            "value":  "End"
+            "value":  "Lõpp"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_LEADERBOARD_TITLE",
-            "value":  "Leaderboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_TILL_NEXT_GAME",
-            "value":  "NEXT GAME IN:"
+            "value":  "JÄRGMINE MÄNG:"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_HELPER",
-            "value":  "Instructions"
+            "value":  "Juhendid"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_TITLE",
-            "value":  "INSERT"
+            "value":  "SISESTA"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_GAME_SUMMARY",
-            "value":  "Type 3 words that usually go together with the headword."
+            "value":  "Trüki kolm sõna, mis tavaliselt selle märksõnaga koos esinevad."
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_INSERT_WAIT_PLAY_BUTTON",
-            "value":  "Play"
+            "value":  "Mängi"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_HELPER",
-            "value":  "ANSWERS"
+            "value":  "VASTUSED"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },          
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_SCORE_END_BUTTON",
-            "value":  "End"
+            "value":  "Lõpp"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_LEADERBOARD_TITLE",
-            "value":  "Leaderboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_TILL_NEXT_GAME",
-            "value":  "NEXT GAME IN:"
+            "value":  "JÄRGMINE MÄNG:"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_HELPER",
-            "value":  "Instructions"
+            "value":  "Juhendid"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_TITLE",
-            "value":  "DRAG"
+            "value":  "LOHISTA"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_GAME_SUMMARY",
-            "value":  "Drag words to the correct headword. Some of the words do not belong to any of the headwords, drag them in the bin."
+            "value":  "Lohista sõnad õige märksõna juurde. Mõned sõnad ei kuulu ühegi märksõna juurde, need lohista prügikasti."
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_DRAG_WAIT_PLAY_BUTTON",
-            "value":  "Play"
+            "value":  "Mängi"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_FIRST",
-            "value":  "1. place"
+            "value":  "1. koht"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_SECOND",
-            "value":  "2. place"
+            "value":  "2. koht"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_HELPER_THIRD",
-            "value":  "3. place"
+            "value":  "3. koht"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_OK_TEXT",
-            "value":  "Satisfied?"
+            "value":  "Oled rahul?"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_TIP_TEXT",
-            "value":  "Please check the ranking again and correct it if necessary."
+            "value":  "Palun kontrolli järjekorda uuesti ja vajadusel paranda."
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_HELPER",
-            "value":  "INSTRUCTIONS"
+            "value":  "JUHISED"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_TITLE",
-            "value":  "Rank"
+            "value":  "Järjesta"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_SUMMARY",
-            "value":  "Rank the selected 3 words from 1. to 3. place, most typical word comes first.\n"
+            "value":  "Järjesta valitud kolm sõna 1. kohast 3. kohani, kõige tüüpilisem sõna pane esimeseks.\n"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_CLASSIFY_INFO_CONTINUE_BUTTON",
-            "value":  "Rank"
+            "value":  "Järjesta"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_TITLE",
-            "value":  "SCORE"
+            "value":  "TULEMUS"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_HELPER",
-            "value":  "ANSWERS"
+            "value":  "VASTUSED"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_POINTS_MAX",
-            "value":  "{{POINTS}}/{{MAXPOINTS}} points"
+            "value":  "{{POINTS}}/{{MAXPOINTS}} punkti"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_END_BUTTON",
-            "value":  "End"
+            "value":  "Lõpp"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_HELPER",
-            "value":  "RANKING"
+            "value":  "JÄRJESTUS"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_TEXT",
-            "value":  "Correct ranking!"
+            "value":  "Õige järjestus!"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_WRONG_ORDER_TEXT",
-            "value":  "Wrong ranking!"
+            "value":  "Vale järjestus!"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_POINTS",
-            "value":  "{{POINTS}} points"
+            "value":  "{{POINTS}} punkti"
         },        
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_SCORE_CORRECT_ORDER_CONTINUE_BUTTON",
-            "value":  "Continue"
+            "value":  "Jätka"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_LEADERBOARD_TITLE",
-            "value":  "Leaderboard"
+            "value":  "Edetabel"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_TILL_NEXT_GAME",
-            "value":  "NEXT GAME IN:"
+            "value":  "JÄRGMINE MÄNG:"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_HELPER",
-            "value":  "Instructions"
+            "value":  "Juhendid"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_TITLE",
-            "value":  "DRAG"
+            "value":  "LOHISTA"
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_GAME_SUMMARY",
-            "value":  "Out of 3 words, choose the one that is most typically found with the headoword. In the end, rank your selected words."
+            "value":  "Vali kolme sõna seast üks, mis kõige tüüpilisemalt selle märksõnaga koos esineb. Lõpus reasta valitud sõnad järjekorda."
         },
         {
             "key" : "COLLOCATION_MULTIPLAYER_CHOOSE_WAIT_PLAY_BUTTON",
-            "value":  "Play"
-        },
-        {
-            "key" : "COLLOCATION_SOLO_CHOOSE_SHOW_GAME_TYPE",
-            "value":  "Choose"
-        },
-        {
-            "key" : "COLLOCATION_SOLO_DRAG_SHOW_GAME_TYPE",
-            "value":  "Drag"
-        },
-        {
-            "key" : "COLLOCATION_SOLO_INSERT_SHOW_GAME_TYPE",
-            "value":  "Insert"
-        },        
-        {
-            "key" : "COLLOCATION_SOLO_DOUBLE_POINTS_MAIN_TEXT",
-            "value":  "Bonus game"
-        },        
-        {
-            "key" : "COLLOCATION_SOLO_DOUBLE_POINTS_HELPER_TEXT",
-            "value":  "Double points!"
-        },        
-        {
-            "key" : "COLLOCATION_SOLO_DRAG_SCORE_IN_ROW_BONUS",
-            "value":  "5 Words in a Row"
-        } 
+            "value":  "Mängi"
+        }
     ]
 }
