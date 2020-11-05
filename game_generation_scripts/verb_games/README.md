@@ -1,6 +1,6 @@
 A Python3 script used to generate verb game levels.
 
-The script reads verb pairs from a file, passed to the script as an argument.
+The script reads verb pairs from a file (in the format output by analyse_csv.py), passed to the script as an argument.
 
 It filters out pairs with verbs, where both verbs have overlay ratios of over 0.5.
 An overlay ratio of a verb is calculated by dividing the number of combined collocates of the pair by the number of collocates of the first verb.
