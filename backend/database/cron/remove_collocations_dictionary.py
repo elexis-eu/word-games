@@ -57,19 +57,19 @@ try:
 
             if existing_collocation is not None:
                 word_sql = "DELETE FROM  collocation_word  WHERE collocation_id = %s"
-                word_val = (row[0])
+                word_val = (row[0],)
                 mycursor.execute(word_sql, word_val)
 
                 word_sql = "DELETE FROM collocation_priority WHERE collocation_id = %s"
-                word_val = (row[0])
+                word_val = (row[0],)
                 mycursor.execute(word_sql, word_val)
 
                 word_sql = "DELETE FROM collocation_priority WHERE collocation_id = %s"
-                word_val = (row[0])
+                word_val = (row[0],)
                 mycursor.execute(word_sql, word_val)
 
                 word_sql = "DELETE FROM collocation WHERE id = %s"
-                word_val = (row[0])
+                word_val = (row[0],)
                 mycursor.execute(word_sql, word_val)
 
                 mycursor.execute("UPDATE admin_imports SET task_done = task_done + 1 WHERE id = '" + str(new_import['id']) + "'")
