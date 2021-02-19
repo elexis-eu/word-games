@@ -59,7 +59,7 @@ def disable_previous_level(level, position):
 def insert_level_headword(level, game_type, structure_id, headword1, headword2, position, points_multiplier):
 
         s_sql = "INSERT INTO collocation_level (level, game_type, structure_id, headword1, headword2, position, points_multiplier, active) VALUES (%s, %s, %s, %s, %s, %s, %s, 1)"
-        s_val = (level, game_type, structure_id, headword1, headword2, position)
+        s_val = (level, game_type, structure_id, headword1, headword2, position, points_multiplier)
         mycursor.execute(s_sql, s_val)
 
         mydb.commit()
