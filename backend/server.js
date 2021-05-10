@@ -93,6 +93,31 @@ function authentication(user_token) {
     });
 }
 
+var mcache = require('memory-cache');
+
+var cache = (duration) => {
+    return (req, res, next) => {
+      let key = '__express__' + req.originalUrl || req.url
+      let cachedBody = mcache.get(key)
+      if (cachedBody) {
+        res.send(cachedBody)
+        return
+      } else {
+
+        res.sendResponse = res.send
+        res.send = (body) => {
+            if(res.statusCode == 200){
+                mcache.put(key, body, duration * 1000);
+            }
+
+            res.sendResponse(body)
+        }
+
+        next()
+      }
+    }
+  }
+
 var router = express.Router();
 //route to handle user registration
 app.post('/api/v1/register', async function(req, res) {
@@ -556,7 +581,7 @@ app.get('/api/v1/game/modes', async function(req, res) {
     }
 });
 
-app.get('/api/v1/language', async function(req, res) {
+app.get('/api/v1/language', cache(10), async function(req, res) {
     let code = req.query.code;
 
     try{
@@ -567,6 +592,24 @@ app.get('/api/v1/language', async function(req, res) {
         res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
     }
 });
+
+/*
+//ASYNC READ LANGUAGE FILE
+app.get('/api/v1/language', cache(10), async function(req, res) {
+    let code = req.query.code;
+
+    try{
+        fs.readFile("translations/"+code+'.json', 'utf8', function(err, data){
+            if(err) throw err;
+        
+            let response = JSON.parse(data);
+            res.send(JSON.stringify(response));
+        });
+
+    } catch(e){
+        res.status(500).send(JSON.stringify({"error":true, "message": e.message}));
+    }
+});*/
 
 app.get('/api/v1/admin/users/list', AdminTokenMiddleware.checkAdminToken, async function(req, res) {
 
