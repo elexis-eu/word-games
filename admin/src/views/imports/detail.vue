@@ -103,7 +103,7 @@
         </el-table-column>
         <el-table-column label="Created" width="200" align="center">
           <template slot-scope="scope">
-            {{ scope.row.created | moment("D. D. YYYY, H:mm")  }}
+            {{ scope.row.created | moment("D. M. YYYY, H:mm")  }}
           </template>
         </el-table-column>
       </el-table>
