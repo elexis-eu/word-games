@@ -51,7 +51,14 @@ def get_game_type_ids():
 
 def disable_previous_level(level, position):
     s_sql = "UPDATE collocation_level SET active = 0, deactivated = NOW() WHERE level = %s AND position = %s"
-    s_val = (level, position)
+    s_val = (str(level), str(position))
+    mycursor.execute(s_sql, s_val)
+
+    mydb.commit()
+
+def disable_whole_level(level):
+    s_sql = "UPDATE collocation_level SET active = 0, deactivated = NOW() WHERE level = %s"
+    s_val = (str(level),)
     mycursor.execute(s_sql, s_val)
 
     mydb.commit()
@@ -102,8 +109,16 @@ try:
 
         for row in dataReader:
             try:
-                disable_previous_level(row[0], row[5])
-                insert_level_headword(row[0], game_types[row[1]], structures[row[2]], row[3], row[4], row[5], row[6])
+                if len(row) == 1:
+                    disable_whole_level(row[0])
+                elif len(row) == 2:
+                    if row[1] == '':
+                        disable_whole_level(row[0])
+                    else:
+                        disable_previous_level(row[0], row[1])
+                else:
+                    disable_previous_level(row[0], row[5])
+                    insert_level_headword(row[0], game_types[row[1]], structures[row[2]], row[3], row[4], row[5], row[6])
 
                 mycursor.execute("UPDATE admin_imports SET task_done = task_done + 1 WHERE id = '" + str(new_import['id']) + "'")
                 mydb.commit()
